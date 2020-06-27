@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   sodipodi:docname="img.svg"
+   inkscape:version="1.1-dev (16a0cfb5ab, 2020-06-25, custom)"
+   id="svg6"
+   version="1.1"
+   viewBox="0 0 14.510562 14.380171"
+   height="14.380171mm"
+   width="14.510562mm">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     inkscape:window-maximized="1"
+     inkscape:window-y="0"
+     inkscape:window-x="0"
+     inkscape:window-height="1007"
+     inkscape:window-width="2560"
+     inkscape:snap-global="false"
+     fit-margin-bottom="0"
+     fit-margin-right="0"
+     fit-margin-left="0"
+     fit-margin-top="0"
+     showgrid="false"
+     inkscape:current-layer="layer1"
+     inkscape:document-units="mm"
+     inkscape:cy="15.252678"
+     inkscape:cx="36.8409"
+     inkscape:zoom="15.839192"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     borderopacity="1.0"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     id="base" />
+  <g
+     transform="translate(-17.727873,-26.339013)"
+     id="layer1"
+     inkscape:groupmode="layer"
+     inkscape:label="Layer 1">
+    <ellipse
+       ry="7.1075854"
+       rx="7.172781"
+       cy="33.529099"
+       cx="24.983154"
+       id="path823"
+       style="fill:#ff0000;stroke:#000000;stroke-width:0.26458333;stroke-dashoffset:3.89291;fill-opacity:1;stroke-miterlimit:4;stroke-dasharray:none" />
+    <rect
+       transform="rotate(45)"
+       y="2.2144525"
+       x="37.545967"
+       height="7.6568851"
+       width="7.6568851"
+       id="rect827"
+       style="fill:#ff0000;fill-opacity:1;stroke:#000000;stroke-width:0.26458333;stroke-dashoffset:3.89291;stroke-miterlimit:4;stroke-dasharray:none" />
+    <rect
+       style="fill:#ff0000;fill-opacity:1;stroke:#000000;stroke-width:0.26458333;stroke-dashoffset:3.89291;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect827-6"
+       width="6.2800603"
+       height="6.2800603"
+       x="38.234379"
+       y="2.9028649"
+       transform="rotate(45)" />
+    <rect
+       style="fill:#ff0000;fill-opacity:1;stroke:#000000;stroke-width:0.26458333;stroke-dashoffset:3.89291;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect827-3"
+       width="4.5730219"
+       height="4.5730219"
+       x="39.087898"
+       y="3.7563841"
+       transform="rotate(45)" />
+  </g>
+</svg>

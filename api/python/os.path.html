@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>os.path | xmolpp2 Python API</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
+  <link rel="icon" href="favicon-dark.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <span id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m">
+        <a href="../../">xmolpp2</a> <span class="m-breadcrumb">|</span> <a href="index.html" class="m-thin">Python API</a>
+      </span>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-12 m-col-m-none">
+            <li>
+              <a href="install.html">Install</a>
+              <ol>
+                <li><a href="changelog.html">Changelog</a></li>
+              </ol>
+            </li>
+            <li><a href="overview.html">Overview</a></li>
+            <li><a href="pages.html">Pages</a></li>
+            <li>
+              <a href="os.html">API</a>
+              <ol>
+                <li><a href="modules.html">Modules</a></li>
+                <li><a href="classes.html">Classes</a></li>
+              </ol>
+            </li>
+            <li><a href="https://github.com/sizmailov/pyxmolpp2">Github</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="6">
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          <span class="m-breadcrumb"><a href="os.html">os</a>.<wbr/></span>path <span class="m-thin">module</span>
+        </h1>
+        <p>Common operations on Posix pathnames.</p>
+        <div class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#functions">Functions</a></li>
+                <li><a href="#data">Data</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+<p>Instead of importing this module directly, import os and refer to
+this module as os.path.  The &quot;os.path&quot; name is an alias for this
+module on Posix systems; on other systems (e.g. Windows),
+os.path provides the same operations in a manner specific to that
+platform, and is an alias to another module (e.g. ntpath).</p>
+<p>Some of this can actually be useful on non-Posix systems too, e.g.
+for manipulation of the pathname component of URLs.</p>
+        <section id="functions">
+          <h2><a href="#functions">Functions</a></h2>
+          <dl class="m-doc">
+            <dt id="normcase">
+              <span class="m-doc-wrap-bumper">def <a href="#normcase" class="m-doc-self">normcase</a>(</span><span class="m-doc-wrap">s)</span>
+            </dt>
+            <dd>Normalize case of pathname.  Has no effect under Posix</dd>
+            <dt id="isabs">
+              <span class="m-doc-wrap-bumper">def <a href="#isabs" class="m-doc-self">isabs</a>(</span><span class="m-doc-wrap">s)</span>
+            </dt>
+            <dd>Test whether a path is absolute</dd>
+            <dt id="join">
+              <span class="m-doc-wrap-bumper">def <a href="#join" class="m-doc-self">join</a>(</span><span class="m-doc-wrap">a, *p)</span>
+            </dt>
+            <dd>Join two or more pathname components, inserting &#x27;/&#x27; as needed.
+If any component is an absolute path, all previous path components
+will be discarded.  An empty last part will result in a path that
+ends with a separator.</dd>
+            <dt id="splitdrive">
+              <span class="m-doc-wrap-bumper">def <a href="#splitdrive" class="m-doc-self">splitdrive</a>(</span><span class="m-doc-wrap">p)</span>
+            </dt>
+            <dd>Split a pathname into drive and path. On Posix, drive is always
+empty.</dd>
+            <dt id="split">
+              <span class="m-doc-wrap-bumper">def <a href="#split" class="m-doc-self">split</a>(</span><span class="m-doc-wrap">p)</span>
+            </dt>
+            <dd>Split a pathname.  Returns tuple &quot;(head, tail)&quot; where &quot;tail&quot; is
+everything after the final slash.  Either part may be empty.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#splitext" class="m-doc">splitext</a>(</span><span class="m-doc-wrap">p)</span>
+            </dt>
+            <dd>Split the extension from a pathname.</dd>
+            <dt id="basename">
+              <span class="m-doc-wrap-bumper">def <a href="#basename" class="m-doc-self">basename</a>(</span><span class="m-doc-wrap">p)</span>
+            </dt>
+            <dd>Returns the final component of a pathname</dd>
+            <dt id="dirname">
+              <span class="m-doc-wrap-bumper">def <a href="#dirname" class="m-doc-self">dirname</a>(</span><span class="m-doc-wrap">p)</span>
+            </dt>
+            <dd>Returns the directory component of a pathname</dd>
+            <dt id="commonprefix">
+              <span class="m-doc-wrap-bumper">def <a href="#commonprefix" class="m-doc-self">commonprefix</a>(</span><span class="m-doc-wrap">m)</span>
+            </dt>
+            <dd>Given a list of pathnames, returns the longest common leading component</dd>
+            <dt id="getsize">
+              <span class="m-doc-wrap-bumper">def <a href="#getsize" class="m-doc-self">getsize</a>(</span><span class="m-doc-wrap">filename)</span>
+            </dt>
+            <dd>Return the size of a file, reported by os.stat().</dd>
+            <dt id="getmtime">
+              <span class="m-doc-wrap-bumper">def <a href="#getmtime" class="m-doc-self">getmtime</a>(</span><span class="m-doc-wrap">filename)</span>
+            </dt>
+            <dd>Return the last modification time of a file, reported by os.stat().</dd>
+            <dt id="getatime">
+              <span class="m-doc-wrap-bumper">def <a href="#getatime" class="m-doc-self">getatime</a>(</span><span class="m-doc-wrap">filename)</span>
+            </dt>
+            <dd>Return the last access time of a file, reported by os.stat().</dd>
+            <dt id="getctime">
+              <span class="m-doc-wrap-bumper">def <a href="#getctime" class="m-doc-self">getctime</a>(</span><span class="m-doc-wrap">filename)</span>
+            </dt>
+            <dd>Return the metadata change time of a file, reported by os.stat().</dd>
+            <dt id="islink">
+              <span class="m-doc-wrap-bumper">def <a href="#islink" class="m-doc-self">islink</a>(</span><span class="m-doc-wrap">path)</span>
+            </dt>
+            <dd>Test whether a path is a symbolic link</dd>
+            <dt id="exists">
+              <span class="m-doc-wrap-bumper">def <a href="#exists" class="m-doc-self">exists</a>(</span><span class="m-doc-wrap">path)</span>
+            </dt>
+            <dd>Test whether a path exists.  Returns False for broken symbolic links</dd>
+            <dt id="lexists">
+              <span class="m-doc-wrap-bumper">def <a href="#lexists" class="m-doc-self">lexists</a>(</span><span class="m-doc-wrap">path)</span>
+            </dt>
+            <dd>Test whether a path exists.  Returns True for broken symbolic links</dd>
+            <dt id="isdir">
+              <span class="m-doc-wrap-bumper">def <a href="#isdir" class="m-doc-self">isdir</a>(</span><span class="m-doc-wrap">s)</span>
+            </dt>
+            <dd>Return true if the pathname refers to an existing directory.</dd>
+            <dt id="isfile">
+              <span class="m-doc-wrap-bumper">def <a href="#isfile" class="m-doc-self">isfile</a>(</span><span class="m-doc-wrap">path)</span>
+            </dt>
+            <dd>Test whether a path is a regular file</dd>
+            <dt id="ismount">
+              <span class="m-doc-wrap-bumper">def <a href="#ismount" class="m-doc-self">ismount</a>(</span><span class="m-doc-wrap">path)</span>
+            </dt>
+            <dd>Test whether a path is a mount point</dd>
+            <dt id="expanduser">
+              <span class="m-doc-wrap-bumper">def <a href="#expanduser" class="m-doc-self">expanduser</a>(</span><span class="m-doc-wrap">path)</span>
+            </dt>
+            <dd>Expand ~ and ~user constructions.  If user or $HOME is unknown,
+do nothing.</dd>
+            <dt id="expandvars">
+              <span class="m-doc-wrap-bumper">def <a href="#expandvars" class="m-doc-self">expandvars</a>(</span><span class="m-doc-wrap">path)</span>
+            </dt>
+            <dd>Expand shell variables of form $var and ${var}.  Unknown variables
+are left unchanged.</dd>
+            <dt id="normpath">
+              <span class="m-doc-wrap-bumper">def <a href="#normpath" class="m-doc-self">normpath</a>(</span><span class="m-doc-wrap">path)</span>
+            </dt>
+            <dd>Normalize path, eliminating double slashes, etc.</dd>
+            <dt id="abspath">
+              <span class="m-doc-wrap-bumper">def <a href="#abspath" class="m-doc-self">abspath</a>(</span><span class="m-doc-wrap">path)</span>
+            </dt>
+            <dd>Return an absolute path.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#samefile" class="m-doc">samefile</a>(</span><span class="m-doc-wrap">f1, f2)</span>
+            </dt>
+            <dd>Test whether two pathnames reference the same actual file or directory</dd>
+            <dt id="sameopenfile">
+              <span class="m-doc-wrap-bumper">def <a href="#sameopenfile" class="m-doc-self">sameopenfile</a>(</span><span class="m-doc-wrap">fp1, fp2)</span>
+            </dt>
+            <dd>Test whether two open file objects reference the same file</dd>
+            <dt id="samestat">
+              <span class="m-doc-wrap-bumper">def <a href="#samestat" class="m-doc-self">samestat</a>(</span><span class="m-doc-wrap">s1, s2)</span>
+            </dt>
+            <dd>Test whether two stat buffers reference the same file</dd>
+            <dt id="realpath">
+              <span class="m-doc-wrap-bumper">def <a href="#realpath" class="m-doc-self">realpath</a>(</span><span class="m-doc-wrap">filename)</span>
+            </dt>
+            <dd>Return the canonical path of the specified filename, eliminating any
+symbolic links encountered in the path.</dd>
+            <dt id="relpath">
+              <span class="m-doc-wrap-bumper">def <a href="#relpath" class="m-doc-self">relpath</a>(</span><span class="m-doc-wrap">path,
+              start = None)</span>
+            </dt>
+            <dd>Return a relative version of a path</dd>
+            <dt id="commonpath">
+              <span class="m-doc-wrap-bumper">def <a href="#commonpath" class="m-doc-self">commonpath</a>(</span><span class="m-doc-wrap">paths)</span>
+            </dt>
+            <dd>Given a sequence of path names, returns the longest common sub-path.</dd>
+          </dl>
+        </section>
+        <section id="data">
+          <h2><a href="#data">Data</a></h2>
+          <dl class="m-doc">
+            <dt id="curdir">
+              <a href="#curdir" class="m-doc-self">curdir</a> = &#x27;.&#x27;
+            </dt>
+            <dd></dd>
+            <dt id="pardir">
+              <a href="#pardir" class="m-doc-self">pardir</a> = &#x27;..&#x27;
+            </dt>
+            <dd></dd>
+            <dt id="sep">
+              <a href="#sep" class="m-doc-self">sep</a> = &#x27;/&#x27;
+            </dt>
+            <dd></dd>
+            <dt id="pathsep">
+              <a href="#pathsep" class="m-doc-self">pathsep</a> = &#x27;:&#x27;
+            </dt>
+            <dd></dd>
+            <dt id="defpath">
+              <a href="#defpath" class="m-doc-self">defpath</a> = &#x27;/bin:/usr/bin&#x27;
+            </dt>
+            <dd></dd>
+            <dt id="altsep">
+              <a href="#altsep" class="m-doc-self">altsep</a> = None
+            </dt>
+            <dd></dd>
+            <dt id="extsep">
+              <a href="#extsep" class="m-doc-self">extsep</a> = &#x27;.&#x27;
+            </dt>
+            <dd></dd>
+            <dt id="devnull">
+              <a href="#devnull" class="m-doc-self">devnull</a> = &#x27;/dev/null&#x27;
+            </dt>
+            <dd></dd>
+            <dt id="supports_unicode_filenames">
+              <a href="#supports_unicode_filenames" class="m-doc-self">supports_unicode_filenames</a> = False
+            </dt>
+            <dd></dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="splitext"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr />path.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#splitext" class="m-doc-self">splitext</a>(</span><span class="m-doc-wrap">p)</span></span>
+            </h3>
+            <p>Split the extension from a pathname.</p>
+<p>Extension is everything from the last dot to the end, ignoring
+leading dots.  Returns &quot;(root, ext)&quot;; ext may be empty.</p>
+          </div></section>
+          <section class="m-doc-details" id="samefile"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr />path.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#samefile" class="m-doc-self">samefile</a>(</span><span class="m-doc-wrap">f1, f2)</span></span>
+            </h3>
+            <p>Test whether two pathnames reference the same actual file or directory</p>
+<p>This is determined by the device number and i-node number and
+raises an exception if an os.stat() call on either pathname fails.</p>
+          </div></section>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for modules, classes, functions and other
+            symbols. You can omit any prefix from the symbol path; adding a <code>.</code>
+            suffix lists all members of given symbol.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>xmolpp2 Python API. Created with <a href="https://mcss.mosra.cz/documentation/python/">m.css Python doc generator</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>

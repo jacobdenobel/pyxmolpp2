@@ -1,0 +1,2711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>os | xmolpp2 Python API</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
+  <link rel="icon" href="favicon-dark.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <span id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m">
+        <a href="../../">xmolpp2</a> <span class="m-breadcrumb">|</span> <a href="index.html" class="m-thin">Python API</a>
+      </span>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-12 m-col-m-none">
+            <li>
+              <a href="install.html">Install</a>
+              <ol>
+                <li><a href="changelog.html">Changelog</a></li>
+              </ol>
+            </li>
+            <li><a href="overview.html">Overview</a></li>
+            <li><a href="pages.html">Pages</a></li>
+            <li>
+              <a href="os.html">API</a>
+              <ol>
+                <li><a href="modules.html">Modules</a></li>
+                <li><a href="classes.html">Classes</a></li>
+              </ol>
+            </li>
+            <li><a href="https://github.com/sizmailov/pyxmolpp2">Github</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="6">
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          os <span class="m-thin">module</span>
+        </h1>
+        <p>OS routines for NT or Posix depending on what system we&#x27;re on.</p>
+        <div class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#packages">Modules</a></li>
+                <li><a href="#classes">Classes</a></li>
+                <li><a href="#functions">Functions</a></li>
+                <li><a href="#data">Data</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+<p>This exports:
+  - all functions from posix or nt, e.g. unlink, stat, etc.
+  - os.path is either posixpath or ntpath
+  - os.name is either &#x27;posix&#x27; or &#x27;nt&#x27;
+  - os.curdir is a string representing the current directory (always &#x27;.&#x27;)
+  - os.pardir is a string representing the parent directory (always &#x27;..&#x27;)
+  - os.sep is the (or a most common) pathname separator (&#x27;/&#x27; or &#x27;\\&#x27;)
+  - os.extsep is the extension separator (always &#x27;.&#x27;)
+  - os.altsep is the alternate pathname separator (None or &#x27;/&#x27;)
+  - os.pathsep is the component separator used in $PATH etc
+  - os.linesep is the line separator in text files (&#x27;\r&#x27; or &#x27;\n&#x27; or &#x27;\r\n&#x27;)
+  - os.defpath is the default search path for executables
+  - os.devnull is the file path of the null device (&#x27;/dev/null&#x27;, etc.)</p>
+<p>Programs that import and use &#x27;os&#x27; stand a better chance of being
+portable between different platforms.  Of course, they must then
+only use functions that are defined by all platforms (e.g., unlink
+and opendir), and leave all pathname manipulation to os.path
+(e.g., split and join).</p>
+        <section id="namespaces">
+          <h2><a href="#namespaces">Modules</a></h2>
+          <dl class="m-doc">
+            <dt>module <a href="os.path.html" class="m-doc">path</a></dt>
+            <dd>Common operations on Posix pathnames.</dd>
+          </dl>
+        </section>
+        <section id="classes">
+          <h2><a href="#classes">Classes</a></h2>
+          <dl class="m-doc">
+            <dt>class <a href="os.DirEntry.html" class="m-doc">DirEntry</a></dt>
+            <dd></dd>
+            <dt>class <a href="os.error.html" class="m-doc">error</a></dt>
+            <dd>Base class for I/O related errors.</dd>
+            <dt>class <a href="os.sched_param.html" class="m-doc">sched_param</a></dt>
+            <dd>Current has only one field: sched_priority&quot;);</dd>
+            <dt>class <a href="os.stat_result.html" class="m-doc">stat_result</a></dt>
+            <dd>stat_result: Result from stat, fstat, or lstat.</dd>
+            <dt>class <a href="os.statvfs_result.html" class="m-doc">statvfs_result</a></dt>
+            <dd>statvfs_result: Result from statvfs or fstatvfs.</dd>
+            <dt>class <a href="os.terminal_size.html" class="m-doc">terminal_size</a></dt>
+            <dd>A tuple of (columns, lines) for holding terminal window size</dd>
+            <dt>class <a href="os.times_result.html" class="m-doc">times_result</a></dt>
+            <dd>times_result: Result from os.times().</dd>
+            <dt>class <a href="os.uname_result.html" class="m-doc">uname_result</a></dt>
+            <dd>uname_result: Result from os.uname().</dd>
+            <dt>class <a href="os.waitid_result.html" class="m-doc">waitid_result</a></dt>
+            <dd>waitid_result: Result from waitid.</dd>
+          </dl>
+        </section>
+        <section id="functions">
+          <h2><a href="#functions">Functions</a></h2>
+          <dl class="m-doc">
+            <dt id="fsencode">
+              <span class="m-doc-wrap-bumper">def <a href="#fsencode" class="m-doc-self">fsencode</a>(</span><span class="m-doc-wrap">filename)</span>
+            </dt>
+            <dd>Encode filename (an os.PathLike, bytes, or str) to the filesystem
+encoding with &#x27;surrogateescape&#x27; error handler, return bytes unchanged.
+On Windows, use &#x27;strict&#x27; error handler if the file system encoding is
+&#x27;mbcs&#x27; (which is the default encoding).</dd>
+            <dt id="fsdecode">
+              <span class="m-doc-wrap-bumper">def <a href="#fsdecode" class="m-doc-self">fsdecode</a>(</span><span class="m-doc-wrap">filename)</span>
+            </dt>
+            <dd>Decode filename (an os.PathLike, bytes, or str) from the filesystem
+encoding with &#x27;surrogateescape&#x27; error handler, return str unchanged. On
+Windows, use &#x27;strict&#x27; error handler if the file system encoding is
+&#x27;mbcs&#x27; (which is the default encoding).</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#get_exec_path" class="m-doc">get_exec_path</a>(</span><span class="m-doc-wrap">env = None)</span>
+            </dt>
+            <dd>Returns the sequence of directories that will be searched for the
+named executable (similar to a shell) when launching a process.</dd>
+            <dt id="fdopen">
+              <span class="m-doc-wrap-bumper">def <a href="#fdopen" class="m-doc-self">fdopen</a>(</span><span class="m-doc-wrap">fd, *args, **kwargs)</span>
+            </dt>
+            <dd></dd>
+            <dt id="popen">
+              <span class="m-doc-wrap-bumper">def <a href="#popen" class="m-doc-self">popen</a>(</span><span class="m-doc-wrap">cmd,
+              mode = &#x27;r&#x27;,
+              buffering = -1)</span>
+            </dt>
+            <dd></dd>
+            <dt id="_exit">
+              <span class="m-doc-wrap-bumper">def <a href="#_exit" class="m-doc-self">_exit</a>(</span><span class="m-doc-wrap">status)</span>
+            </dt>
+            <dd>Exit to the system with specified status, without normal exit processing.</dd>
+            <dt id="WCOREDUMP">
+              <span class="m-doc-wrap-bumper">def <a href="#WCOREDUMP" class="m-doc-self">WCOREDUMP</a>(</span><span class="m-doc-wrap">status<span class="m-text m-dim">, /</span>)</span>
+            </dt>
+            <dd>Return True if the process returning status was dumped to a core file.</dd>
+            <dt id="WEXITSTATUS">
+              <span class="m-doc-wrap-bumper">def <a href="#WEXITSTATUS" class="m-doc-self">WEXITSTATUS</a>(</span><span class="m-doc-wrap">status)</span>
+            </dt>
+            <dd>Return the process return code from status.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#WIFCONTINUED" class="m-doc">WIFCONTINUED</a>(</span><span class="m-doc-wrap">status)</span>
+            </dt>
+            <dd>Return True if a particular process was continued from a job control stop.</dd>
+            <dt id="WIFEXITED">
+              <span class="m-doc-wrap-bumper">def <a href="#WIFEXITED" class="m-doc-self">WIFEXITED</a>(</span><span class="m-doc-wrap">status)</span>
+            </dt>
+            <dd>Return True if the process returning status exited via the exit() system call.</dd>
+            <dt id="WIFSIGNALED">
+              <span class="m-doc-wrap-bumper">def <a href="#WIFSIGNALED" class="m-doc-self">WIFSIGNALED</a>(</span><span class="m-doc-wrap">status)</span>
+            </dt>
+            <dd>Return True if the process returning status was terminated by a signal.</dd>
+            <dt id="WIFSTOPPED">
+              <span class="m-doc-wrap-bumper">def <a href="#WIFSTOPPED" class="m-doc-self">WIFSTOPPED</a>(</span><span class="m-doc-wrap">status)</span>
+            </dt>
+            <dd>Return True if the process returning status was stopped.</dd>
+            <dt id="WSTOPSIG">
+              <span class="m-doc-wrap-bumper">def <a href="#WSTOPSIG" class="m-doc-self">WSTOPSIG</a>(</span><span class="m-doc-wrap">status)</span>
+            </dt>
+            <dd>Return the signal that stopped the process that provided the status value.</dd>
+            <dt id="WTERMSIG">
+              <span class="m-doc-wrap-bumper">def <a href="#WTERMSIG" class="m-doc-self">WTERMSIG</a>(</span><span class="m-doc-wrap">status)</span>
+            </dt>
+            <dd>Return the signal that terminated the process that provided the status value.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#abort" class="m-doc">abort</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd>Abort the interpreter immediately.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#access" class="m-doc">access</a>(</span><span class="m-doc-wrap">path,
+              mode,<span class="m-text m-dim"> *,</span>
+              dir_fd = None,
+              effective_ids = False,
+              follow_symlinks = True)</span>
+            </dt>
+            <dd>Use the real uid/gid to test for access to a path.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#chdir" class="m-doc">chdir</a>(</span><span class="m-doc-wrap">path)</span>
+            </dt>
+            <dd>Change the current working directory to the specified path.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#chmod" class="m-doc">chmod</a>(</span><span class="m-doc-wrap">path,
+              mode,<span class="m-text m-dim"> *,</span>
+              dir_fd = None,
+              follow_symlinks = True)</span>
+            </dt>
+            <dd>Change the access permissions of a file.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#chown" class="m-doc">chown</a>(</span><span class="m-doc-wrap">path,
+              uid,
+              gid,<span class="m-text m-dim"> *,</span>
+              dir_fd = None,
+              follow_symlinks = True)</span>
+            </dt>
+            <dd>Change the owner and group id of path to the numeric uid and gid.\</dd>
+            <dt id="chroot">
+              <span class="m-doc-wrap-bumper">def <a href="#chroot" class="m-doc-self">chroot</a>(</span><span class="m-doc-wrap">path)</span>
+            </dt>
+            <dd>Change root directory to path.</dd>
+            <dt id="close">
+              <span class="m-doc-wrap-bumper">def <a href="#close" class="m-doc-self">close</a>(</span><span class="m-doc-wrap">fd)</span>
+            </dt>
+            <dd>Close a file descriptor.</dd>
+            <dt id="closerange">
+              <span class="m-doc-wrap-bumper">def <a href="#closerange" class="m-doc-self">closerange</a>(</span><span class="m-doc-wrap">fd_low, fd_high<span class="m-text m-dim">, /</span>)</span>
+            </dt>
+            <dd>Closes all file descriptors in [fd_low, fd_high), ignoring errors.</dd>
+            <dt id="confstr">
+              <span class="m-doc-wrap-bumper">def <a href="#confstr" class="m-doc-self">confstr</a>(</span><span class="m-doc-wrap">name<span class="m-text m-dim">, /</span>)</span>
+            </dt>
+            <dd>Return a string-valued system configuration variable.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#copy_file_range" class="m-doc">copy_file_range</a>(</span><span class="m-doc-wrap">src,
+              dst,
+              count,
+              offset_src = None,
+              offset_dst = None)</span>
+            </dt>
+            <dd>Copy count bytes from one file descriptor to another.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#cpu_count" class="m-doc">cpu_count</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd>Return the number of CPUs in the system; return None if indeterminable.</dd>
+            <dt id="ctermid">
+              <span class="m-doc-wrap-bumper">def <a href="#ctermid" class="m-doc-self">ctermid</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd>Return the name of the controlling terminal for this process.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#device_encoding" class="m-doc">device_encoding</a>(</span><span class="m-doc-wrap">fd)</span>
+            </dt>
+            <dd>Return a string describing the encoding of a terminal&#x27;s file descriptor.</dd>
+            <dt id="dup">
+              <span class="m-doc-wrap-bumper">def <a href="#dup" class="m-doc-self">dup</a>(</span><span class="m-doc-wrap">fd<span class="m-text m-dim">, /</span>)</span>
+            </dt>
+            <dd>Return a duplicate of a file descriptor.</dd>
+            <dt id="dup2">
+              <span class="m-doc-wrap-bumper">def <a href="#dup2" class="m-doc-self">dup2</a>(</span><span class="m-doc-wrap">fd,
+              fd2,
+              inheritable = True)</span>
+            </dt>
+            <dd>Duplicate file descriptor.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#execv" class="m-doc">execv</a>(</span><span class="m-doc-wrap">path, argv<span class="m-text m-dim">, /</span>)</span>
+            </dt>
+            <dd>Execute an executable path with arguments, replacing current process.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#execve" class="m-doc">execve</a>(</span><span class="m-doc-wrap">path, argv, env)</span>
+            </dt>
+            <dd>Execute an executable path with arguments, replacing current process.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#fchdir" class="m-doc">fchdir</a>(</span><span class="m-doc-wrap">fd)</span>
+            </dt>
+            <dd>Change to the directory of the given file descriptor.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#fchmod" class="m-doc">fchmod</a>(</span><span class="m-doc-wrap">fd, mode)</span>
+            </dt>
+            <dd>Change the access permissions of the file given by file descriptor fd.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#fchown" class="m-doc">fchown</a>(</span><span class="m-doc-wrap">fd, uid, gid)</span>
+            </dt>
+            <dd>Change the owner and group id of the file specified by file descriptor.</dd>
+            <dt id="fdatasync">
+              <span class="m-doc-wrap-bumper">def <a href="#fdatasync" class="m-doc-self">fdatasync</a>(</span><span class="m-doc-wrap">fd)</span>
+            </dt>
+            <dd>Force write of fd to disk without forcing update of metadata.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#fork" class="m-doc">fork</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd>Fork a child process.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#forkpty" class="m-doc">forkpty</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd>Fork a new process with a new pseudo-terminal as controlling tty.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#fpathconf" class="m-doc">fpathconf</a>(</span><span class="m-doc-wrap">fd, name<span class="m-text m-dim">, /</span>)</span>
+            </dt>
+            <dd>Return the configuration limit name for the file descriptor fd.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#fspath" class="m-doc">fspath</a>(</span><span class="m-doc-wrap">path)</span>
+            </dt>
+            <dd>Return the file system path representation of the object.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#fstat" class="m-doc">fstat</a>(</span><span class="m-doc-wrap">fd)</span>
+            </dt>
+            <dd>Perform a stat system call on the given file descriptor.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#fstatvfs" class="m-doc">fstatvfs</a>(</span><span class="m-doc-wrap">fd<span class="m-text m-dim">, /</span>)</span>
+            </dt>
+            <dd>Perform an fstatvfs system call on the given fd.</dd>
+            <dt id="fsync">
+              <span class="m-doc-wrap-bumper">def <a href="#fsync" class="m-doc-self">fsync</a>(</span><span class="m-doc-wrap">fd)</span>
+            </dt>
+            <dd>Force write of fd to disk.</dd>
+            <dt id="ftruncate">
+              <span class="m-doc-wrap-bumper">def <a href="#ftruncate" class="m-doc-self">ftruncate</a>(</span><span class="m-doc-wrap">fd, length<span class="m-text m-dim">, /</span>)</span>
+            </dt>
+            <dd>Truncate a file, specified by file descriptor, to a specific length.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#get_blocking" class="m-doc">get_blocking</a>(</span><span class="m-doc-wrap">fd<span class="m-text m-dim">, /</span>)</span>
+            </dt>
+            <dd>Get the blocking mode of the file descriptor.</dd>
+            <dt id="get_inheritable">
+              <span class="m-doc-wrap-bumper">def <a href="#get_inheritable" class="m-doc-self">get_inheritable</a>(</span><span class="m-doc-wrap">fd<span class="m-text m-dim">, /</span>)</span>
+            </dt>
+            <dd>Get the close-on-exe flag of the specified file descriptor.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#get_terminal_size" class="m-doc">get_terminal_size</a>(</span><span class="m-doc-wrap">...)</span>
+            </dt>
+            <dd>Return the size of the terminal window as (columns, lines).</dd>
+            <dt id="getcwd">
+              <span class="m-doc-wrap-bumper">def <a href="#getcwd" class="m-doc-self">getcwd</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd>Return a unicode string representing the current working directory.</dd>
+            <dt id="getcwdb">
+              <span class="m-doc-wrap-bumper">def <a href="#getcwdb" class="m-doc-self">getcwdb</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd>Return a bytes string representing the current working directory.</dd>
+            <dt id="getegid">
+              <span class="m-doc-wrap-bumper">def <a href="#getegid" class="m-doc-self">getegid</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd>Return the current process&#x27;s effective group id.</dd>
+            <dt id="geteuid">
+              <span class="m-doc-wrap-bumper">def <a href="#geteuid" class="m-doc-self">geteuid</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd>Return the current process&#x27;s effective user id.</dd>
+            <dt id="getgid">
+              <span class="m-doc-wrap-bumper">def <a href="#getgid" class="m-doc-self">getgid</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd>Return the current process&#x27;s group id.</dd>
+            <dt id="getgrouplist">
+              <span class="m-doc-wrap-bumper">def <a href="#getgrouplist" class="m-doc-self">getgrouplist</a>(</span><span class="m-doc-wrap">…)</span>
+            </dt>
+            <dd>Returns a list of groups to which a user belongs.</dd>
+            <dt id="getgroups">
+              <span class="m-doc-wrap-bumper">def <a href="#getgroups" class="m-doc-self">getgroups</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd>Return list of supplemental group IDs for the process.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#getloadavg" class="m-doc">getloadavg</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd>Return average recent system load information.</dd>
+            <dt id="getlogin">
+              <span class="m-doc-wrap-bumper">def <a href="#getlogin" class="m-doc-self">getlogin</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd>Return the actual login name.</dd>
+            <dt id="getpgid">
+              <span class="m-doc-wrap-bumper">def <a href="#getpgid" class="m-doc-self">getpgid</a>(</span><span class="m-doc-wrap">pid)</span>
+            </dt>
+            <dd>Call the system call getpgid(), and return the result.</dd>
+            <dt id="getpgrp">
+              <span class="m-doc-wrap-bumper">def <a href="#getpgrp" class="m-doc-self">getpgrp</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd>Return the current process group id.</dd>
+            <dt id="getpid">
+              <span class="m-doc-wrap-bumper">def <a href="#getpid" class="m-doc-self">getpid</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd>Return the current process id.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#getppid" class="m-doc">getppid</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd>Return the parent&#x27;s process id.</dd>
+            <dt id="getpriority">
+              <span class="m-doc-wrap-bumper">def <a href="#getpriority" class="m-doc-self">getpriority</a>(</span><span class="m-doc-wrap">which, who)</span>
+            </dt>
+            <dd>Return program scheduling priority.</dd>
+            <dt id="getrandom">
+              <span class="m-doc-wrap-bumper">def <a href="#getrandom" class="m-doc-self">getrandom</a>(</span><span class="m-doc-wrap">size,
+              flags = 0)</span>
+            </dt>
+            <dd>Obtain a series of random bytes.</dd>
+            <dt id="getresgid">
+              <span class="m-doc-wrap-bumper">def <a href="#getresgid" class="m-doc-self">getresgid</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd>Return a tuple of the current process&#x27;s real, effective, and saved group ids.</dd>
+            <dt id="getresuid">
+              <span class="m-doc-wrap-bumper">def <a href="#getresuid" class="m-doc-self">getresuid</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd>Return a tuple of the current process&#x27;s real, effective, and saved user ids.</dd>
+            <dt id="getsid">
+              <span class="m-doc-wrap-bumper">def <a href="#getsid" class="m-doc-self">getsid</a>(</span><span class="m-doc-wrap">pid<span class="m-text m-dim">, /</span>)</span>
+            </dt>
+            <dd>Call the system call getsid(pid) and return the result.</dd>
+            <dt id="getuid">
+              <span class="m-doc-wrap-bumper">def <a href="#getuid" class="m-doc-self">getuid</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd>Return the current process&#x27;s user id.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#getxattr" class="m-doc">getxattr</a>(</span><span class="m-doc-wrap">path,
+              attribute,<span class="m-text m-dim"> *,</span>
+              follow_symlinks = True)</span>
+            </dt>
+            <dd>Return the value of extended attribute attribute on path.</dd>
+            <dt id="initgroups">
+              <span class="m-doc-wrap-bumper">def <a href="#initgroups" class="m-doc-self">initgroups</a>(</span><span class="m-doc-wrap">username, gid) -&gt; None</span>
+            </dt>
+            <dd>Call the system initgroups() to initialize the group access list with all of
+the groups of which the specified username is a member, plus the specified
+group id.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#isatty" class="m-doc">isatty</a>(</span><span class="m-doc-wrap">fd<span class="m-text m-dim">, /</span>)</span>
+            </dt>
+            <dd>Return True if the fd is connected to a terminal.</dd>
+            <dt id="kill">
+              <span class="m-doc-wrap-bumper">def <a href="#kill" class="m-doc-self">kill</a>(</span><span class="m-doc-wrap">pid, signal<span class="m-text m-dim">, /</span>)</span>
+            </dt>
+            <dd>Kill a process with a signal.</dd>
+            <dt id="killpg">
+              <span class="m-doc-wrap-bumper">def <a href="#killpg" class="m-doc-self">killpg</a>(</span><span class="m-doc-wrap">pgid, signal<span class="m-text m-dim">, /</span>)</span>
+            </dt>
+            <dd>Kill a process group with a signal.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#lchown" class="m-doc">lchown</a>(</span><span class="m-doc-wrap">path, uid, gid)</span>
+            </dt>
+            <dd>Change the owner and group id of path to the numeric uid and gid.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#link" class="m-doc">link</a>(</span><span class="m-doc-wrap">src,
+              dst,<span class="m-text m-dim"> *,</span>
+              src_dir_fd = None,
+              dst_dir_fd = None,
+              follow_symlinks = True)</span>
+            </dt>
+            <dd>Create a hard link to a file.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#listdir" class="m-doc">listdir</a>(</span><span class="m-doc-wrap">path = None)</span>
+            </dt>
+            <dd>Return a list containing the names of the files in the directory.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#listxattr" class="m-doc">listxattr</a>(</span><span class="m-doc-wrap">path = None,<span class="m-text m-dim"> *,</span>
+              follow_symlinks = True)</span>
+            </dt>
+            <dd>Return a list of extended attributes on path.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#lockf" class="m-doc">lockf</a>(</span><span class="m-doc-wrap">fd, command, length<span class="m-text m-dim">, /</span>)</span>
+            </dt>
+            <dd>Apply, test or remove a POSIX lock on an open file descriptor.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#lseek" class="m-doc">lseek</a>(</span><span class="m-doc-wrap">fd, position, how<span class="m-text m-dim">, /</span>)</span>
+            </dt>
+            <dd>Set the position of a file descriptor.  Return the new position.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#lstat" class="m-doc">lstat</a>(</span><span class="m-doc-wrap">path,<span class="m-text m-dim"> *,</span>
+              dir_fd = None)</span>
+            </dt>
+            <dd>Perform a stat system call on the given path, without following symbolic links.</dd>
+            <dt id="major">
+              <span class="m-doc-wrap-bumper">def <a href="#major" class="m-doc-self">major</a>(</span><span class="m-doc-wrap">device<span class="m-text m-dim">, /</span>)</span>
+            </dt>
+            <dd>Extracts a device major number from a raw device number.</dd>
+            <dt id="makedev">
+              <span class="m-doc-wrap-bumper">def <a href="#makedev" class="m-doc-self">makedev</a>(</span><span class="m-doc-wrap">major, minor<span class="m-text m-dim">, /</span>)</span>
+            </dt>
+            <dd>Composes a raw device number from the major and minor device numbers.</dd>
+            <dt id="memfd_create">
+              <span class="m-doc-wrap-bumper">def <a href="#memfd_create" class="m-doc-self">memfd_create</a>(</span><span class="m-doc-wrap">name,
+              flags = 1)</span>
+            </dt>
+            <dd></dd>
+            <dt id="minor">
+              <span class="m-doc-wrap-bumper">def <a href="#minor" class="m-doc-self">minor</a>(</span><span class="m-doc-wrap">device<span class="m-text m-dim">, /</span>)</span>
+            </dt>
+            <dd>Extracts a device minor number from a raw device number.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#mkdir" class="m-doc">mkdir</a>(</span><span class="m-doc-wrap">path,
+              mode = 511,<span class="m-text m-dim"> *,</span>
+              dir_fd = None)</span>
+            </dt>
+            <dd>Create a directory.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#mkfifo" class="m-doc">mkfifo</a>(</span><span class="m-doc-wrap">path,
+              mode = 438,<span class="m-text m-dim"> *,</span>
+              dir_fd = None)</span>
+            </dt>
+            <dd>Create a &quot;fifo&quot; (a POSIX named pipe).</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#mknod" class="m-doc">mknod</a>(</span><span class="m-doc-wrap">path,
+              mode = 384,
+              device = 0,<span class="m-text m-dim"> *,</span>
+              dir_fd = None)</span>
+            </dt>
+            <dd>Create a node in the file system.</dd>
+            <dt id="nice">
+              <span class="m-doc-wrap-bumper">def <a href="#nice" class="m-doc-self">nice</a>(</span><span class="m-doc-wrap">increment<span class="m-text m-dim">, /</span>)</span>
+            </dt>
+            <dd>Add increment to the priority of process and return the new priority.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#open" class="m-doc">open</a>(</span><span class="m-doc-wrap">path,
+              flags,
+              mode = 511,<span class="m-text m-dim"> *,</span>
+              dir_fd = None)</span>
+            </dt>
+            <dd>Open a file for low level IO.  Returns a file descriptor (integer).</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#openpty" class="m-doc">openpty</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd>Open a pseudo-terminal.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#pathconf" class="m-doc">pathconf</a>(</span><span class="m-doc-wrap">path, name)</span>
+            </dt>
+            <dd>Return the configuration limit name for the file or directory path.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#pipe" class="m-doc">pipe</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd>Create a pipe.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#pipe2" class="m-doc">pipe2</a>(</span><span class="m-doc-wrap">flags<span class="m-text m-dim">, /</span>)</span>
+            </dt>
+            <dd>Create a pipe with flags set atomically.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#posix_fadvise" class="m-doc">posix_fadvise</a>(</span><span class="m-doc-wrap">fd, offset, length, advice<span class="m-text m-dim">, /</span>)</span>
+            </dt>
+            <dd>Announce an intention to access data in a specific pattern.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#posix_fallocate" class="m-doc">posix_fallocate</a>(</span><span class="m-doc-wrap">fd, offset, length<span class="m-text m-dim">, /</span>)</span>
+            </dt>
+            <dd>Ensure a file has allocated at least a particular number of bytes on disk.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#posix_spawn" class="m-doc">posix_spawn</a>(</span><span class="m-doc-wrap">...)</span>
+            </dt>
+            <dd>Execute the program specified by path in a new process.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#posix_spawnp" class="m-doc">posix_spawnp</a>(</span><span class="m-doc-wrap">...)</span>
+            </dt>
+            <dd>Execute the program specified by path in a new process.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#pread" class="m-doc">pread</a>(</span><span class="m-doc-wrap">fd, length, offset<span class="m-text m-dim">, /</span>)</span>
+            </dt>
+            <dd>Read a number of bytes from a file descriptor starting at a particular offset.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#preadv" class="m-doc">preadv</a>(</span><span class="m-doc-wrap">fd,
+              buffers,
+              offset,
+              flags = 0<span class="m-text m-dim">, /</span>)</span>
+            </dt>
+            <dd>Reads from a file descriptor into a number of mutable bytes-like objects.</dd>
+            <dt id="putenv">
+              <span class="m-doc-wrap-bumper">def <a href="#putenv" class="m-doc-self">putenv</a>(</span><span class="m-doc-wrap">name, value<span class="m-text m-dim">, /</span>)</span>
+            </dt>
+            <dd>Change or add an environment variable.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#pwrite" class="m-doc">pwrite</a>(</span><span class="m-doc-wrap">fd, buffer, offset<span class="m-text m-dim">, /</span>)</span>
+            </dt>
+            <dd>Write bytes to a file descriptor starting at a particular offset.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#pwritev" class="m-doc">pwritev</a>(</span><span class="m-doc-wrap">fd,
+              buffers,
+              offset,
+              flags = 0<span class="m-text m-dim">, /</span>)</span>
+            </dt>
+            <dd>Writes the contents of bytes-like objects to a file descriptor at a given offset.</dd>
+            <dt id="read">
+              <span class="m-doc-wrap-bumper">def <a href="#read" class="m-doc-self">read</a>(</span><span class="m-doc-wrap">fd, length<span class="m-text m-dim">, /</span>)</span>
+            </dt>
+            <dd>Read from a file descriptor.  Returns a bytes object.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#readlink" class="m-doc">readlink</a>(</span><span class="m-doc-wrap">path,<span class="m-text m-dim"> *,</span>
+              dir_fd = None)</span>
+            </dt>
+            <dd>Return a string representing the path to which the symbolic link points.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#readv" class="m-doc">readv</a>(</span><span class="m-doc-wrap">fd, buffers<span class="m-text m-dim">, /</span>)</span>
+            </dt>
+            <dd>Read from a file descriptor fd into an iterable of buffers.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#register_at_fork" class="m-doc">register_at_fork</a>(</span><span class="m-doc-wrap">...)</span>
+            </dt>
+            <dd>Register callables to be called when forking a new process.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#remove" class="m-doc">remove</a>(</span><span class="m-doc-wrap">path,<span class="m-text m-dim"> *,</span>
+              dir_fd = None)</span>
+            </dt>
+            <dd>Remove a file (same as unlink()).</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#removexattr" class="m-doc">removexattr</a>(</span><span class="m-doc-wrap">path,
+              attribute,<span class="m-text m-dim"> *,</span>
+              follow_symlinks = True)</span>
+            </dt>
+            <dd>Remove extended attribute attribute on path.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#rename" class="m-doc">rename</a>(</span><span class="m-doc-wrap">src,
+              dst,<span class="m-text m-dim"> *,</span>
+              src_dir_fd = None,
+              dst_dir_fd = None)</span>
+            </dt>
+            <dd>Rename a file or directory.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#replace" class="m-doc">replace</a>(</span><span class="m-doc-wrap">src,
+              dst,<span class="m-text m-dim"> *,</span>
+              src_dir_fd = None,
+              dst_dir_fd = None)</span>
+            </dt>
+            <dd>Rename a file or directory, overwriting the destination.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#rmdir" class="m-doc">rmdir</a>(</span><span class="m-doc-wrap">path,<span class="m-text m-dim"> *,</span>
+              dir_fd = None)</span>
+            </dt>
+            <dd>Remove a directory.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#scandir" class="m-doc">scandir</a>(</span><span class="m-doc-wrap">path = None)</span>
+            </dt>
+            <dd>Return an iterator of DirEntry objects for given path.</dd>
+            <dt id="sched_get_priority_max">
+              <span class="m-doc-wrap-bumper">def <a href="#sched_get_priority_max" class="m-doc-self">sched_get_priority_max</a>(</span><span class="m-doc-wrap">policy)</span>
+            </dt>
+            <dd>Get the maximum scheduling priority for policy.</dd>
+            <dt id="sched_get_priority_min">
+              <span class="m-doc-wrap-bumper">def <a href="#sched_get_priority_min" class="m-doc-self">sched_get_priority_min</a>(</span><span class="m-doc-wrap">policy)</span>
+            </dt>
+            <dd>Get the minimum scheduling priority for policy.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#sched_getaffinity" class="m-doc">sched_getaffinity</a>(</span><span class="m-doc-wrap">pid<span class="m-text m-dim">, /</span>)</span>
+            </dt>
+            <dd>Return the affinity of the process identified by pid (or the current process if zero).</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#sched_getparam" class="m-doc">sched_getparam</a>(</span><span class="m-doc-wrap">pid<span class="m-text m-dim">, /</span>)</span>
+            </dt>
+            <dd>Returns scheduling parameters for the process identified by pid.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#sched_getscheduler" class="m-doc">sched_getscheduler</a>(</span><span class="m-doc-wrap">pid<span class="m-text m-dim">, /</span>)</span>
+            </dt>
+            <dd>Get the scheduling policy for the process identifiedy by pid.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#sched_rr_get_interval" class="m-doc">sched_rr_get_interval</a>(</span><span class="m-doc-wrap">pid<span class="m-text m-dim">, /</span>)</span>
+            </dt>
+            <dd>Return the round-robin quantum for the process identified by pid, in seconds.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#sched_setaffinity" class="m-doc">sched_setaffinity</a>(</span><span class="m-doc-wrap">pid, mask<span class="m-text m-dim">, /</span>)</span>
+            </dt>
+            <dd>Set the CPU affinity of the process identified by pid to mask.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#sched_setparam" class="m-doc">sched_setparam</a>(</span><span class="m-doc-wrap">pid, param<span class="m-text m-dim">, /</span>)</span>
+            </dt>
+            <dd>Set scheduling parameters for the process identified by pid.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#sched_setscheduler" class="m-doc">sched_setscheduler</a>(</span><span class="m-doc-wrap">pid, policy, param<span class="m-text m-dim">, /</span>)</span>
+            </dt>
+            <dd>Set the scheduling policy for the process identified by pid.</dd>
+            <dt id="sched_yield">
+              <span class="m-doc-wrap-bumper">def <a href="#sched_yield" class="m-doc-self">sched_yield</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd>Voluntarily relinquish the CPU.</dd>
+            <dt id="sendfile">
+              <span class="m-doc-wrap-bumper">def <a href="#sendfile" class="m-doc-self">sendfile</a>(</span><span class="m-doc-wrap">out, in, offset, count) -&gt; byteswritten</span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#set_blocking" class="m-doc">set_blocking</a>(</span><span class="m-doc-wrap">fd, blocking<span class="m-text m-dim">, /</span>)</span>
+            </dt>
+            <dd>Set the blocking mode of the specified file descriptor.</dd>
+            <dt id="set_inheritable">
+              <span class="m-doc-wrap-bumper">def <a href="#set_inheritable" class="m-doc-self">set_inheritable</a>(</span><span class="m-doc-wrap">fd, inheritable<span class="m-text m-dim">, /</span>)</span>
+            </dt>
+            <dd>Set the inheritable flag of the specified file descriptor.</dd>
+            <dt id="setegid">
+              <span class="m-doc-wrap-bumper">def <a href="#setegid" class="m-doc-self">setegid</a>(</span><span class="m-doc-wrap">egid<span class="m-text m-dim">, /</span>)</span>
+            </dt>
+            <dd>Set the current process&#x27;s effective group id.</dd>
+            <dt id="seteuid">
+              <span class="m-doc-wrap-bumper">def <a href="#seteuid" class="m-doc-self">seteuid</a>(</span><span class="m-doc-wrap">euid<span class="m-text m-dim">, /</span>)</span>
+            </dt>
+            <dd>Set the current process&#x27;s effective user id.</dd>
+            <dt id="setgid">
+              <span class="m-doc-wrap-bumper">def <a href="#setgid" class="m-doc-self">setgid</a>(</span><span class="m-doc-wrap">gid<span class="m-text m-dim">, /</span>)</span>
+            </dt>
+            <dd>Set the current process&#x27;s group id.</dd>
+            <dt id="setgroups">
+              <span class="m-doc-wrap-bumper">def <a href="#setgroups" class="m-doc-self">setgroups</a>(</span><span class="m-doc-wrap">groups<span class="m-text m-dim">, /</span>)</span>
+            </dt>
+            <dd>Set the groups of the current process to list.</dd>
+            <dt id="setpgid">
+              <span class="m-doc-wrap-bumper">def <a href="#setpgid" class="m-doc-self">setpgid</a>(</span><span class="m-doc-wrap">pid, pgrp<span class="m-text m-dim">, /</span>)</span>
+            </dt>
+            <dd>Call the system call setpgid(pid, pgrp).</dd>
+            <dt id="setpgrp">
+              <span class="m-doc-wrap-bumper">def <a href="#setpgrp" class="m-doc-self">setpgrp</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd>Make the current process the leader of its process group.</dd>
+            <dt id="setpriority">
+              <span class="m-doc-wrap-bumper">def <a href="#setpriority" class="m-doc-self">setpriority</a>(</span><span class="m-doc-wrap">which, who, priority)</span>
+            </dt>
+            <dd>Set program scheduling priority.</dd>
+            <dt id="setregid">
+              <span class="m-doc-wrap-bumper">def <a href="#setregid" class="m-doc-self">setregid</a>(</span><span class="m-doc-wrap">rgid, egid<span class="m-text m-dim">, /</span>)</span>
+            </dt>
+            <dd>Set the current process&#x27;s real and effective group ids.</dd>
+            <dt id="setresgid">
+              <span class="m-doc-wrap-bumper">def <a href="#setresgid" class="m-doc-self">setresgid</a>(</span><span class="m-doc-wrap">rgid, egid, sgid<span class="m-text m-dim">, /</span>)</span>
+            </dt>
+            <dd>Set the current process&#x27;s real, effective, and saved group ids.</dd>
+            <dt id="setresuid">
+              <span class="m-doc-wrap-bumper">def <a href="#setresuid" class="m-doc-self">setresuid</a>(</span><span class="m-doc-wrap">ruid, euid, suid<span class="m-text m-dim">, /</span>)</span>
+            </dt>
+            <dd>Set the current process&#x27;s real, effective, and saved user ids.</dd>
+            <dt id="setreuid">
+              <span class="m-doc-wrap-bumper">def <a href="#setreuid" class="m-doc-self">setreuid</a>(</span><span class="m-doc-wrap">ruid, euid<span class="m-text m-dim">, /</span>)</span>
+            </dt>
+            <dd>Set the current process&#x27;s real and effective user ids.</dd>
+            <dt id="setsid">
+              <span class="m-doc-wrap-bumper">def <a href="#setsid" class="m-doc-self">setsid</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd>Call the system call setsid().</dd>
+            <dt id="setuid">
+              <span class="m-doc-wrap-bumper">def <a href="#setuid" class="m-doc-self">setuid</a>(</span><span class="m-doc-wrap">uid<span class="m-text m-dim">, /</span>)</span>
+            </dt>
+            <dd>Set the current process&#x27;s user id.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#setxattr" class="m-doc">setxattr</a>(</span><span class="m-doc-wrap">path,
+              attribute,
+              value,
+              flags = 0,<span class="m-text m-dim"> *,</span>
+              follow_symlinks = True)</span>
+            </dt>
+            <dd>Set extended attribute attribute on path to value.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#stat" class="m-doc">stat</a>(</span><span class="m-doc-wrap">path,<span class="m-text m-dim"> *,</span>
+              dir_fd = None,
+              follow_symlinks = True)</span>
+            </dt>
+            <dd>Perform a stat system call on the given path.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#statvfs" class="m-doc">statvfs</a>(</span><span class="m-doc-wrap">path)</span>
+            </dt>
+            <dd>Perform a statvfs system call on the given path.</dd>
+            <dt id="strerror">
+              <span class="m-doc-wrap-bumper">def <a href="#strerror" class="m-doc-self">strerror</a>(</span><span class="m-doc-wrap">code<span class="m-text m-dim">, /</span>)</span>
+            </dt>
+            <dd>Translate an error code to a message string.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#symlink" class="m-doc">symlink</a>(</span><span class="m-doc-wrap">src,
+              dst,
+              target_is_directory = False,<span class="m-text m-dim"> *,</span>
+              dir_fd = None)</span>
+            </dt>
+            <dd>Create a symbolic link pointing to src named dst.</dd>
+            <dt id="sync">
+              <span class="m-doc-wrap-bumper">def <a href="#sync" class="m-doc-self">sync</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd>Force write of everything to disk.</dd>
+            <dt id="sysconf">
+              <span class="m-doc-wrap-bumper">def <a href="#sysconf" class="m-doc-self">sysconf</a>(</span><span class="m-doc-wrap">name<span class="m-text m-dim">, /</span>)</span>
+            </dt>
+            <dd>Return an integer-valued system configuration variable.</dd>
+            <dt id="system">
+              <span class="m-doc-wrap-bumper">def <a href="#system" class="m-doc-self">system</a>(</span><span class="m-doc-wrap">command)</span>
+            </dt>
+            <dd>Execute the command in a subshell.</dd>
+            <dt id="tcgetpgrp">
+              <span class="m-doc-wrap-bumper">def <a href="#tcgetpgrp" class="m-doc-self">tcgetpgrp</a>(</span><span class="m-doc-wrap">fd<span class="m-text m-dim">, /</span>)</span>
+            </dt>
+            <dd>Return the process group associated with the terminal specified by fd.</dd>
+            <dt id="tcsetpgrp">
+              <span class="m-doc-wrap-bumper">def <a href="#tcsetpgrp" class="m-doc-self">tcsetpgrp</a>(</span><span class="m-doc-wrap">fd, pgid<span class="m-text m-dim">, /</span>)</span>
+            </dt>
+            <dd>Set the process group associated with the terminal specified by fd.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#times" class="m-doc">times</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd>Return a collection containing process timing information.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#truncate" class="m-doc">truncate</a>(</span><span class="m-doc-wrap">path, length)</span>
+            </dt>
+            <dd>Truncate a file, specified by path, to a specific length.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#ttyname" class="m-doc">ttyname</a>(</span><span class="m-doc-wrap">fd<span class="m-text m-dim">, /</span>)</span>
+            </dt>
+            <dd>Return the name of the terminal device connected to &#x27;fd&#x27;.</dd>
+            <dt id="umask">
+              <span class="m-doc-wrap-bumper">def <a href="#umask" class="m-doc-self">umask</a>(</span><span class="m-doc-wrap">mask<span class="m-text m-dim">, /</span>)</span>
+            </dt>
+            <dd>Set the current numeric umask and return the previous umask.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#uname" class="m-doc">uname</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd>Return an object identifying the current operating system.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#unlink" class="m-doc">unlink</a>(</span><span class="m-doc-wrap">path,<span class="m-text m-dim"> *,</span>
+              dir_fd = None)</span>
+            </dt>
+            <dd>Remove a file (same as remove()).</dd>
+            <dt id="unsetenv">
+              <span class="m-doc-wrap-bumper">def <a href="#unsetenv" class="m-doc-self">unsetenv</a>(</span><span class="m-doc-wrap">name<span class="m-text m-dim">, /</span>)</span>
+            </dt>
+            <dd>Delete an environment variable.</dd>
+            <dt id="urandom">
+              <span class="m-doc-wrap-bumper">def <a href="#urandom" class="m-doc-self">urandom</a>(</span><span class="m-doc-wrap">size<span class="m-text m-dim">, /</span>)</span>
+            </dt>
+            <dd>Return a bytes object containing random bytes suitable for cryptographic use.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#utime" class="m-doc">utime</a>(</span><span class="m-doc-wrap">...)</span>
+            </dt>
+            <dd>Set the access and modified time of path.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#wait" class="m-doc">wait</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd>Wait for completion of a child process.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#wait3" class="m-doc">wait3</a>(</span><span class="m-doc-wrap">options)</span>
+            </dt>
+            <dd>Wait for completion of a child process.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#wait4" class="m-doc">wait4</a>(</span><span class="m-doc-wrap">pid, options)</span>
+            </dt>
+            <dd>Wait for completion of a specific child process.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#waitid" class="m-doc">waitid</a>(</span><span class="m-doc-wrap">idtype, id, options<span class="m-text m-dim">, /</span>)</span>
+            </dt>
+            <dd>Returns the result of waiting for a process or processes.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#waitpid" class="m-doc">waitpid</a>(</span><span class="m-doc-wrap">pid, options<span class="m-text m-dim">, /</span>)</span>
+            </dt>
+            <dd>Wait for completion of a given child process.</dd>
+            <dt id="write">
+              <span class="m-doc-wrap-bumper">def <a href="#write" class="m-doc-self">write</a>(</span><span class="m-doc-wrap">fd, data<span class="m-text m-dim">, /</span>)</span>
+            </dt>
+            <dd>Write a bytes object to a file descriptor.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#writev" class="m-doc">writev</a>(</span><span class="m-doc-wrap">fd, buffers<span class="m-text m-dim">, /</span>)</span>
+            </dt>
+            <dd>Iterate over buffers, and write the contents of each to a file descriptor.</dd>
+            <dt id="makedirs">
+              <span class="m-doc-wrap-bumper">def <a href="#makedirs" class="m-doc-self">makedirs</a>(</span><span class="m-doc-wrap">…)</span>
+            </dt>
+            <dd>Super-mkdir; create a leaf directory and all intermediate ones.  Works like
+mkdir, except that any intermediate path segment (not just the rightmost)
+will be created if it does not exist. If the target directory already
+exists, raise an OSError if exist_ok is False. Otherwise no exception is
+raised.  This is recursive.</dd>
+            <dt id="removedirs">
+              <span class="m-doc-wrap-bumper">def <a href="#removedirs" class="m-doc-self">removedirs</a>(</span><span class="m-doc-wrap">name)</span>
+            </dt>
+            <dd>Super-rmdir; remove a leaf directory and all empty intermediate
+ones.  Works like rmdir except that, if the leaf directory is
+successfully removed, directories corresponding to rightmost path
+segments will be pruned away until either the whole path is
+consumed or an error occurs.  Errors during this latter phase are
+ignored -- they generally mean that a directory was not empty.</dd>
+            <dt id="renames">
+              <span class="m-doc-wrap-bumper">def <a href="#renames" class="m-doc-self">renames</a>(</span><span class="m-doc-wrap">old, new)</span>
+            </dt>
+            <dd>Super-rename; create directories as necessary and delete any left
+empty.  Works like rename, except creation of any intermediate
+directories needed to make the new pathname good is attempted
+first.  After the rename, directories corresponding to rightmost
+path segments of the old name will be pruned until either the
+whole path is consumed or a nonempty directory is found.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#walk" class="m-doc">walk</a>(</span><span class="m-doc-wrap">top,
+              topdown = True,
+              onerror = None,
+              followlinks = False)</span>
+            </dt>
+            <dd>Directory tree generator.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#fwalk" class="m-doc">fwalk</a>(</span><span class="m-doc-wrap">top = &#x27;.&#x27;,
+              topdown = True,
+              onerror = None,<span class="m-text m-dim"> *,</span>
+              follow_symlinks = False,
+              dir_fd = None)</span>
+            </dt>
+            <dd>Directory tree generator.</dd>
+            <dt id="execl">
+              <span class="m-doc-wrap-bumper">def <a href="#execl" class="m-doc-self">execl</a>(</span><span class="m-doc-wrap">file, *args)</span>
+            </dt>
+            <dd>Execute the executable file with argument list args, replacing the
+current process.</dd>
+            <dt id="execle">
+              <span class="m-doc-wrap-bumper">def <a href="#execle" class="m-doc-self">execle</a>(</span><span class="m-doc-wrap">file, *args, env)</span>
+            </dt>
+            <dd>Execute the executable file with argument list args and
+environment env, replacing the current process.</dd>
+            <dt id="execlp">
+              <span class="m-doc-wrap-bumper">def <a href="#execlp" class="m-doc-self">execlp</a>(</span><span class="m-doc-wrap">file, *args)</span>
+            </dt>
+            <dd>Execute the executable file (which is searched for along $PATH)
+with argument list args, replacing the current process.</dd>
+            <dt id="execlpe">
+              <span class="m-doc-wrap-bumper">def <a href="#execlpe" class="m-doc-self">execlpe</a>(</span><span class="m-doc-wrap">file, *args, env)</span>
+            </dt>
+            <dd>Execute the executable file (which is searched for along $PATH)
+with argument list args and environment env, replacing the current
+process.</dd>
+            <dt id="execvp">
+              <span class="m-doc-wrap-bumper">def <a href="#execvp" class="m-doc-self">execvp</a>(</span><span class="m-doc-wrap">file, args)</span>
+            </dt>
+            <dd>Execute the executable file (which is searched for along $PATH)
+with argument list args, replacing the current process.
+args may be a list or tuple of strings.</dd>
+            <dt id="execvpe">
+              <span class="m-doc-wrap-bumper">def <a href="#execvpe" class="m-doc-self">execvpe</a>(</span><span class="m-doc-wrap">file, args, env)</span>
+            </dt>
+            <dd>Execute the executable file (which is searched for along $PATH)
+with argument list args and environment env, replacing the
+current process.
+args may be a list or tuple of strings.</dd>
+            <dt id="getenv">
+              <span class="m-doc-wrap-bumper">def <a href="#getenv" class="m-doc-self">getenv</a>(</span><span class="m-doc-wrap">key,
+              default = None)</span>
+            </dt>
+            <dd>Get an environment variable, return None if it doesn&#x27;t exist.
+The optional second argument can specify an alternate default.
+key, default and the result are str.</dd>
+            <dt id="getenvb">
+              <span class="m-doc-wrap-bumper">def <a href="#getenvb" class="m-doc-self">getenvb</a>(</span><span class="m-doc-wrap">key,
+              default = None)</span>
+            </dt>
+            <dd>Get an environment variable, return None if it doesn&#x27;t exist.
+The optional second argument can specify an alternate default.
+key, default and the result are bytes.</dd>
+            <dt id="spawnv">
+              <span class="m-doc-wrap-bumper">def <a href="#spawnv" class="m-doc-self">spawnv</a>(</span><span class="m-doc-wrap">mode, file, args) -&gt; integer</span>
+            </dt>
+            <dd>Execute file with arguments from args in a subprocess.
+If mode == P_NOWAIT return the pid of the process.
+If mode == P_WAIT return the process&#x27;s exit code if it exits normally;
+otherwise return -SIG, where SIG is the signal that killed it.</dd>
+            <dt id="spawnve">
+              <span class="m-doc-wrap-bumper">def <a href="#spawnve" class="m-doc-self">spawnve</a>(</span><span class="m-doc-wrap">mode, file, args, env) -&gt; integer</span>
+            </dt>
+            <dd>Execute file with arguments from args in a subprocess with the
+specified environment.
+If mode == P_NOWAIT return the pid of the process.
+If mode == P_WAIT return the process&#x27;s exit code if it exits normally;
+otherwise return -SIG, where SIG is the signal that killed it.</dd>
+            <dt id="spawnvp">
+              <span class="m-doc-wrap-bumper">def <a href="#spawnvp" class="m-doc-self">spawnvp</a>(</span><span class="m-doc-wrap">mode, file, args) -&gt; integer</span>
+            </dt>
+            <dd>Execute file (which is looked for along $PATH) with arguments from
+args in a subprocess.
+If mode == P_NOWAIT return the pid of the process.
+If mode == P_WAIT return the process&#x27;s exit code if it exits normally;
+otherwise return -SIG, where SIG is the signal that killed it.</dd>
+            <dt id="spawnvpe">
+              <span class="m-doc-wrap-bumper">def <a href="#spawnvpe" class="m-doc-self">spawnvpe</a>(</span><span class="m-doc-wrap">mode, file, args, env) -&gt; integer</span>
+            </dt>
+            <dd>Execute file (which is looked for along $PATH) with arguments from
+args in a subprocess with the supplied environment.
+If mode == P_NOWAIT return the pid of the process.
+If mode == P_WAIT return the process&#x27;s exit code if it exits normally;
+otherwise return -SIG, where SIG is the signal that killed it.</dd>
+            <dt id="spawnl">
+              <span class="m-doc-wrap-bumper">def <a href="#spawnl" class="m-doc-self">spawnl</a>(</span><span class="m-doc-wrap">mode, file, *args) -&gt; integer</span>
+            </dt>
+            <dd>Execute file with arguments from args in a subprocess.
+If mode == P_NOWAIT return the pid of the process.
+If mode == P_WAIT return the process&#x27;s exit code if it exits normally;
+otherwise return -SIG, where SIG is the signal that killed it.</dd>
+            <dt id="spawnle">
+              <span class="m-doc-wrap-bumper">def <a href="#spawnle" class="m-doc-self">spawnle</a>(</span><span class="m-doc-wrap">mode, file, *args, env) -&gt; integer</span>
+            </dt>
+            <dd>Execute file with arguments from args in a subprocess with the
+supplied environment.
+If mode == P_NOWAIT return the pid of the process.
+If mode == P_WAIT return the process&#x27;s exit code if it exits normally;
+otherwise return -SIG, where SIG is the signal that killed it.</dd>
+            <dt id="spawnlp">
+              <span class="m-doc-wrap-bumper">def <a href="#spawnlp" class="m-doc-self">spawnlp</a>(</span><span class="m-doc-wrap">mode, file, *args) -&gt; integer</span>
+            </dt>
+            <dd>Execute file (which is looked for along $PATH) with arguments from
+args in a subprocess with the supplied environment.
+If mode == P_NOWAIT return the pid of the process.
+If mode == P_WAIT return the process&#x27;s exit code if it exits normally;
+otherwise return -SIG, where SIG is the signal that killed it.</dd>
+            <dt id="spawnlpe">
+              <span class="m-doc-wrap-bumper">def <a href="#spawnlpe" class="m-doc-self">spawnlpe</a>(</span><span class="m-doc-wrap">mode, file, *args, env) -&gt; integer</span>
+            </dt>
+            <dd>Execute file (which is looked for along $PATH) with arguments from
+args in a subprocess with the supplied environment.
+If mode == P_NOWAIT return the pid of the process.
+If mode == P_WAIT return the process&#x27;s exit code if it exits normally;
+otherwise return -SIG, where SIG is the signal that killed it.</dd>
+          </dl>
+        </section>
+        <section id="data">
+          <h2><a href="#data">Data</a></h2>
+          <dl class="m-doc">
+            <dt id="altsep">
+              <a href="#altsep" class="m-doc-self">altsep</a> = None
+            </dt>
+            <dd></dd>
+            <dt id="curdir">
+              <a href="#curdir" class="m-doc-self">curdir</a> = &#x27;.&#x27;
+            </dt>
+            <dd></dd>
+            <dt id="pardir">
+              <a href="#pardir" class="m-doc-self">pardir</a> = &#x27;..&#x27;
+            </dt>
+            <dd></dd>
+            <dt id="sep">
+              <a href="#sep" class="m-doc-self">sep</a> = &#x27;/&#x27;
+            </dt>
+            <dd></dd>
+            <dt id="pathsep">
+              <a href="#pathsep" class="m-doc-self">pathsep</a> = &#x27;:&#x27;
+            </dt>
+            <dd></dd>
+            <dt id="linesep">
+              <a href="#linesep" class="m-doc-self">linesep</a> = &#x27;\n&#x27;
+            </dt>
+            <dd></dd>
+            <dt id="defpath">
+              <a href="#defpath" class="m-doc-self">defpath</a> = &#x27;/bin:/usr/bin&#x27;
+            </dt>
+            <dd></dd>
+            <dt id="name">
+              <a href="#name" class="m-doc-self">name</a> = &#x27;posix&#x27;
+            </dt>
+            <dd></dd>
+            <dt id="devnull">
+              <a href="#devnull" class="m-doc-self">devnull</a> = &#x27;/dev/null&#x27;
+            </dt>
+            <dd></dd>
+            <dt id="SEEK_SET">
+              <a href="#SEEK_SET" class="m-doc-self">SEEK_SET</a> = 0
+            </dt>
+            <dd></dd>
+            <dt id="SEEK_CUR">
+              <a href="#SEEK_CUR" class="m-doc-self">SEEK_CUR</a> = 1
+            </dt>
+            <dd></dd>
+            <dt id="SEEK_END">
+              <a href="#SEEK_END" class="m-doc-self">SEEK_END</a> = 2
+            </dt>
+            <dd></dd>
+            <dt id="extsep">
+              <a href="#extsep" class="m-doc-self">extsep</a> = &#x27;.&#x27;
+            </dt>
+            <dd></dd>
+            <dt id="CLD_CONTINUED">
+              <a href="#CLD_CONTINUED" class="m-doc-self">CLD_CONTINUED</a> = 6
+            </dt>
+            <dd></dd>
+            <dt id="CLD_DUMPED">
+              <a href="#CLD_DUMPED" class="m-doc-self">CLD_DUMPED</a> = 3
+            </dt>
+            <dd></dd>
+            <dt id="CLD_EXITED">
+              <a href="#CLD_EXITED" class="m-doc-self">CLD_EXITED</a> = 1
+            </dt>
+            <dd></dd>
+            <dt id="CLD_TRAPPED">
+              <a href="#CLD_TRAPPED" class="m-doc-self">CLD_TRAPPED</a> = 4
+            </dt>
+            <dd></dd>
+            <dt id="EX_CANTCREAT">
+              <a href="#EX_CANTCREAT" class="m-doc-self">EX_CANTCREAT</a> = 73
+            </dt>
+            <dd></dd>
+            <dt id="EX_CONFIG">
+              <a href="#EX_CONFIG" class="m-doc-self">EX_CONFIG</a> = 78
+            </dt>
+            <dd></dd>
+            <dt id="EX_DATAERR">
+              <a href="#EX_DATAERR" class="m-doc-self">EX_DATAERR</a> = 65
+            </dt>
+            <dd></dd>
+            <dt id="EX_IOERR">
+              <a href="#EX_IOERR" class="m-doc-self">EX_IOERR</a> = 74
+            </dt>
+            <dd></dd>
+            <dt id="EX_NOHOST">
+              <a href="#EX_NOHOST" class="m-doc-self">EX_NOHOST</a> = 68
+            </dt>
+            <dd></dd>
+            <dt id="EX_NOINPUT">
+              <a href="#EX_NOINPUT" class="m-doc-self">EX_NOINPUT</a> = 66
+            </dt>
+            <dd></dd>
+            <dt id="EX_NOPERM">
+              <a href="#EX_NOPERM" class="m-doc-self">EX_NOPERM</a> = 77
+            </dt>
+            <dd></dd>
+            <dt id="EX_NOUSER">
+              <a href="#EX_NOUSER" class="m-doc-self">EX_NOUSER</a> = 67
+            </dt>
+            <dd></dd>
+            <dt id="EX_OK">
+              <a href="#EX_OK" class="m-doc-self">EX_OK</a> = 0
+            </dt>
+            <dd></dd>
+            <dt id="EX_OSERR">
+              <a href="#EX_OSERR" class="m-doc-self">EX_OSERR</a> = 71
+            </dt>
+            <dd></dd>
+            <dt id="EX_OSFILE">
+              <a href="#EX_OSFILE" class="m-doc-self">EX_OSFILE</a> = 72
+            </dt>
+            <dd></dd>
+            <dt id="EX_PROTOCOL">
+              <a href="#EX_PROTOCOL" class="m-doc-self">EX_PROTOCOL</a> = 76
+            </dt>
+            <dd></dd>
+            <dt id="EX_SOFTWARE">
+              <a href="#EX_SOFTWARE" class="m-doc-self">EX_SOFTWARE</a> = 70
+            </dt>
+            <dd></dd>
+            <dt id="EX_TEMPFAIL">
+              <a href="#EX_TEMPFAIL" class="m-doc-self">EX_TEMPFAIL</a> = 75
+            </dt>
+            <dd></dd>
+            <dt id="EX_UNAVAILABLE">
+              <a href="#EX_UNAVAILABLE" class="m-doc-self">EX_UNAVAILABLE</a> = 69
+            </dt>
+            <dd></dd>
+            <dt id="EX_USAGE">
+              <a href="#EX_USAGE" class="m-doc-self">EX_USAGE</a> = 64
+            </dt>
+            <dd></dd>
+            <dt id="F_LOCK">
+              <a href="#F_LOCK" class="m-doc-self">F_LOCK</a> = 1
+            </dt>
+            <dd></dd>
+            <dt id="F_OK">
+              <a href="#F_OK" class="m-doc-self">F_OK</a> = 0
+            </dt>
+            <dd></dd>
+            <dt id="F_TEST">
+              <a href="#F_TEST" class="m-doc-self">F_TEST</a> = 3
+            </dt>
+            <dd></dd>
+            <dt id="F_TLOCK">
+              <a href="#F_TLOCK" class="m-doc-self">F_TLOCK</a> = 2
+            </dt>
+            <dd></dd>
+            <dt id="F_ULOCK">
+              <a href="#F_ULOCK" class="m-doc-self">F_ULOCK</a> = 0
+            </dt>
+            <dd></dd>
+            <dt id="GRND_NONBLOCK">
+              <a href="#GRND_NONBLOCK" class="m-doc-self">GRND_NONBLOCK</a> = 1
+            </dt>
+            <dd></dd>
+            <dt id="GRND_RANDOM">
+              <a href="#GRND_RANDOM" class="m-doc-self">GRND_RANDOM</a> = 2
+            </dt>
+            <dd></dd>
+            <dt id="MFD_ALLOW_SEALING">
+              <a href="#MFD_ALLOW_SEALING" class="m-doc-self">MFD_ALLOW_SEALING</a> = 2
+            </dt>
+            <dd></dd>
+            <dt id="MFD_CLOEXEC">
+              <a href="#MFD_CLOEXEC" class="m-doc-self">MFD_CLOEXEC</a> = 1
+            </dt>
+            <dd></dd>
+            <dt id="MFD_HUGETLB">
+              <a href="#MFD_HUGETLB" class="m-doc-self">MFD_HUGETLB</a> = 4
+            </dt>
+            <dd></dd>
+            <dt id="MFD_HUGE_16GB">
+              <a href="#MFD_HUGE_16GB" class="m-doc-self">MFD_HUGE_16GB</a> = -2013265920
+            </dt>
+            <dd></dd>
+            <dt id="MFD_HUGE_16MB">
+              <a href="#MFD_HUGE_16MB" class="m-doc-self">MFD_HUGE_16MB</a> = 1610612736
+            </dt>
+            <dd></dd>
+            <dt id="MFD_HUGE_1GB">
+              <a href="#MFD_HUGE_1GB" class="m-doc-self">MFD_HUGE_1GB</a> = 2013265920
+            </dt>
+            <dd></dd>
+            <dt id="MFD_HUGE_1MB">
+              <a href="#MFD_HUGE_1MB" class="m-doc-self">MFD_HUGE_1MB</a> = 1342177280
+            </dt>
+            <dd></dd>
+            <dt id="MFD_HUGE_256MB">
+              <a href="#MFD_HUGE_256MB" class="m-doc-self">MFD_HUGE_256MB</a> = 1879048192
+            </dt>
+            <dd></dd>
+            <dt id="MFD_HUGE_2GB">
+              <a href="#MFD_HUGE_2GB" class="m-doc-self">MFD_HUGE_2GB</a> = 2080374784
+            </dt>
+            <dd></dd>
+            <dt id="MFD_HUGE_2MB">
+              <a href="#MFD_HUGE_2MB" class="m-doc-self">MFD_HUGE_2MB</a> = 1409286144
+            </dt>
+            <dd></dd>
+            <dt id="MFD_HUGE_32MB">
+              <a href="#MFD_HUGE_32MB" class="m-doc-self">MFD_HUGE_32MB</a> = 1677721600
+            </dt>
+            <dd></dd>
+            <dt id="MFD_HUGE_512KB">
+              <a href="#MFD_HUGE_512KB" class="m-doc-self">MFD_HUGE_512KB</a> = 1275068416
+            </dt>
+            <dd></dd>
+            <dt id="MFD_HUGE_512MB">
+              <a href="#MFD_HUGE_512MB" class="m-doc-self">MFD_HUGE_512MB</a> = 1946157056
+            </dt>
+            <dd></dd>
+            <dt id="MFD_HUGE_64KB">
+              <a href="#MFD_HUGE_64KB" class="m-doc-self">MFD_HUGE_64KB</a> = 1073741824
+            </dt>
+            <dd></dd>
+            <dt id="MFD_HUGE_8MB">
+              <a href="#MFD_HUGE_8MB" class="m-doc-self">MFD_HUGE_8MB</a> = 1543503872
+            </dt>
+            <dd></dd>
+            <dt id="MFD_HUGE_MASK">
+              <a href="#MFD_HUGE_MASK" class="m-doc-self">MFD_HUGE_MASK</a> = 63
+            </dt>
+            <dd></dd>
+            <dt id="MFD_HUGE_SHIFT">
+              <a href="#MFD_HUGE_SHIFT" class="m-doc-self">MFD_HUGE_SHIFT</a> = 26
+            </dt>
+            <dd></dd>
+            <dt id="NGROUPS_MAX">
+              <a href="#NGROUPS_MAX" class="m-doc-self">NGROUPS_MAX</a> = 65536
+            </dt>
+            <dd></dd>
+            <dt id="O_ACCMODE">
+              <a href="#O_ACCMODE" class="m-doc-self">O_ACCMODE</a> = 3
+            </dt>
+            <dd></dd>
+            <dt id="O_APPEND">
+              <a href="#O_APPEND" class="m-doc-self">O_APPEND</a> = 1024
+            </dt>
+            <dd></dd>
+            <dt id="O_ASYNC">
+              <a href="#O_ASYNC" class="m-doc-self">O_ASYNC</a> = 8192
+            </dt>
+            <dd></dd>
+            <dt id="O_CLOEXEC">
+              <a href="#O_CLOEXEC" class="m-doc-self">O_CLOEXEC</a> = 524288
+            </dt>
+            <dd></dd>
+            <dt id="O_CREAT">
+              <a href="#O_CREAT" class="m-doc-self">O_CREAT</a> = 64
+            </dt>
+            <dd></dd>
+            <dt id="O_DIRECT">
+              <a href="#O_DIRECT" class="m-doc-self">O_DIRECT</a> = 16384
+            </dt>
+            <dd></dd>
+            <dt id="O_DIRECTORY">
+              <a href="#O_DIRECTORY" class="m-doc-self">O_DIRECTORY</a> = 65536
+            </dt>
+            <dd></dd>
+            <dt id="O_DSYNC">
+              <a href="#O_DSYNC" class="m-doc-self">O_DSYNC</a> = 4096
+            </dt>
+            <dd></dd>
+            <dt id="O_EXCL">
+              <a href="#O_EXCL" class="m-doc-self">O_EXCL</a> = 128
+            </dt>
+            <dd></dd>
+            <dt id="O_LARGEFILE">
+              <a href="#O_LARGEFILE" class="m-doc-self">O_LARGEFILE</a> = 0
+            </dt>
+            <dd></dd>
+            <dt id="O_NDELAY">
+              <a href="#O_NDELAY" class="m-doc-self">O_NDELAY</a> = 2048
+            </dt>
+            <dd></dd>
+            <dt id="O_NOATIME">
+              <a href="#O_NOATIME" class="m-doc-self">O_NOATIME</a> = 262144
+            </dt>
+            <dd></dd>
+            <dt id="O_NOCTTY">
+              <a href="#O_NOCTTY" class="m-doc-self">O_NOCTTY</a> = 256
+            </dt>
+            <dd></dd>
+            <dt id="O_NOFOLLOW">
+              <a href="#O_NOFOLLOW" class="m-doc-self">O_NOFOLLOW</a> = 131072
+            </dt>
+            <dd></dd>
+            <dt id="O_NONBLOCK">
+              <a href="#O_NONBLOCK" class="m-doc-self">O_NONBLOCK</a> = 2048
+            </dt>
+            <dd></dd>
+            <dt id="O_PATH">
+              <a href="#O_PATH" class="m-doc-self">O_PATH</a> = 2097152
+            </dt>
+            <dd></dd>
+            <dt id="O_RDONLY">
+              <a href="#O_RDONLY" class="m-doc-self">O_RDONLY</a> = 0
+            </dt>
+            <dd></dd>
+            <dt id="O_RDWR">
+              <a href="#O_RDWR" class="m-doc-self">O_RDWR</a> = 2
+            </dt>
+            <dd></dd>
+            <dt id="O_RSYNC">
+              <a href="#O_RSYNC" class="m-doc-self">O_RSYNC</a> = 1052672
+            </dt>
+            <dd></dd>
+            <dt id="O_SYNC">
+              <a href="#O_SYNC" class="m-doc-self">O_SYNC</a> = 1052672
+            </dt>
+            <dd></dd>
+            <dt id="O_TMPFILE">
+              <a href="#O_TMPFILE" class="m-doc-self">O_TMPFILE</a> = 4259840
+            </dt>
+            <dd></dd>
+            <dt id="O_TRUNC">
+              <a href="#O_TRUNC" class="m-doc-self">O_TRUNC</a> = 512
+            </dt>
+            <dd></dd>
+            <dt id="O_WRONLY">
+              <a href="#O_WRONLY" class="m-doc-self">O_WRONLY</a> = 1
+            </dt>
+            <dd></dd>
+            <dt id="POSIX_FADV_DONTNEED">
+              <a href="#POSIX_FADV_DONTNEED" class="m-doc-self">POSIX_FADV_DONTNEED</a> = 4
+            </dt>
+            <dd></dd>
+            <dt id="POSIX_FADV_NOREUSE">
+              <a href="#POSIX_FADV_NOREUSE" class="m-doc-self">POSIX_FADV_NOREUSE</a> = 5
+            </dt>
+            <dd></dd>
+            <dt id="POSIX_FADV_NORMAL">
+              <a href="#POSIX_FADV_NORMAL" class="m-doc-self">POSIX_FADV_NORMAL</a> = 0
+            </dt>
+            <dd></dd>
+            <dt id="POSIX_FADV_RANDOM">
+              <a href="#POSIX_FADV_RANDOM" class="m-doc-self">POSIX_FADV_RANDOM</a> = 1
+            </dt>
+            <dd></dd>
+            <dt id="POSIX_FADV_SEQUENTIAL">
+              <a href="#POSIX_FADV_SEQUENTIAL" class="m-doc-self">POSIX_FADV_SEQUENTIAL</a> = 2
+            </dt>
+            <dd></dd>
+            <dt id="POSIX_FADV_WILLNEED">
+              <a href="#POSIX_FADV_WILLNEED" class="m-doc-self">POSIX_FADV_WILLNEED</a> = 3
+            </dt>
+            <dd></dd>
+            <dt id="POSIX_SPAWN_CLOSE">
+              <a href="#POSIX_SPAWN_CLOSE" class="m-doc-self">POSIX_SPAWN_CLOSE</a> = 1
+            </dt>
+            <dd></dd>
+            <dt id="POSIX_SPAWN_DUP2">
+              <a href="#POSIX_SPAWN_DUP2" class="m-doc-self">POSIX_SPAWN_DUP2</a> = 2
+            </dt>
+            <dd></dd>
+            <dt id="POSIX_SPAWN_OPEN">
+              <a href="#POSIX_SPAWN_OPEN" class="m-doc-self">POSIX_SPAWN_OPEN</a> = 0
+            </dt>
+            <dd></dd>
+            <dt id="PRIO_PGRP">
+              <a href="#PRIO_PGRP" class="m-doc-self">PRIO_PGRP</a> = 1
+            </dt>
+            <dd></dd>
+            <dt id="PRIO_PROCESS">
+              <a href="#PRIO_PROCESS" class="m-doc-self">PRIO_PROCESS</a> = 0
+            </dt>
+            <dd></dd>
+            <dt id="PRIO_USER">
+              <a href="#PRIO_USER" class="m-doc-self">PRIO_USER</a> = 2
+            </dt>
+            <dd></dd>
+            <dt id="P_ALL">
+              <a href="#P_ALL" class="m-doc-self">P_ALL</a> = 0
+            </dt>
+            <dd></dd>
+            <dt id="P_PGID">
+              <a href="#P_PGID" class="m-doc-self">P_PGID</a> = 2
+            </dt>
+            <dd></dd>
+            <dt id="P_PID">
+              <a href="#P_PID" class="m-doc-self">P_PID</a> = 1
+            </dt>
+            <dd></dd>
+            <dt id="RTLD_DEEPBIND">
+              <a href="#RTLD_DEEPBIND" class="m-doc-self">RTLD_DEEPBIND</a> = 8
+            </dt>
+            <dd></dd>
+            <dt id="RTLD_GLOBAL">
+              <a href="#RTLD_GLOBAL" class="m-doc-self">RTLD_GLOBAL</a> = 256
+            </dt>
+            <dd></dd>
+            <dt id="RTLD_LAZY">
+              <a href="#RTLD_LAZY" class="m-doc-self">RTLD_LAZY</a> = 1
+            </dt>
+            <dd></dd>
+            <dt id="RTLD_LOCAL">
+              <a href="#RTLD_LOCAL" class="m-doc-self">RTLD_LOCAL</a> = 0
+            </dt>
+            <dd></dd>
+            <dt id="RTLD_NODELETE">
+              <a href="#RTLD_NODELETE" class="m-doc-self">RTLD_NODELETE</a> = 4096
+            </dt>
+            <dd></dd>
+            <dt id="RTLD_NOLOAD">
+              <a href="#RTLD_NOLOAD" class="m-doc-self">RTLD_NOLOAD</a> = 4
+            </dt>
+            <dd></dd>
+            <dt id="RTLD_NOW">
+              <a href="#RTLD_NOW" class="m-doc-self">RTLD_NOW</a> = 2
+            </dt>
+            <dd></dd>
+            <dt id="RWF_DSYNC">
+              <a href="#RWF_DSYNC" class="m-doc-self">RWF_DSYNC</a> = 2
+            </dt>
+            <dd></dd>
+            <dt id="RWF_HIPRI">
+              <a href="#RWF_HIPRI" class="m-doc-self">RWF_HIPRI</a> = 1
+            </dt>
+            <dd></dd>
+            <dt id="RWF_NOWAIT">
+              <a href="#RWF_NOWAIT" class="m-doc-self">RWF_NOWAIT</a> = 8
+            </dt>
+            <dd></dd>
+            <dt id="RWF_SYNC">
+              <a href="#RWF_SYNC" class="m-doc-self">RWF_SYNC</a> = 4
+            </dt>
+            <dd></dd>
+            <dt id="R_OK">
+              <a href="#R_OK" class="m-doc-self">R_OK</a> = 4
+            </dt>
+            <dd></dd>
+            <dt id="SCHED_BATCH">
+              <a href="#SCHED_BATCH" class="m-doc-self">SCHED_BATCH</a> = 3
+            </dt>
+            <dd></dd>
+            <dt id="SCHED_FIFO">
+              <a href="#SCHED_FIFO" class="m-doc-self">SCHED_FIFO</a> = 1
+            </dt>
+            <dd></dd>
+            <dt id="SCHED_IDLE">
+              <a href="#SCHED_IDLE" class="m-doc-self">SCHED_IDLE</a> = 5
+            </dt>
+            <dd></dd>
+            <dt id="SCHED_OTHER">
+              <a href="#SCHED_OTHER" class="m-doc-self">SCHED_OTHER</a> = 0
+            </dt>
+            <dd></dd>
+            <dt id="SCHED_RESET_ON_FORK">
+              <a href="#SCHED_RESET_ON_FORK" class="m-doc-self">SCHED_RESET_ON_FORK</a> = 1073741824
+            </dt>
+            <dd></dd>
+            <dt id="SCHED_RR">
+              <a href="#SCHED_RR" class="m-doc-self">SCHED_RR</a> = 2
+            </dt>
+            <dd></dd>
+            <dt id="SEEK_DATA">
+              <a href="#SEEK_DATA" class="m-doc-self">SEEK_DATA</a> = 3
+            </dt>
+            <dd></dd>
+            <dt id="SEEK_HOLE">
+              <a href="#SEEK_HOLE" class="m-doc-self">SEEK_HOLE</a> = 4
+            </dt>
+            <dd></dd>
+            <dt id="ST_APPEND">
+              <a href="#ST_APPEND" class="m-doc-self">ST_APPEND</a> = 256
+            </dt>
+            <dd></dd>
+            <dt id="ST_MANDLOCK">
+              <a href="#ST_MANDLOCK" class="m-doc-self">ST_MANDLOCK</a> = 64
+            </dt>
+            <dd></dd>
+            <dt id="ST_NOATIME">
+              <a href="#ST_NOATIME" class="m-doc-self">ST_NOATIME</a> = 1024
+            </dt>
+            <dd></dd>
+            <dt id="ST_NODEV">
+              <a href="#ST_NODEV" class="m-doc-self">ST_NODEV</a> = 4
+            </dt>
+            <dd></dd>
+            <dt id="ST_NODIRATIME">
+              <a href="#ST_NODIRATIME" class="m-doc-self">ST_NODIRATIME</a> = 2048
+            </dt>
+            <dd></dd>
+            <dt id="ST_NOEXEC">
+              <a href="#ST_NOEXEC" class="m-doc-self">ST_NOEXEC</a> = 8
+            </dt>
+            <dd></dd>
+            <dt id="ST_NOSUID">
+              <a href="#ST_NOSUID" class="m-doc-self">ST_NOSUID</a> = 2
+            </dt>
+            <dd></dd>
+            <dt id="ST_RDONLY">
+              <a href="#ST_RDONLY" class="m-doc-self">ST_RDONLY</a> = 1
+            </dt>
+            <dd></dd>
+            <dt id="ST_RELATIME">
+              <a href="#ST_RELATIME" class="m-doc-self">ST_RELATIME</a> = 4096
+            </dt>
+            <dd></dd>
+            <dt id="ST_SYNCHRONOUS">
+              <a href="#ST_SYNCHRONOUS" class="m-doc-self">ST_SYNCHRONOUS</a> = 16
+            </dt>
+            <dd></dd>
+            <dt id="ST_WRITE">
+              <a href="#ST_WRITE" class="m-doc-self">ST_WRITE</a> = 128
+            </dt>
+            <dd></dd>
+            <dt id="TMP_MAX">
+              <a href="#TMP_MAX" class="m-doc-self">TMP_MAX</a> = 238328
+            </dt>
+            <dd></dd>
+            <dt id="WCONTINUED">
+              <a href="#WCONTINUED" class="m-doc-self">WCONTINUED</a> = 8
+            </dt>
+            <dd></dd>
+            <dt id="WEXITED">
+              <a href="#WEXITED" class="m-doc-self">WEXITED</a> = 4
+            </dt>
+            <dd></dd>
+            <dt id="WNOHANG">
+              <a href="#WNOHANG" class="m-doc-self">WNOHANG</a> = 1
+            </dt>
+            <dd></dd>
+            <dt id="WNOWAIT">
+              <a href="#WNOWAIT" class="m-doc-self">WNOWAIT</a> = 16777216
+            </dt>
+            <dd></dd>
+            <dt id="WSTOPPED">
+              <a href="#WSTOPPED" class="m-doc-self">WSTOPPED</a> = 2
+            </dt>
+            <dd></dd>
+            <dt id="WUNTRACED">
+              <a href="#WUNTRACED" class="m-doc-self">WUNTRACED</a> = 2
+            </dt>
+            <dd></dd>
+            <dt id="W_OK">
+              <a href="#W_OK" class="m-doc-self">W_OK</a> = 2
+            </dt>
+            <dd></dd>
+            <dt id="XATTR_CREATE">
+              <a href="#XATTR_CREATE" class="m-doc-self">XATTR_CREATE</a> = 1
+            </dt>
+            <dd></dd>
+            <dt id="XATTR_REPLACE">
+              <a href="#XATTR_REPLACE" class="m-doc-self">XATTR_REPLACE</a> = 2
+            </dt>
+            <dd></dd>
+            <dt id="XATTR_SIZE_MAX">
+              <a href="#XATTR_SIZE_MAX" class="m-doc-self">XATTR_SIZE_MAX</a> = 65536
+            </dt>
+            <dd></dd>
+            <dt id="X_OK">
+              <a href="#X_OK" class="m-doc-self">X_OK</a> = 1
+            </dt>
+            <dd></dd>
+            <dt id="confstr_names">
+              <a href="#confstr_names" class="m-doc-self">confstr_names</a> = …
+            </dt>
+            <dd></dd>
+            <dt id="environ">
+              <a href="#environ" class="m-doc-self">environ</a> = …
+            </dt>
+            <dd></dd>
+            <dt id="pathconf_names">
+              <a href="#pathconf_names" class="m-doc-self">pathconf_names</a> = …
+            </dt>
+            <dd></dd>
+            <dt id="sysconf_names">
+              <a href="#sysconf_names" class="m-doc-self">sysconf_names</a> = …
+            </dt>
+            <dd></dd>
+            <dt id="supports_bytes_environ">
+              <a href="#supports_bytes_environ" class="m-doc-self">supports_bytes_environ</a> = True
+            </dt>
+            <dd></dd>
+            <dt id="environb">
+              <a href="#environb" class="m-doc-self">environb</a> = …
+            </dt>
+            <dd></dd>
+            <dt id="P_WAIT">
+              <a href="#P_WAIT" class="m-doc-self">P_WAIT</a> = 0
+            </dt>
+            <dd></dd>
+            <dt id="P_NOWAIT">
+              <a href="#P_NOWAIT" class="m-doc-self">P_NOWAIT</a> = 1
+            </dt>
+            <dd></dd>
+            <dt id="P_NOWAITO">
+              <a href="#P_NOWAITO" class="m-doc-self">P_NOWAITO</a> = 1
+            </dt>
+            <dd></dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="get_exec_path"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#get_exec_path" class="m-doc-self">get_exec_path</a>(</span><span class="m-doc-wrap">env = None)</span></span>
+            </h3>
+            <p>Returns the sequence of directories that will be searched for the
+named executable (similar to a shell) when launching a process.</p>
+<p>*env* must be an environment variable dict or None.  If *env* is None,
+os.environ will be used.</p>
+          </div></section>
+          <section class="m-doc-details" id="WIFCONTINUED"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#WIFCONTINUED" class="m-doc-self">WIFCONTINUED</a>(</span><span class="m-doc-wrap">status)</span></span>
+            </h3>
+            <p>Return True if a particular process was continued from a job control stop.</p>
+<p>Return True if the process returning status was continued from a
+job control stop.</p>
+          </div></section>
+          <section class="m-doc-details" id="abort"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#abort" class="m-doc-self">abort</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <p>Abort the interpreter immediately.</p>
+<p>This function &#x27;dumps core&#x27; or otherwise fails in the hardest way possible
+on the hosting operating system.  This function never returns.</p>
+          </div></section>
+          <section class="m-doc-details" id="access"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#access" class="m-doc-self">access</a>(</span><span class="m-doc-wrap">path,
+              mode,<span class="m-text m-dim"> *,</span>
+              dir_fd = None,
+              effective_ids = False,
+              follow_symlinks = True)</span></span>
+            </h3>
+            <p>Use the real uid/gid to test for access to a path.</p>
+<p>  path
+    Path to be tested; can be string, bytes, or a path-like object.
+  mode
+    Operating-system mode bitfield.  Can be F_OK to test existence,
+    or the inclusive-OR of R_OK, W_OK, and X_OK.
+  dir_fd
+    If not None, it should be a file descriptor open to a directory,
+    and path should be relative; path will then be relative to that
+    directory.
+  effective_ids
+    If True, access will use the effective uid/gid instead of
+    the real uid/gid.
+  follow_symlinks
+    If False, and the last element of the path is a symbolic link,
+    access will examine the symbolic link itself instead of the file
+    the link points to.</p>
+<p>dir_fd, effective_ids, and follow_symlinks may not be implemented
+  on your platform.  If they are unavailable, using them will raise a
+  NotImplementedError.</p>
+<p>Note that most operations will use the effective uid/gid, therefore this
+  routine can be used in a suid/sgid environment to test if the invoking user
+  has the specified access to the path.</p>
+          </div></section>
+          <section class="m-doc-details" id="chdir"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#chdir" class="m-doc-self">chdir</a>(</span><span class="m-doc-wrap">path)</span></span>
+            </h3>
+            <p>Change the current working directory to the specified path.</p>
+<p>path may always be specified as a string.
+On some platforms, path may also be specified as an open file descriptor.
+  If this functionality is unavailable, using it raises an exception.</p>
+          </div></section>
+          <section class="m-doc-details" id="chmod"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#chmod" class="m-doc-self">chmod</a>(</span><span class="m-doc-wrap">path,
+              mode,<span class="m-text m-dim"> *,</span>
+              dir_fd = None,
+              follow_symlinks = True)</span></span>
+            </h3>
+            <p>Change the access permissions of a file.</p>
+<p>  path
+    Path to be modified.  May always be specified as a str, bytes, or a path-like object.
+    On some platforms, path may also be specified as an open file descriptor.
+    If this functionality is unavailable, using it raises an exception.
+  mode
+    Operating-system mode bitfield.
+  dir_fd
+    If not None, it should be a file descriptor open to a directory,
+    and path should be relative; path will then be relative to that
+    directory.
+  follow_symlinks
+    If False, and the last element of the path is a symbolic link,
+    chmod will modify the symbolic link itself instead of the file
+    the link points to.</p>
+<p>It is an error to use dir_fd or follow_symlinks when specifying path as
+  an open file descriptor.
+dir_fd and follow_symlinks may not be implemented on your platform.
+  If they are unavailable, using them will raise a NotImplementedError.</p>
+          </div></section>
+          <section class="m-doc-details" id="chown"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#chown" class="m-doc-self">chown</a>(</span><span class="m-doc-wrap">path,
+              uid,
+              gid,<span class="m-text m-dim"> *,</span>
+              dir_fd = None,
+              follow_symlinks = True)</span></span>
+            </h3>
+            <p>Change the owner and group id of path to the numeric uid and gid.\</p>
+<p>  path
+    Path to be examined; can be string, bytes, a path-like object, or open-file-descriptor int.
+  dir_fd
+    If not None, it should be a file descriptor open to a directory,
+    and path should be relative; path will then be relative to that
+    directory.
+  follow_symlinks
+    If False, and the last element of the path is a symbolic link,
+    stat will examine the symbolic link itself instead of the file
+    the link points to.</p>
+<p>path may always be specified as a string.
+On some platforms, path may also be specified as an open file descriptor.
+  If this functionality is unavailable, using it raises an exception.
+If dir_fd is not None, it should be a file descriptor open to a directory,
+  and path should be relative; path will then be relative to that directory.
+If follow_symlinks is False, and the last element of the path is a symbolic
+  link, chown will modify the symbolic link itself instead of the file the
+  link points to.
+It is an error to use dir_fd or follow_symlinks when specifying path as
+  an open file descriptor.
+dir_fd and follow_symlinks may not be implemented on your platform.
+  If they are unavailable, using them will raise a NotImplementedError.</p>
+          </div></section>
+          <section class="m-doc-details" id="copy_file_range"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#copy_file_range" class="m-doc-self">copy_file_range</a>(</span><span class="m-doc-wrap">src,
+              dst,
+              count,
+              offset_src = None,
+              offset_dst = None)</span></span>
+            </h3>
+            <p>Copy count bytes from one file descriptor to another.</p>
+<p>  src
+    Source file descriptor.
+  dst
+    Destination file descriptor.
+  count
+    Number of bytes to copy.
+  offset_src
+    Starting offset in src.
+  offset_dst
+    Starting offset in dst.</p>
+<p>If offset_src is None, then src is read from the current position;
+respectively for offset_dst.</p>
+          </div></section>
+          <section class="m-doc-details" id="cpu_count"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#cpu_count" class="m-doc-self">cpu_count</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <p>Return the number of CPUs in the system; return None if indeterminable.</p>
+<p>This number is not equivalent to the number of CPUs the current process can
+use.  The number of usable CPUs can be obtained with
+``len(os.sched_getaffinity(0))``</p>
+          </div></section>
+          <section class="m-doc-details" id="device_encoding"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#device_encoding" class="m-doc-self">device_encoding</a>(</span><span class="m-doc-wrap">fd)</span></span>
+            </h3>
+            <p>Return a string describing the encoding of a terminal&#x27;s file descriptor.</p>
+<p>The file descriptor must be attached to a terminal.
+If the device is not a terminal, return None.</p>
+          </div></section>
+          <section class="m-doc-details" id="execv"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#execv" class="m-doc-self">execv</a>(</span><span class="m-doc-wrap">path, argv<span class="m-text m-dim">, /</span>)</span></span>
+            </h3>
+            <p>Execute an executable path with arguments, replacing current process.</p>
+<p>path
+  Path of executable file.
+argv
+  Tuple or list of strings.</p>
+          </div></section>
+          <section class="m-doc-details" id="execve"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#execve" class="m-doc-self">execve</a>(</span><span class="m-doc-wrap">path, argv, env)</span></span>
+            </h3>
+            <p>Execute an executable path with arguments, replacing current process.</p>
+<p>path
+  Path of executable file.
+argv
+  Tuple or list of strings.
+env
+  Dictionary of strings mapping to strings.</p>
+          </div></section>
+          <section class="m-doc-details" id="fchdir"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#fchdir" class="m-doc-self">fchdir</a>(</span><span class="m-doc-wrap">fd)</span></span>
+            </h3>
+            <p>Change to the directory of the given file descriptor.</p>
+<p>fd must be opened on a directory, not a file.
+Equivalent to os.chdir(fd).</p>
+          </div></section>
+          <section class="m-doc-details" id="fchmod"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#fchmod" class="m-doc-self">fchmod</a>(</span><span class="m-doc-wrap">fd, mode)</span></span>
+            </h3>
+            <p>Change the access permissions of the file given by file descriptor fd.</p>
+<p>Equivalent to os.chmod(fd, mode).</p>
+          </div></section>
+          <section class="m-doc-details" id="fchown"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#fchown" class="m-doc-self">fchown</a>(</span><span class="m-doc-wrap">fd, uid, gid)</span></span>
+            </h3>
+            <p>Change the owner and group id of the file specified by file descriptor.</p>
+<p>Equivalent to os.chown(fd, uid, gid).</p>
+          </div></section>
+          <section class="m-doc-details" id="fork"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#fork" class="m-doc-self">fork</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <p>Fork a child process.</p>
+<p>Return 0 to child process and PID of child to parent process.</p>
+          </div></section>
+          <section class="m-doc-details" id="forkpty"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#forkpty" class="m-doc-self">forkpty</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <p>Fork a new process with a new pseudo-terminal as controlling tty.</p>
+<p>Returns a tuple of (pid, master_fd).
+Like fork(), return pid of 0 to the child process,
+and pid of child to the parent process.
+To both, return fd of newly opened pseudo-terminal.</p>
+          </div></section>
+          <section class="m-doc-details" id="fpathconf"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#fpathconf" class="m-doc-self">fpathconf</a>(</span><span class="m-doc-wrap">fd, name<span class="m-text m-dim">, /</span>)</span></span>
+            </h3>
+            <p>Return the configuration limit name for the file descriptor fd.</p>
+<p>If there is no limit, return -1.</p>
+          </div></section>
+          <section class="m-doc-details" id="fspath"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#fspath" class="m-doc-self">fspath</a>(</span><span class="m-doc-wrap">path)</span></span>
+            </h3>
+            <p>Return the file system path representation of the object.</p>
+<p>If the object is str or bytes, then allow it to pass through as-is. If the
+object defines __fspath__(), then return the result of that method. All other
+types raise a TypeError.</p>
+          </div></section>
+          <section class="m-doc-details" id="fstat"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#fstat" class="m-doc-self">fstat</a>(</span><span class="m-doc-wrap">fd)</span></span>
+            </h3>
+            <p>Perform a stat system call on the given file descriptor.</p>
+<p>Like stat(), but for an open file descriptor.
+Equivalent to os.stat(fd).</p>
+          </div></section>
+          <section class="m-doc-details" id="fstatvfs"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#fstatvfs" class="m-doc-self">fstatvfs</a>(</span><span class="m-doc-wrap">fd<span class="m-text m-dim">, /</span>)</span></span>
+            </h3>
+            <p>Perform an fstatvfs system call on the given fd.</p>
+<p>Equivalent to statvfs(fd).</p>
+          </div></section>
+          <section class="m-doc-details" id="get_blocking"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#get_blocking" class="m-doc-self">get_blocking</a>(</span><span class="m-doc-wrap">fd<span class="m-text m-dim">, /</span>)</span></span>
+            </h3>
+            <p>Get the blocking mode of the file descriptor.</p>
+<p>Return False if the O_NONBLOCK flag is set, True if the flag is cleared.</p>
+          </div></section>
+          <section class="m-doc-details" id="get_terminal_size"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#get_terminal_size" class="m-doc-self">get_terminal_size</a>(</span><span class="m-doc-wrap">...)</span></span>
+            </h3>
+            <p>Return the size of the terminal window as (columns, lines).</p>
+<p>The optional argument fd (default standard output) specifies
+which file descriptor should be queried.</p>
+<p>If the file descriptor is not connected to a terminal, an OSError
+is thrown.</p>
+<p>This function will only be defined if an implementation is
+available for this system.</p>
+<p>shutil.get_terminal_size is the high-level function which should
+normally be used, os.get_terminal_size is the low-level implementation.</p>
+          </div></section>
+          <section class="m-doc-details" id="getloadavg"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#getloadavg" class="m-doc-self">getloadavg</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <p>Return average recent system load information.</p>
+<p>Return the number of processes in the system run queue averaged over
+the last 1, 5, and 15 minutes as a tuple of three floats.
+Raises OSError if the load average was unobtainable.</p>
+          </div></section>
+          <section class="m-doc-details" id="getppid"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#getppid" class="m-doc-self">getppid</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <p>Return the parent&#x27;s process id.</p>
+<p>If the parent process has already exited, Windows machines will still
+return its id; others systems will return the id of the &#x27;init&#x27; process (1).</p>
+          </div></section>
+          <section class="m-doc-details" id="getxattr"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#getxattr" class="m-doc-self">getxattr</a>(</span><span class="m-doc-wrap">path,
+              attribute,<span class="m-text m-dim"> *,</span>
+              follow_symlinks = True)</span></span>
+            </h3>
+            <p>Return the value of extended attribute attribute on path.</p>
+<p>path may be either a string, a path-like object, or an open file descriptor.
+If follow_symlinks is False, and the last element of the path is a symbolic
+  link, getxattr will examine the symbolic link itself instead of the file
+  the link points to.</p>
+          </div></section>
+          <section class="m-doc-details" id="isatty"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#isatty" class="m-doc-self">isatty</a>(</span><span class="m-doc-wrap">fd<span class="m-text m-dim">, /</span>)</span></span>
+            </h3>
+            <p>Return True if the fd is connected to a terminal.</p>
+<p>Return True if the file descriptor is an open file descriptor
+connected to the slave end of a terminal.</p>
+          </div></section>
+          <section class="m-doc-details" id="lchown"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#lchown" class="m-doc-self">lchown</a>(</span><span class="m-doc-wrap">path, uid, gid)</span></span>
+            </h3>
+            <p>Change the owner and group id of path to the numeric uid and gid.</p>
+<p>This function will not follow symbolic links.
+Equivalent to os.chown(path, uid, gid, follow_symlinks=False).</p>
+          </div></section>
+          <section class="m-doc-details" id="link"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#link" class="m-doc-self">link</a>(</span><span class="m-doc-wrap">src,
+              dst,<span class="m-text m-dim"> *,</span>
+              src_dir_fd = None,
+              dst_dir_fd = None,
+              follow_symlinks = True)</span></span>
+            </h3>
+            <p>Create a hard link to a file.</p>
+<p>If either src_dir_fd or dst_dir_fd is not None, it should be a file
+  descriptor open to a directory, and the respective path string (src or dst)
+  should be relative; the path will then be relative to that directory.
+If follow_symlinks is False, and the last element of src is a symbolic
+  link, link will create a link to the symbolic link itself instead of the
+  file the link points to.
+src_dir_fd, dst_dir_fd, and follow_symlinks may not be implemented on your
+  platform.  If they are unavailable, using them will raise a
+  NotImplementedError.</p>
+          </div></section>
+          <section class="m-doc-details" id="listdir"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#listdir" class="m-doc-self">listdir</a>(</span><span class="m-doc-wrap">path = None)</span></span>
+            </h3>
+            <p>Return a list containing the names of the files in the directory.</p>
+<p>path can be specified as either str, bytes, or a path-like object.  If path is bytes,
+  the filenames returned will also be bytes; in all other circumstances
+  the filenames returned will be str.
+If path is None, uses the path=&#x27;.&#x27;.
+On some platforms, path may also be specified as an open file descriptor;\
+  the file descriptor must refer to a directory.
+  If this functionality is unavailable, using it raises NotImplementedError.</p>
+<p>The list is in arbitrary order.  It does not include the special
+entries &#x27;.&#x27; and &#x27;..&#x27; even if they are present in the directory.</p>
+          </div></section>
+          <section class="m-doc-details" id="listxattr"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#listxattr" class="m-doc-self">listxattr</a>(</span><span class="m-doc-wrap">path = None,<span class="m-text m-dim"> *,</span>
+              follow_symlinks = True)</span></span>
+            </h3>
+            <p>Return a list of extended attributes on path.</p>
+<p>path may be either None, a string, a path-like object, or an open file descriptor.
+if path is None, listxattr will examine the current directory.
+If follow_symlinks is False, and the last element of the path is a symbolic
+  link, listxattr will examine the symbolic link itself instead of the file
+  the link points to.</p>
+          </div></section>
+          <section class="m-doc-details" id="lockf"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#lockf" class="m-doc-self">lockf</a>(</span><span class="m-doc-wrap">fd, command, length<span class="m-text m-dim">, /</span>)</span></span>
+            </h3>
+            <p>Apply, test or remove a POSIX lock on an open file descriptor.</p>
+<p>fd
+  An open file descriptor.
+command
+  One of F_LOCK, F_TLOCK, F_ULOCK or F_TEST.
+length
+  The number of bytes to lock, starting at the current position.</p>
+          </div></section>
+          <section class="m-doc-details" id="lseek"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#lseek" class="m-doc-self">lseek</a>(</span><span class="m-doc-wrap">fd, position, how<span class="m-text m-dim">, /</span>)</span></span>
+            </h3>
+            <p>Set the position of a file descriptor.  Return the new position.</p>
+<p>Return the new cursor position in number of bytes
+relative to the beginning of the file.</p>
+          </div></section>
+          <section class="m-doc-details" id="lstat"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#lstat" class="m-doc-self">lstat</a>(</span><span class="m-doc-wrap">path,<span class="m-text m-dim"> *,</span>
+              dir_fd = None)</span></span>
+            </h3>
+            <p>Perform a stat system call on the given path, without following symbolic links.</p>
+<p>Like stat(), but do not follow symbolic links.
+Equivalent to stat(path, follow_symlinks=False).</p>
+          </div></section>
+          <section class="m-doc-details" id="mkdir"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#mkdir" class="m-doc-self">mkdir</a>(</span><span class="m-doc-wrap">path,
+              mode = 511,<span class="m-text m-dim"> *,</span>
+              dir_fd = None)</span></span>
+            </h3>
+            <p>Create a directory.</p>
+<p>If dir_fd is not None, it should be a file descriptor open to a directory,
+  and path should be relative; path will then be relative to that directory.
+dir_fd may not be implemented on your platform.
+  If it is unavailable, using it will raise a NotImplementedError.</p>
+<p>The mode argument is ignored on Windows.</p>
+          </div></section>
+          <section class="m-doc-details" id="mkfifo"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#mkfifo" class="m-doc-self">mkfifo</a>(</span><span class="m-doc-wrap">path,
+              mode = 438,<span class="m-text m-dim"> *,</span>
+              dir_fd = None)</span></span>
+            </h3>
+            <p>Create a &quot;fifo&quot; (a POSIX named pipe).</p>
+<p>If dir_fd is not None, it should be a file descriptor open to a directory,
+  and path should be relative; path will then be relative to that directory.
+dir_fd may not be implemented on your platform.
+  If it is unavailable, using it will raise a NotImplementedError.</p>
+          </div></section>
+          <section class="m-doc-details" id="mknod"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#mknod" class="m-doc-self">mknod</a>(</span><span class="m-doc-wrap">path,
+              mode = 384,
+              device = 0,<span class="m-text m-dim"> *,</span>
+              dir_fd = None)</span></span>
+            </h3>
+            <p>Create a node in the file system.</p>
+<p>Create a node in the file system (file, device special file or named pipe)
+at path.  mode specifies both the permissions to use and the
+type of node to be created, being combined (bitwise OR) with one of
+S_IFREG, S_IFCHR, S_IFBLK, and S_IFIFO.  If S_IFCHR or S_IFBLK is set on mode,
+device defines the newly created device special file (probably using
+os.makedev()).  Otherwise device is ignored.</p>
+<p>If dir_fd is not None, it should be a file descriptor open to a directory,
+  and path should be relative; path will then be relative to that directory.
+dir_fd may not be implemented on your platform.
+  If it is unavailable, using it will raise a NotImplementedError.</p>
+          </div></section>
+          <section class="m-doc-details" id="open"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#open" class="m-doc-self">open</a>(</span><span class="m-doc-wrap">path,
+              flags,
+              mode = 511,<span class="m-text m-dim"> *,</span>
+              dir_fd = None)</span></span>
+            </h3>
+            <p>Open a file for low level IO.  Returns a file descriptor (integer).</p>
+<p>If dir_fd is not None, it should be a file descriptor open to a directory,
+  and path should be relative; path will then be relative to that directory.
+dir_fd may not be implemented on your platform.
+  If it is unavailable, using it will raise a NotImplementedError.</p>
+          </div></section>
+          <section class="m-doc-details" id="openpty"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#openpty" class="m-doc-self">openpty</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <p>Open a pseudo-terminal.</p>
+<p>Return a tuple of (master_fd, slave_fd) containing open file descriptors
+for both the master and slave ends.</p>
+          </div></section>
+          <section class="m-doc-details" id="pathconf"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#pathconf" class="m-doc-self">pathconf</a>(</span><span class="m-doc-wrap">path, name)</span></span>
+            </h3>
+            <p>Return the configuration limit name for the file or directory path.</p>
+<p>If there is no limit, return -1.
+On some platforms, path may also be specified as an open file descriptor.
+  If this functionality is unavailable, using it raises an exception.</p>
+          </div></section>
+          <section class="m-doc-details" id="pipe"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#pipe" class="m-doc-self">pipe</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <p>Create a pipe.</p>
+<p>Returns a tuple of two file descriptors:
+  (read_fd, write_fd)</p>
+          </div></section>
+          <section class="m-doc-details" id="pipe2"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#pipe2" class="m-doc-self">pipe2</a>(</span><span class="m-doc-wrap">flags<span class="m-text m-dim">, /</span>)</span></span>
+            </h3>
+            <p>Create a pipe with flags set atomically.</p>
+<p>Returns a tuple of two file descriptors:
+  (read_fd, write_fd)</p>
+<p>flags can be constructed by ORing together one or more of these values:
+O_NONBLOCK, O_CLOEXEC.</p>
+          </div></section>
+          <section class="m-doc-details" id="posix_fadvise"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#posix_fadvise" class="m-doc-self">posix_fadvise</a>(</span><span class="m-doc-wrap">fd, offset, length, advice<span class="m-text m-dim">, /</span>)</span></span>
+            </h3>
+            <p>Announce an intention to access data in a specific pattern.</p>
+<p>Announce an intention to access data in a specific pattern, thus allowing
+the kernel to make optimizations.
+The advice applies to the region of the file specified by fd starting at
+offset and continuing for length bytes.
+advice is one of POSIX_FADV_NORMAL, POSIX_FADV_SEQUENTIAL,
+POSIX_FADV_RANDOM, POSIX_FADV_NOREUSE, POSIX_FADV_WILLNEED, or
+POSIX_FADV_DONTNEED.</p>
+          </div></section>
+          <section class="m-doc-details" id="posix_fallocate"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#posix_fallocate" class="m-doc-self">posix_fallocate</a>(</span><span class="m-doc-wrap">fd, offset, length<span class="m-text m-dim">, /</span>)</span></span>
+            </h3>
+            <p>Ensure a file has allocated at least a particular number of bytes on disk.</p>
+<p>Ensure that the file specified by fd encompasses a range of bytes
+starting at offset bytes from the beginning and continuing for length bytes.</p>
+          </div></section>
+          <section class="m-doc-details" id="posix_spawn"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#posix_spawn" class="m-doc-self">posix_spawn</a>(</span><span class="m-doc-wrap">...)</span></span>
+            </h3>
+            <p>Execute the program specified by path in a new process.</p>
+<p>path
+  Path of executable file.
+argv
+  Tuple or list of strings.
+env
+  Dictionary of strings mapping to strings.
+file_actions
+  A sequence of file action tuples.
+setpgroup
+  The pgroup to use with the POSIX_SPAWN_SETPGROUP flag.
+resetids
+  If the value is `true` the POSIX_SPAWN_RESETIDS will be activated.
+setsid
+  If the value is `true` the POSIX_SPAWN_SETSID or POSIX_SPAWN_SETSID_NP will be activated.
+setsigmask
+  The sigmask to use with the POSIX_SPAWN_SETSIGMASK flag.
+setsigdef
+  The sigmask to use with the POSIX_SPAWN_SETSIGDEF flag.
+scheduler
+  A tuple with the scheduler policy (optional) and parameters.</p>
+          </div></section>
+          <section class="m-doc-details" id="posix_spawnp"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#posix_spawnp" class="m-doc-self">posix_spawnp</a>(</span><span class="m-doc-wrap">...)</span></span>
+            </h3>
+            <p>Execute the program specified by path in a new process.</p>
+<p>path
+  Path of executable file.
+argv
+  Tuple or list of strings.
+env
+  Dictionary of strings mapping to strings.
+file_actions
+  A sequence of file action tuples.
+setpgroup
+  The pgroup to use with the POSIX_SPAWN_SETPGROUP flag.
+resetids
+  If the value is `True` the POSIX_SPAWN_RESETIDS will be activated.
+setsid
+  If the value is `True` the POSIX_SPAWN_SETSID or POSIX_SPAWN_SETSID_NP will be activated.
+setsigmask
+  The sigmask to use with the POSIX_SPAWN_SETSIGMASK flag.
+setsigdef
+  The sigmask to use with the POSIX_SPAWN_SETSIGDEF flag.
+scheduler
+  A tuple with the scheduler policy (optional) and parameters.</p>
+          </div></section>
+          <section class="m-doc-details" id="pread"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#pread" class="m-doc-self">pread</a>(</span><span class="m-doc-wrap">fd, length, offset<span class="m-text m-dim">, /</span>)</span></span>
+            </h3>
+            <p>Read a number of bytes from a file descriptor starting at a particular offset.</p>
+<p>Read length bytes from file descriptor fd, starting at offset bytes from
+the beginning of the file.  The file offset remains unchanged.</p>
+          </div></section>
+          <section class="m-doc-details" id="preadv"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#preadv" class="m-doc-self">preadv</a>(</span><span class="m-doc-wrap">fd,
+              buffers,
+              offset,
+              flags = 0<span class="m-text m-dim">, /</span>)</span></span>
+            </h3>
+            <p>Reads from a file descriptor into a number of mutable bytes-like objects.</p>
+<p>Combines the functionality of readv() and pread(). As readv(), it will
+transfer data into each buffer until it is full and then move on to the next
+buffer in the sequence to hold the rest of the data. Its fourth argument,
+specifies the file offset at which the input operation is to be performed. It
+will return the total number of bytes read (which can be less than the total
+capacity of all the objects).</p>
+<p>The flags argument contains a bitwise OR of zero or more of the following flags:</p>
+<p>- RWF_HIPRI
+- RWF_NOWAIT</p>
+<p>Using non-zero flags requires Linux 4.6 or newer.</p>
+          </div></section>
+          <section class="m-doc-details" id="pwrite"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#pwrite" class="m-doc-self">pwrite</a>(</span><span class="m-doc-wrap">fd, buffer, offset<span class="m-text m-dim">, /</span>)</span></span>
+            </h3>
+            <p>Write bytes to a file descriptor starting at a particular offset.</p>
+<p>Write buffer to fd, starting at offset bytes from the beginning of
+the file.  Returns the number of bytes writte.  Does not change the
+current file offset.</p>
+          </div></section>
+          <section class="m-doc-details" id="pwritev"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#pwritev" class="m-doc-self">pwritev</a>(</span><span class="m-doc-wrap">fd,
+              buffers,
+              offset,
+              flags = 0<span class="m-text m-dim">, /</span>)</span></span>
+            </h3>
+            <p>Writes the contents of bytes-like objects to a file descriptor at a given offset.</p>
+<p>Combines the functionality of writev() and pwrite(). All buffers must be a sequence
+of bytes-like objects. Buffers are processed in array order. Entire contents of first
+buffer is written before proceeding to second, and so on. The operating system may
+set a limit (sysconf() value SC_IOV_MAX) on the number of buffers that can be used.
+This function writes the contents of each object to the file descriptor and returns
+the total number of bytes written.</p>
+<p>The flags argument contains a bitwise OR of zero or more of the following flags:</p>
+<p>- RWF_DSYNC
+- RWF_SYNC</p>
+<p>Using non-zero flags requires Linux 4.7 or newer.</p>
+          </div></section>
+          <section class="m-doc-details" id="readlink"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#readlink" class="m-doc-self">readlink</a>(</span><span class="m-doc-wrap">path,<span class="m-text m-dim"> *,</span>
+              dir_fd = None)</span></span>
+            </h3>
+            <p>Return a string representing the path to which the symbolic link points.</p>
+<p>If dir_fd is not None, it should be a file descriptor open to a directory,
+and path should be relative; path will then be relative to that directory.</p>
+<p>dir_fd may not be implemented on your platform.  If it is unavailable,
+using it will raise a NotImplementedError.</p>
+          </div></section>
+          <section class="m-doc-details" id="readv"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#readv" class="m-doc-self">readv</a>(</span><span class="m-doc-wrap">fd, buffers<span class="m-text m-dim">, /</span>)</span></span>
+            </h3>
+            <p>Read from a file descriptor fd into an iterable of buffers.</p>
+<p>The buffers should be mutable buffers accepting bytes.
+readv will transfer data into each buffer until it is full
+and then move on to the next buffer in the sequence to hold
+the rest of the data.</p>
+<p>readv returns the total number of bytes read,
+which may be less than the total capacity of all the buffers.</p>
+          </div></section>
+          <section class="m-doc-details" id="register_at_fork"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#register_at_fork" class="m-doc-self">register_at_fork</a>(</span><span class="m-doc-wrap">...)</span></span>
+            </h3>
+            <p>Register callables to be called when forking a new process.</p>
+<p>  before
+    A callable to be called in the parent before the fork() syscall.
+  after_in_child
+    A callable to be called in the child after fork().
+  after_in_parent
+    A callable to be called in the parent after fork().</p>
+<p>&#x27;before&#x27; callbacks are called in reverse order.
+&#x27;after_in_child&#x27; and &#x27;after_in_parent&#x27; callbacks are called in order.</p>
+          </div></section>
+          <section class="m-doc-details" id="remove"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#remove" class="m-doc-self">remove</a>(</span><span class="m-doc-wrap">path,<span class="m-text m-dim"> *,</span>
+              dir_fd = None)</span></span>
+            </h3>
+            <p>Remove a file (same as unlink()).</p>
+<p>If dir_fd is not None, it should be a file descriptor open to a directory,
+  and path should be relative; path will then be relative to that directory.
+dir_fd may not be implemented on your platform.
+  If it is unavailable, using it will raise a NotImplementedError.</p>
+          </div></section>
+          <section class="m-doc-details" id="removexattr"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#removexattr" class="m-doc-self">removexattr</a>(</span><span class="m-doc-wrap">path,
+              attribute,<span class="m-text m-dim"> *,</span>
+              follow_symlinks = True)</span></span>
+            </h3>
+            <p>Remove extended attribute attribute on path.</p>
+<p>path may be either a string, a path-like object, or an open file descriptor.
+If follow_symlinks is False, and the last element of the path is a symbolic
+  link, removexattr will modify the symbolic link itself instead of the file
+  the link points to.</p>
+          </div></section>
+          <section class="m-doc-details" id="rename"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#rename" class="m-doc-self">rename</a>(</span><span class="m-doc-wrap">src,
+              dst,<span class="m-text m-dim"> *,</span>
+              src_dir_fd = None,
+              dst_dir_fd = None)</span></span>
+            </h3>
+            <p>Rename a file or directory.</p>
+<p>If either src_dir_fd or dst_dir_fd is not None, it should be a file
+  descriptor open to a directory, and the respective path string (src or dst)
+  should be relative; the path will then be relative to that directory.
+src_dir_fd and dst_dir_fd, may not be implemented on your platform.
+  If they are unavailable, using them will raise a NotImplementedError.</p>
+          </div></section>
+          <section class="m-doc-details" id="replace"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#replace" class="m-doc-self">replace</a>(</span><span class="m-doc-wrap">src,
+              dst,<span class="m-text m-dim"> *,</span>
+              src_dir_fd = None,
+              dst_dir_fd = None)</span></span>
+            </h3>
+            <p>Rename a file or directory, overwriting the destination.</p>
+<p>If either src_dir_fd or dst_dir_fd is not None, it should be a file
+  descriptor open to a directory, and the respective path string (src or dst)
+  should be relative; the path will then be relative to that directory.
+src_dir_fd and dst_dir_fd, may not be implemented on your platform.
+  If they are unavailable, using them will raise a NotImplementedError.</p>
+          </div></section>
+          <section class="m-doc-details" id="rmdir"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#rmdir" class="m-doc-self">rmdir</a>(</span><span class="m-doc-wrap">path,<span class="m-text m-dim"> *,</span>
+              dir_fd = None)</span></span>
+            </h3>
+            <p>Remove a directory.</p>
+<p>If dir_fd is not None, it should be a file descriptor open to a directory,
+  and path should be relative; path will then be relative to that directory.
+dir_fd may not be implemented on your platform.
+  If it is unavailable, using it will raise a NotImplementedError.</p>
+          </div></section>
+          <section class="m-doc-details" id="scandir"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#scandir" class="m-doc-self">scandir</a>(</span><span class="m-doc-wrap">path = None)</span></span>
+            </h3>
+            <p>Return an iterator of DirEntry objects for given path.</p>
+<p>path can be specified as either str, bytes, or a path-like object.  If path
+is bytes, the names of yielded DirEntry objects will also be bytes; in
+all other circumstances they will be str.</p>
+<p>If path is None, uses the path=&#x27;.&#x27;.</p>
+          </div></section>
+          <section class="m-doc-details" id="sched_getaffinity"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#sched_getaffinity" class="m-doc-self">sched_getaffinity</a>(</span><span class="m-doc-wrap">pid<span class="m-text m-dim">, /</span>)</span></span>
+            </h3>
+            <p>Return the affinity of the process identified by pid (or the current process if zero).</p>
+<p>The affinity is returned as a set of CPU identifiers.</p>
+          </div></section>
+          <section class="m-doc-details" id="sched_getparam"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#sched_getparam" class="m-doc-self">sched_getparam</a>(</span><span class="m-doc-wrap">pid<span class="m-text m-dim">, /</span>)</span></span>
+            </h3>
+            <p>Returns scheduling parameters for the process identified by pid.</p>
+<p>If pid is 0, returns parameters for the calling process.
+Return value is an instance of sched_param.</p>
+          </div></section>
+          <section class="m-doc-details" id="sched_getscheduler"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#sched_getscheduler" class="m-doc-self">sched_getscheduler</a>(</span><span class="m-doc-wrap">pid<span class="m-text m-dim">, /</span>)</span></span>
+            </h3>
+            <p>Get the scheduling policy for the process identifiedy by pid.</p>
+<p>Passing 0 for pid returns the scheduling policy for the calling process.</p>
+          </div></section>
+          <section class="m-doc-details" id="sched_rr_get_interval"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#sched_rr_get_interval" class="m-doc-self">sched_rr_get_interval</a>(</span><span class="m-doc-wrap">pid<span class="m-text m-dim">, /</span>)</span></span>
+            </h3>
+            <p>Return the round-robin quantum for the process identified by pid, in seconds.</p>
+<p>Value returned is a float.</p>
+          </div></section>
+          <section class="m-doc-details" id="sched_setaffinity"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#sched_setaffinity" class="m-doc-self">sched_setaffinity</a>(</span><span class="m-doc-wrap">pid, mask<span class="m-text m-dim">, /</span>)</span></span>
+            </h3>
+            <p>Set the CPU affinity of the process identified by pid to mask.</p>
+<p>mask should be an iterable of integers identifying CPUs.</p>
+          </div></section>
+          <section class="m-doc-details" id="sched_setparam"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#sched_setparam" class="m-doc-self">sched_setparam</a>(</span><span class="m-doc-wrap">pid, param<span class="m-text m-dim">, /</span>)</span></span>
+            </h3>
+            <p>Set scheduling parameters for the process identified by pid.</p>
+<p>If pid is 0, sets parameters for the calling process.
+param should be an instance of sched_param.</p>
+          </div></section>
+          <section class="m-doc-details" id="sched_setscheduler"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#sched_setscheduler" class="m-doc-self">sched_setscheduler</a>(</span><span class="m-doc-wrap">pid, policy, param<span class="m-text m-dim">, /</span>)</span></span>
+            </h3>
+            <p>Set the scheduling policy for the process identified by pid.</p>
+<p>If pid is 0, the calling process is changed.
+param is an instance of sched_param.</p>
+          </div></section>
+          <section class="m-doc-details" id="set_blocking"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#set_blocking" class="m-doc-self">set_blocking</a>(</span><span class="m-doc-wrap">fd, blocking<span class="m-text m-dim">, /</span>)</span></span>
+            </h3>
+            <p>Set the blocking mode of the specified file descriptor.</p>
+<p>Set the O_NONBLOCK flag if blocking is False,
+clear the O_NONBLOCK flag otherwise.</p>
+          </div></section>
+          <section class="m-doc-details" id="setxattr"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#setxattr" class="m-doc-self">setxattr</a>(</span><span class="m-doc-wrap">path,
+              attribute,
+              value,
+              flags = 0,<span class="m-text m-dim"> *,</span>
+              follow_symlinks = True)</span></span>
+            </h3>
+            <p>Set extended attribute attribute on path to value.</p>
+<p>path may be either a string, a path-like object,  or an open file descriptor.
+If follow_symlinks is False, and the last element of the path is a symbolic
+  link, setxattr will modify the symbolic link itself instead of the file
+  the link points to.</p>
+          </div></section>
+          <section class="m-doc-details" id="stat"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#stat" class="m-doc-self">stat</a>(</span><span class="m-doc-wrap">path,<span class="m-text m-dim"> *,</span>
+              dir_fd = None,
+              follow_symlinks = True)</span></span>
+            </h3>
+            <p>Perform a stat system call on the given path.</p>
+<p>  path
+    Path to be examined; can be string, bytes, a path-like object or
+    open-file-descriptor int.
+  dir_fd
+    If not None, it should be a file descriptor open to a directory,
+    and path should be a relative string; path will then be relative to
+    that directory.
+  follow_symlinks
+    If False, and the last element of the path is a symbolic link,
+    stat will examine the symbolic link itself instead of the file
+    the link points to.</p>
+<p>dir_fd and follow_symlinks may not be implemented
+  on your platform.  If they are unavailable, using them will raise a
+  NotImplementedError.</p>
+<p>It&#x27;s an error to use dir_fd or follow_symlinks when specifying path as
+  an open file descriptor.</p>
+          </div></section>
+          <section class="m-doc-details" id="statvfs"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#statvfs" class="m-doc-self">statvfs</a>(</span><span class="m-doc-wrap">path)</span></span>
+            </h3>
+            <p>Perform a statvfs system call on the given path.</p>
+<p>path may always be specified as a string.
+On some platforms, path may also be specified as an open file descriptor.
+  If this functionality is unavailable, using it raises an exception.</p>
+          </div></section>
+          <section class="m-doc-details" id="symlink"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#symlink" class="m-doc-self">symlink</a>(</span><span class="m-doc-wrap">src,
+              dst,
+              target_is_directory = False,<span class="m-text m-dim"> *,</span>
+              dir_fd = None)</span></span>
+            </h3>
+            <p>Create a symbolic link pointing to src named dst.</p>
+<p>target_is_directory is required on Windows if the target is to be
+  interpreted as a directory.  (On Windows, symlink requires
+  Windows 6.0 or greater, and raises a NotImplementedError otherwise.)
+  target_is_directory is ignored on non-Windows platforms.</p>
+<p>If dir_fd is not None, it should be a file descriptor open to a directory,
+  and path should be relative; path will then be relative to that directory.
+dir_fd may not be implemented on your platform.
+  If it is unavailable, using it will raise a NotImplementedError.</p>
+          </div></section>
+          <section class="m-doc-details" id="times"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#times" class="m-doc-self">times</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <p>Return a collection containing process timing information.</p>
+<p>The object returned behaves like a named tuple with these fields:
+  (utime, stime, cutime, cstime, elapsed_time)
+All fields are floating point numbers.</p>
+          </div></section>
+          <section class="m-doc-details" id="truncate"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#truncate" class="m-doc-self">truncate</a>(</span><span class="m-doc-wrap">path, length)</span></span>
+            </h3>
+            <p>Truncate a file, specified by path, to a specific length.</p>
+<p>On some platforms, path may also be specified as an open file descriptor.
+  If this functionality is unavailable, using it raises an exception.</p>
+          </div></section>
+          <section class="m-doc-details" id="ttyname"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ttyname" class="m-doc-self">ttyname</a>(</span><span class="m-doc-wrap">fd<span class="m-text m-dim">, /</span>)</span></span>
+            </h3>
+            <p>Return the name of the terminal device connected to &#x27;fd&#x27;.</p>
+<p>fd
+  Integer file descriptor handle.</p>
+          </div></section>
+          <section class="m-doc-details" id="uname"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#uname" class="m-doc-self">uname</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <p>Return an object identifying the current operating system.</p>
+<p>The object behaves like a named tuple with the following fields:
+  (sysname, nodename, release, version, machine)</p>
+          </div></section>
+          <section class="m-doc-details" id="unlink"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#unlink" class="m-doc-self">unlink</a>(</span><span class="m-doc-wrap">path,<span class="m-text m-dim"> *,</span>
+              dir_fd = None)</span></span>
+            </h3>
+            <p>Remove a file (same as remove()).</p>
+<p>If dir_fd is not None, it should be a file descriptor open to a directory,
+  and path should be relative; path will then be relative to that directory.
+dir_fd may not be implemented on your platform.
+  If it is unavailable, using it will raise a NotImplementedError.</p>
+          </div></section>
+          <section class="m-doc-details" id="utime"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#utime" class="m-doc-self">utime</a>(</span><span class="m-doc-wrap">...)</span></span>
+            </h3>
+            <p>Set the access and modified time of path.</p>
+<p>path may always be specified as a string.
+On some platforms, path may also be specified as an open file descriptor.
+  If this functionality is unavailable, using it raises an exception.</p>
+<p>If times is not None, it must be a tuple (atime, mtime);
+    atime and mtime should be expressed as float seconds since the epoch.
+If ns is specified, it must be a tuple (atime_ns, mtime_ns);
+    atime_ns and mtime_ns should be expressed as integer nanoseconds
+    since the epoch.
+If times is None and ns is unspecified, utime uses the current time.
+Specifying tuples for both times and ns is an error.</p>
+<p>If dir_fd is not None, it should be a file descriptor open to a directory,
+  and path should be relative; path will then be relative to that directory.
+If follow_symlinks is False, and the last element of the path is a symbolic
+  link, utime will modify the symbolic link itself instead of the file the
+  link points to.
+It is an error to use dir_fd or follow_symlinks when specifying path
+  as an open file descriptor.
+dir_fd and follow_symlinks may not be available on your platform.
+  If they are unavailable, using them will raise a NotImplementedError.</p>
+          </div></section>
+          <section class="m-doc-details" id="wait"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#wait" class="m-doc-self">wait</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <p>Wait for completion of a child process.</p>
+<p>Returns a tuple of information about the child process:
+    (pid, status)</p>
+          </div></section>
+          <section class="m-doc-details" id="wait3"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#wait3" class="m-doc-self">wait3</a>(</span><span class="m-doc-wrap">options)</span></span>
+            </h3>
+            <p>Wait for completion of a child process.</p>
+<p>Returns a tuple of information about the child process:
+  (pid, status, rusage)</p>
+          </div></section>
+          <section class="m-doc-details" id="wait4"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#wait4" class="m-doc-self">wait4</a>(</span><span class="m-doc-wrap">pid, options)</span></span>
+            </h3>
+            <p>Wait for completion of a specific child process.</p>
+<p>Returns a tuple of information about the child process:
+  (pid, status, rusage)</p>
+          </div></section>
+          <section class="m-doc-details" id="waitid"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#waitid" class="m-doc-self">waitid</a>(</span><span class="m-doc-wrap">idtype, id, options<span class="m-text m-dim">, /</span>)</span></span>
+            </h3>
+            <p>Returns the result of waiting for a process or processes.</p>
+<p>  idtype
+    Must be one of be P_PID, P_PGID or P_ALL.
+  id
+    The id to wait on.
+  options
+    Constructed from the ORing of one or more of WEXITED, WSTOPPED
+    or WCONTINUED and additionally may be ORed with WNOHANG or WNOWAIT.</p>
+<p>Returns either waitid_result or None if WNOHANG is specified and there are
+no children in a waitable state.</p>
+          </div></section>
+          <section class="m-doc-details" id="waitpid"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#waitpid" class="m-doc-self">waitpid</a>(</span><span class="m-doc-wrap">pid, options<span class="m-text m-dim">, /</span>)</span></span>
+            </h3>
+            <p>Wait for completion of a given child process.</p>
+<p>Returns a tuple of information regarding the child process:
+    (pid, status)</p>
+<p>The options argument is ignored on Windows.</p>
+          </div></section>
+          <section class="m-doc-details" id="writev"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#writev" class="m-doc-self">writev</a>(</span><span class="m-doc-wrap">fd, buffers<span class="m-text m-dim">, /</span>)</span></span>
+            </h3>
+            <p>Iterate over buffers, and write the contents of each to a file descriptor.</p>
+<p>Returns the total number of bytes written.
+buffers must be a sequence of bytes-like objects.</p>
+          </div></section>
+          <section class="m-doc-details" id="walk"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#walk" class="m-doc-self">walk</a>(</span><span class="m-doc-wrap">top,
+              topdown = True,
+              onerror = None,
+              followlinks = False)</span></span>
+            </h3>
+            <p>Directory tree generator.</p>
+<p>For each directory in the directory tree rooted at top (including top
+itself, but excluding &#x27;.&#x27; and &#x27;..&#x27;), yields a 3-tuple</p>
+<p>    dirpath, dirnames, filenames</p>
+<p>dirpath is a string, the path to the directory.  dirnames is a list of
+the names of the subdirectories in dirpath (excluding &#x27;.&#x27; and &#x27;..&#x27;).
+filenames is a list of the names of the non-directory files in dirpath.
+Note that the names in the lists are just names, with no path components.
+To get a full path (which begins with top) to a file or directory in
+dirpath, do os.path.join(dirpath, name).</p>
+<p>If optional arg &#x27;topdown&#x27; is true or not specified, the triple for a
+directory is generated before the triples for any of its subdirectories
+(directories are generated top down).  If topdown is false, the triple
+for a directory is generated after the triples for all of its
+subdirectories (directories are generated bottom up).</p>
+<p>When topdown is true, the caller can modify the dirnames list in-place
+(e.g., via del or slice assignment), and walk will only recurse into the
+subdirectories whose names remain in dirnames; this can be used to prune the
+search, or to impose a specific order of visiting.  Modifying dirnames when
+topdown is false has no effect on the behavior of os.walk(), since the
+directories in dirnames have already been generated by the time dirnames
+itself is generated. No matter the value of topdown, the list of
+subdirectories is retrieved before the tuples for the directory and its
+subdirectories are generated.</p>
+<p>By default errors from the os.scandir() call are ignored.  If
+optional arg &#x27;onerror&#x27; is specified, it should be a function; it
+will be called with one argument, an OSError instance.  It can
+report the error to continue with the walk, or raise the exception
+to abort the walk.  Note that the filename is available as the
+filename attribute of the exception object.</p>
+<p>By default, os.walk does not follow symbolic links to subdirectories on
+systems that support them.  In order to get this functionality, set the
+optional argument &#x27;followlinks&#x27; to true.</p>
+<p>Caution:  if you pass a relative pathname for top, don&#x27;t change the
+current working directory between resumptions of walk.  walk never
+changes the current directory, and assumes that the client doesn&#x27;t
+either.</p>
+<p>Example:</p>
+<p>import os
+from os.path import join, getsize
+for root, dirs, files in os.walk(&#x27;python/Lib/email&#x27;):
+    print(root, &quot;consumes&quot;, end=&quot;&quot;)
+    print(sum(getsize(join(root, name)) for name in files), end=&quot;&quot;)
+    print(&quot;bytes in&quot;, len(files), &quot;non-directory files&quot;)
+    if &#x27;CVS&#x27; in dirs:
+        dirs.remove(&#x27;CVS&#x27;)  # don&#x27;t visit CVS directories</p>
+          </div></section>
+          <section class="m-doc-details" id="fwalk"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def os.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#fwalk" class="m-doc-self">fwalk</a>(</span><span class="m-doc-wrap">top = &#x27;.&#x27;,
+              topdown = True,
+              onerror = None,<span class="m-text m-dim"> *,</span>
+              follow_symlinks = False,
+              dir_fd = None)</span></span>
+            </h3>
+            <p>Directory tree generator.</p>
+<p>This behaves exactly like walk(), except that it yields a 4-tuple</p>
+<p>    dirpath, dirnames, filenames, dirfd</p>
+<p>`dirpath`, `dirnames` and `filenames` are identical to walk() output,
+and `dirfd` is a file descriptor referring to the directory `dirpath`.</p>
+<p>The advantage of fwalk() over walk() is that it&#x27;s safe against symlink
+races (when follow_symlinks is False).</p>
+<p>If dir_fd is not None, it should be a file descriptor open to a directory,
+  and top should be relative; top will then be relative to that directory.
+  (dir_fd is always supported for fwalk.)</p>
+<p>Caution:
+Since fwalk() yields file descriptors, those are only valid until the
+next iteration step, so you should dup() them if you want to keep them
+for a longer period.</p>
+<p>Example:</p>
+<p>import os
+for root, dirs, files, rootfd in os.fwalk(&#x27;python/Lib/email&#x27;):
+    print(root, &quot;consumes&quot;, end=&quot;&quot;)
+    print(sum(os.stat(name, dir_fd=rootfd).st_size for name in files),
+          end=&quot;&quot;)
+    print(&quot;bytes in&quot;, len(files), &quot;non-directory files&quot;)
+    if &#x27;CVS&#x27; in dirs:
+        dirs.remove(&#x27;CVS&#x27;)  # don&#x27;t visit CVS directories</p>
+          </div></section>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for modules, classes, functions and other
+            symbols. You can omit any prefix from the symbol path; adding a <code>.</code>
+            suffix lists all members of given symbol.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>xmolpp2 Python API. Created with <a href="https://mcss.mosra.cz/documentation/python/">m.css Python doc generator</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>

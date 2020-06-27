@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>tqdm.TMonitor | xmolpp2 Python API</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
+  <link rel="icon" href="favicon-dark.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <span id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m">
+        <a href="../../">xmolpp2</a> <span class="m-breadcrumb">|</span> <a href="index.html" class="m-thin">Python API</a>
+      </span>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-12 m-col-m-none">
+            <li>
+              <a href="install.html">Install</a>
+              <ol>
+                <li><a href="changelog.html">Changelog</a></li>
+              </ol>
+            </li>
+            <li><a href="overview.html">Overview</a></li>
+            <li><a href="pages.html">Pages</a></li>
+            <li>
+              <a href="tqdm.html">API</a>
+              <ol>
+                <li><a href="modules.html">Modules</a></li>
+                <li><a href="classes.html">Classes</a></li>
+              </ol>
+            </li>
+            <li><a href="https://github.com/sizmailov/pyxmolpp2">Github</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="6">
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          <span class="m-breadcrumb"><a href="tqdm.html">tqdm</a>.<wbr/></span>TMonitor <span class="m-thin">class</span>
+        </h1>
+        <p>Monitoring thread for tqdm bars.
+Monitors if tqdm bars are taking too much time to display
+and readjusts miniters automatically if necessary.</p>
+        <div class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#methods">Methods</a></li>
+                <li><a href="#dunder-methods">Special methods</a></li>
+                <li><a href="#properties">Properties</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+<p>Parameters
+----------
+tqdm_cls  : class
+    tqdm class to use (can be core tqdm or a submodule).
+sleep_interval  : fload
+    Time to sleep between monitoring checks.</p>
+        <section id="methods">
+          <h2><a href="#methods">Methods</a></h2>
+          <dl class="m-doc">
+            <dt id="_delete">
+              <span class="m-doc-wrap-bumper">def <a href="#_delete" class="m-doc-self">_delete</a>(</span><span class="m-doc-wrap">self)</span>
+            </dt>
+            <dd>Remove current thread from the dict of currently running threads.</dd>
+            <dt id="_set_tstate_lock">
+              <span class="m-doc-wrap-bumper">def <a href="#_set_tstate_lock" class="m-doc-self">_set_tstate_lock</a>(</span><span class="m-doc-wrap">self)</span>
+            </dt>
+            <dd>Set a lock object which will be released by the interpreter when
+the underlying thread state (see pystate.h) gets deleted.</dd>
+            <dt id="exit">
+              <span class="m-doc-wrap-bumper">def <a href="#exit" class="m-doc-self">exit</a>(</span><span class="m-doc-wrap">self)</span>
+            </dt>
+            <dd></dd>
+            <dt id="getName">
+              <span class="m-doc-wrap-bumper">def <a href="#getName" class="m-doc-self">getName</a>(</span><span class="m-doc-wrap">self)</span>
+            </dt>
+            <dd></dd>
+            <dt id="get_instances">
+              <span class="m-doc-wrap-bumper">def <a href="#get_instances" class="m-doc-self">get_instances</a>(</span><span class="m-doc-wrap">self)</span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#isAlive" class="m-doc">isAlive</a>(</span><span class="m-doc-wrap">self)</span>
+            </dt>
+            <dd>Return whether the thread is alive.</dd>
+            <dt id="isDaemon">
+              <span class="m-doc-wrap-bumper">def <a href="#isDaemon" class="m-doc-self">isDaemon</a>(</span><span class="m-doc-wrap">self)</span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#is_alive" class="m-doc">is_alive</a>(</span><span class="m-doc-wrap">self)</span>
+            </dt>
+            <dd>Return whether the thread is alive.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#join" class="m-doc">join</a>(</span><span class="m-doc-wrap">self,
+              timeout = None)</span>
+            </dt>
+            <dd>Wait until the thread terminates.</dd>
+            <dt id="report">
+              <span class="m-doc-wrap-bumper">def <a href="#report" class="m-doc-self">report</a>(</span><span class="m-doc-wrap">self)</span>
+            </dt>
+            <dd></dd>
+            <dt id="run">
+              <span class="m-doc-wrap-bumper">def <a href="#run" class="m-doc-self">run</a>(</span><span class="m-doc-wrap">self)</span>
+            </dt>
+            <dd></dd>
+            <dt id="setDaemon">
+              <span class="m-doc-wrap-bumper">def <a href="#setDaemon" class="m-doc-self">setDaemon</a>(</span><span class="m-doc-wrap">self, daemonic)</span>
+            </dt>
+            <dd></dd>
+            <dt id="setName">
+              <span class="m-doc-wrap-bumper">def <a href="#setName" class="m-doc-self">setName</a>(</span><span class="m-doc-wrap">self, name)</span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#start" class="m-doc">start</a>(</span><span class="m-doc-wrap">self)</span>
+            </dt>
+            <dd>Start the thread&#x27;s activity.</dd>
+          </dl>
+        </section>
+        <section id="dunder-methods">
+          <h2><a href="#dunder-methods">Special methods</a></h2>
+          <dl class="m-doc">
+            <dt id="__init__">
+              <span class="m-doc-wrap-bumper">def <a href="#__init__" class="m-doc-self">__init__</a>(</span><span class="m-doc-wrap">self, tqdm_cls, sleep_interval)</span>
+            </dt>
+            <dd></dd>
+            <dt id="__repr__">
+              <span class="m-doc-wrap-bumper">def <a href="#__repr__" class="m-doc-self">__repr__</a>(</span><span class="m-doc-wrap">self)</span>
+            </dt>
+            <dd></dd>
+          </dl>
+        </section>
+        <section id="properties">
+          <h2><a href="#properties">Properties</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <a href="#daemon" class="m-doc">daemon</a> <span class="m-label m-flat m-success">get set</span>
+            </dt>
+            <dd>A boolean value indicating whether this thread is a daemon thread.</dd>
+            <dt>
+              <a href="#ident" class="m-doc">ident</a> <span class="m-label m-flat m-warning">get</span>
+            </dt>
+            <dd>Thread identifier of this thread or None if it has not been started.</dd>
+            <dt>
+              <a href="#name" class="m-doc">name</a> <span class="m-label m-flat m-success">get set</span>
+            </dt>
+            <dd>A string used for identification purposes only.</dd>
+            <dt>
+              <a href="#native_id" class="m-doc">native_id</a> <span class="m-label m-flat m-warning">get</span>
+            </dt>
+            <dd>Native integral thread ID of this thread, or None if it has not been started.</dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Method documentation</h2>
+          <section class="m-doc-details" id="isAlive"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def tqdm.<wbr />TMonitor.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#isAlive" class="m-doc-self">isAlive</a>(</span><span class="m-doc-wrap">self)</span></span>
+            </h3>
+            <p>Return whether the thread is alive.</p>
+<p>This method is deprecated, use is_alive() instead.</p>
+          </div></section>
+          <section class="m-doc-details" id="is_alive"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def tqdm.<wbr />TMonitor.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#is_alive" class="m-doc-self">is_alive</a>(</span><span class="m-doc-wrap">self)</span></span>
+            </h3>
+            <p>Return whether the thread is alive.</p>
+<p>This method returns True just before the run() method starts until just
+after the run() method terminates. The module function enumerate()
+returns a list of all alive threads.</p>
+          </div></section>
+          <section class="m-doc-details" id="join"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def tqdm.<wbr />TMonitor.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#join" class="m-doc-self">join</a>(</span><span class="m-doc-wrap">self,
+              timeout = None)</span></span>
+            </h3>
+            <p>Wait until the thread terminates.</p>
+<p>This blocks the calling thread until the thread whose join() method is
+called terminates -- either normally or through an unhandled exception
+or until the optional timeout occurs.</p>
+<p>When the timeout argument is present and not None, it should be a
+floating point number specifying a timeout for the operation in seconds
+(or fractions thereof). As join() always returns None, you must call
+is_alive() after join() to decide whether a timeout happened -- if the
+thread is still alive, the join() call timed out.</p>
+<p>When the timeout argument is not present or None, the operation will
+block until the thread terminates.</p>
+<p>A thread can be join()ed many times.</p>
+<p>join() raises a RuntimeError if an attempt is made to join the current
+thread as that would cause a deadlock. It is also an error to join() a
+thread before it has been started and attempts to do so raises the same
+exception.</p>
+          </div></section>
+          <section class="m-doc-details" id="start"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def tqdm.<wbr />TMonitor.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#start" class="m-doc-self">start</a>(</span><span class="m-doc-wrap">self)</span></span>
+            </h3>
+            <p>Start the thread&#x27;s activity.</p>
+<p>It must be called at most once per thread object. It arranges for the
+object&#x27;s run() method to be invoked in a separate thread of control.</p>
+<p>This method will raise a RuntimeError if called more than once on the
+same thread object.</p>
+          </div></section>
+        </section>
+        <section>
+          <h2>Property documentation</h2>
+          <section class="m-doc-details" id="daemon"><div>
+            <h3>
+              tqdm.<wbr />TMonitor.<wbr /><a href="#daemon" class="m-doc-self">daemon</a> <span class="m-label m-flat m-success">get set</span>
+            </h3>
+            <p>A boolean value indicating whether this thread is a daemon thread.</p>
+<p>This must be set before start() is called, otherwise RuntimeError is
+raised. Its initial value is inherited from the creating thread; the
+main thread is not a daemon thread and therefore all threads created in
+the main thread default to daemon = False.</p>
+<p>The entire Python program exits when only daemon threads are left.</p>
+          </div></section>
+          <section class="m-doc-details" id="ident"><div>
+            <h3>
+              tqdm.<wbr />TMonitor.<wbr /><a href="#ident" class="m-doc-self">ident</a> <span class="m-label m-flat m-warning">get</span>
+            </h3>
+            <p>Thread identifier of this thread or None if it has not been started.</p>
+<p>This is a nonzero integer. See the get_ident() function. Thread
+identifiers may be recycled when a thread exits and another thread is
+created. The identifier is available even after the thread has exited.</p>
+          </div></section>
+          <section class="m-doc-details" id="name"><div>
+            <h3>
+              tqdm.<wbr />TMonitor.<wbr /><a href="#name" class="m-doc-self">name</a> <span class="m-label m-flat m-success">get set</span>
+            </h3>
+            <p>A string used for identification purposes only.</p>
+<p>It has no semantics. Multiple threads may be given the same name. The
+initial name is set by the constructor.</p>
+          </div></section>
+          <section class="m-doc-details" id="native_id"><div>
+            <h3>
+              tqdm.<wbr />TMonitor.<wbr /><a href="#native_id" class="m-doc-self">native_id</a> <span class="m-label m-flat m-warning">get</span>
+            </h3>
+            <p>Native integral thread ID of this thread, or None if it has not been started.</p>
+<p>This is a non-negative integer. See the get_native_id() function.
+This represents the Thread ID as reported by the kernel.</p>
+          </div></section>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for modules, classes, functions and other
+            symbols. You can omit any prefix from the symbol path; adding a <code>.</code>
+            suffix lists all members of given symbol.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>xmolpp2 Python API. Created with <a href="https://mcss.mosra.cz/documentation/python/">m.css Python doc generator</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>

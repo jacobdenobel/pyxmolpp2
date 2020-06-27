@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>tqdm.tqdm | xmolpp2 Python API</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
+  <link rel="icon" href="favicon-dark.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <span id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m">
+        <a href="../../">xmolpp2</a> <span class="m-breadcrumb">|</span> <a href="index.html" class="m-thin">Python API</a>
+      </span>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-12 m-col-m-none">
+            <li>
+              <a href="install.html">Install</a>
+              <ol>
+                <li><a href="changelog.html">Changelog</a></li>
+              </ol>
+            </li>
+            <li><a href="overview.html">Overview</a></li>
+            <li><a href="pages.html">Pages</a></li>
+            <li>
+              <a href="tqdm.html">API</a>
+              <ol>
+                <li><a href="modules.html">Modules</a></li>
+                <li><a href="classes.html">Classes</a></li>
+              </ol>
+            </li>
+            <li><a href="https://github.com/sizmailov/pyxmolpp2">Github</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="6">
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          <span class="m-breadcrumb"><a href="tqdm.html">tqdm</a>.<wbr/></span>tqdm <span class="m-thin">class</span>
+        </h1>
+        <p>Decorate an iterable object, returning an iterator which acts exactly
+like the original iterable, but prints a dynamically updating
+progressbar every time a value is requested.</p>
+        <div class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#classmethods">Class methods</a></li>
+                <li><a href="#staticmethods">Static methods</a></li>
+                <li><a href="#methods">Methods</a></li>
+                <li><a href="#dunder-methods">Special methods</a></li>
+                <li><a href="#properties">Properties</a></li>
+                <li><a href="#data">Data</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <section id="classmethods">
+          <h2><a href="#classmethods">Class methods</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#_decr_instances" class="m-doc">_decr_instances</a>(</span><span class="m-doc-wrap">instance)</span>
+            </dt>
+            <dd>Remove from list and reposition another unfixed bar
+to fill the new gap.</dd>
+            <dt id="_get_free_pos">
+              <span class="m-doc-wrap-bumper">def <a href="#_get_free_pos" class="m-doc-self">_get_free_pos</a>(</span><span class="m-doc-wrap">instance = None)</span>
+            </dt>
+            <dd>Skips specified instance.</dd>
+            <dt id="external_write_mode">
+              <span class="m-doc-wrap-bumper">def <a href="#external_write_mode" class="m-doc-self">external_write_mode</a>(</span><span class="m-doc-wrap">file = None,
+              nolock = False)</span>
+            </dt>
+            <dd>Disable tqdm within context and refresh tqdm when exits.
+Useful when writing to standard output stream</dd>
+            <dt id="get_lock">
+              <span class="m-doc-wrap-bumper">def <a href="#get_lock" class="m-doc-self">get_lock</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd>Get the global lock. Construct it if it does not exist.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#pandas" class="m-doc">pandas</a>(</span><span class="m-doc-wrap">*targs, **tkwargs)</span>
+            </dt>
+            <dd>Registers the given `tqdm` class with
+    pandas.core.
+    ( frame.DataFrame
+    | series.Series
+    | groupby.(generic.)DataFrameGroupBy
+    | groupby.(generic.)SeriesGroupBy
+    ).progress_apply</dd>
+            <dt id="set_lock">
+              <span class="m-doc-wrap-bumper">def <a href="#set_lock" class="m-doc-self">set_lock</a>(</span><span class="m-doc-wrap">lock)</span>
+            </dt>
+            <dd>Set the global lock.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#wrapattr" class="m-doc">wrapattr</a>(</span><span class="m-doc-wrap">stream,
+              method,
+              total = None,
+              bytes = True,
+              **tkwargs)</span>
+            </dt>
+            <dd>stream  : file-like object.
+method  : str, &quot;read&quot; or &quot;write&quot;. The result of `read()` and
+    the first argument of `write()` should have a `len()`.</dd>
+            <dt id="write">
+              <span class="m-doc-wrap-bumper">def <a href="#write" class="m-doc-self">write</a>(</span><span class="m-doc-wrap">s,
+              file = None,
+              end = &#x27;\n&#x27;,
+              nolock = False)</span>
+            </dt>
+            <dd>Print a message via tqdm (without overlap with bars).</dd>
+          </dl>
+        </section>
+        <section id="staticmethods">
+          <h2><a href="#staticmethods">Static methods</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#ema" class="m-doc">ema</a>(</span><span class="m-doc-wrap">x,
+              mu = None,
+              alpha = 0.3)</span>
+            </dt>
+            <dd>Exponential moving average: smoothing to give progressively lower
+weights to older values.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#format_interval" class="m-doc">format_interval</a>(</span><span class="m-doc-wrap">t)</span>
+            </dt>
+            <dd>Formats a number of seconds as a clock time, [H:]MM:SS</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#format_meter" class="m-doc">format_meter</a>(</span><span class="m-doc-wrap">n,
+              total,
+              elapsed,
+              ncols = None,
+              prefix = &#x27;&#x27;,
+              ascii = False,
+              unit = &#x27;it&#x27;,
+              unit_scale = False,
+              rate = None,
+              bar_format = None,
+              postfix = None,
+              unit_divisor = 1000,
+              **extra_kwargs)</span>
+            </dt>
+            <dd>Return a string-based progress bar given some parameters</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#format_num" class="m-doc">format_num</a>(</span><span class="m-doc-wrap">n)</span>
+            </dt>
+            <dd>Intelligent scientific notation (.3g).</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#format_sizeof" class="m-doc">format_sizeof</a>(</span><span class="m-doc-wrap">num,
+              suffix = &#x27;&#x27;,
+              divisor = 1000)</span>
+            </dt>
+            <dd>Formats a number (greater than unity) with SI Order of Magnitude
+prefixes.</dd>
+            <dt id="status_printer">
+              <span class="m-doc-wrap-bumper">def <a href="#status_printer" class="m-doc-self">status_printer</a>(</span><span class="m-doc-wrap">file)</span>
+            </dt>
+            <dd>Manage the printing and in-place updating of a line of characters.
+Note that if the string is longer than a line, then in-place
+updating may not work (it will print a new line at each refresh).</dd>
+          </dl>
+        </section>
+        <section id="methods">
+          <h2><a href="#methods">Methods</a></h2>
+          <dl class="m-doc">
+            <dt id="clear">
+              <span class="m-doc-wrap-bumper">def <a href="#clear" class="m-doc-self">clear</a>(</span><span class="m-doc-wrap">self,
+              nolock = False)</span>
+            </dt>
+            <dd>Clear current bar display.</dd>
+            <dt id="close">
+              <span class="m-doc-wrap-bumper">def <a href="#close" class="m-doc-self">close</a>(</span><span class="m-doc-wrap">self)</span>
+            </dt>
+            <dd>Cleanup and (if leave=False) close the progressbar.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#display" class="m-doc">display</a>(</span><span class="m-doc-wrap">self,
+              msg = None,
+              pos = None)</span>
+            </dt>
+            <dd>Use `self.sp` to display `msg` in the specified `pos`.</dd>
+            <dt id="moveto">
+              <span class="m-doc-wrap-bumper">def <a href="#moveto" class="m-doc-self">moveto</a>(</span><span class="m-doc-wrap">self, n)</span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#refresh" class="m-doc">refresh</a>(</span><span class="m-doc-wrap">self,
+              nolock = False,
+              lock_args = None)</span>
+            </dt>
+            <dd>Force refresh the display of this bar.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#reset" class="m-doc">reset</a>(</span><span class="m-doc-wrap">self,
+              total = None)</span>
+            </dt>
+            <dd>Resets to 0 iterations for repeated use.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#set_description" class="m-doc">set_description</a>(</span><span class="m-doc-wrap">self,
+              desc = None,
+              refresh = True)</span>
+            </dt>
+            <dd>Set/modify description of the progress bar.</dd>
+            <dt id="set_description_str">
+              <span class="m-doc-wrap-bumper">def <a href="#set_description_str" class="m-doc-self">set_description_str</a>(</span><span class="m-doc-wrap">self,
+              desc = None,
+              refresh = True)</span>
+            </dt>
+            <dd>Set/modify description without &#x27;: &#x27; appended.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#set_postfix" class="m-doc">set_postfix</a>(</span><span class="m-doc-wrap">self,
+              ordered_dict = None,
+              refresh = True,
+              **kwargs)</span>
+            </dt>
+            <dd>Set/modify postfix (additional stats)
+with automatic formatting based on datatype.</dd>
+            <dt id="set_postfix_str">
+              <span class="m-doc-wrap-bumper">def <a href="#set_postfix_str" class="m-doc-self">set_postfix_str</a>(</span><span class="m-doc-wrap">self,
+              s = &#x27;&#x27;,
+              refresh = True)</span>
+            </dt>
+            <dd>Postfix without dictionary expansion, similar to prefix handling.</dd>
+            <dt id="unpause">
+              <span class="m-doc-wrap-bumper">def <a href="#unpause" class="m-doc-self">unpause</a>(</span><span class="m-doc-wrap">self)</span>
+            </dt>
+            <dd>Restart tqdm timer from last print time.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#update" class="m-doc">update</a>(</span><span class="m-doc-wrap">self,
+              n = 1)</span>
+            </dt>
+            <dd>Manually update the progress bar, useful for streams
+such as reading files.
+E.g.:
+&gt;&gt;&gt; t = tqdm(total=filesize) # Initialise
+&gt;&gt;&gt; for current_buffer in stream:
+...    ...
+...    t.update(len(current_buffer))
+&gt;&gt;&gt; t.close()
+The last line is highly recommended, but possibly not necessary if
+`t.update()` will be called in such a way that `filesize` will be
+exactly reached and printed.</dd>
+          </dl>
+        </section>
+        <section id="dunder-methods">
+          <h2><a href="#dunder-methods">Special methods</a></h2>
+          <dl class="m-doc">
+            <dt id="__bool__">
+              <span class="m-doc-wrap-bumper">def <a href="#__bool__" class="m-doc-self">__bool__</a>(</span><span class="m-doc-wrap">self)</span>
+            </dt>
+            <dd></dd>
+            <dt id="__del__">
+              <span class="m-doc-wrap-bumper">def <a href="#__del__" class="m-doc-self">__del__</a>(</span><span class="m-doc-wrap">self)</span>
+            </dt>
+            <dd></dd>
+            <dt id="__enter__">
+              <span class="m-doc-wrap-bumper">def <a href="#__enter__" class="m-doc-self">__enter__</a>(</span><span class="m-doc-wrap">self)</span>
+            </dt>
+            <dd></dd>
+            <dt id="__eq__">
+              <span class="m-doc-wrap-bumper">def <a href="#__eq__" class="m-doc-self">__eq__</a>(</span><span class="m-doc-wrap">self, other)</span>
+            </dt>
+            <dd></dd>
+            <dt id="__exit__">
+              <span class="m-doc-wrap-bumper">def <a href="#__exit__" class="m-doc-self">__exit__</a>(</span><span class="m-doc-wrap">self, exc_type, exc_value, traceback)</span>
+            </dt>
+            <dd></dd>
+            <dt id="__ge__">
+              <span class="m-doc-wrap-bumper">def <a href="#__ge__" class="m-doc-self">__ge__</a>(</span><span class="m-doc-wrap">self, other)</span>
+            </dt>
+            <dd></dd>
+            <dt id="__gt__">
+              <span class="m-doc-wrap-bumper">def <a href="#__gt__" class="m-doc-self">__gt__</a>(</span><span class="m-doc-wrap">self, other)</span>
+            </dt>
+            <dd></dd>
+            <dt id="__hash__">
+              <span class="m-doc-wrap-bumper">def <a href="#__hash__" class="m-doc-self">__hash__</a>(</span><span class="m-doc-wrap">self)</span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#__init__" class="m-doc">__init__</a>(</span><span class="m-doc-wrap">self,
+              iterable = None,
+              desc = None,
+              total = None,
+              leave = True,
+              file = None,
+              ncols = None,
+              mininterval = 0.1,
+              maxinterval = 10.0,
+              miniters = None,
+              ascii = None,
+              disable = False,
+              unit = &#x27;it&#x27;,
+              unit_scale = False,
+              dynamic_ncols = False,
+              smoothing = 0.3,
+              bar_format = None,
+              initial = 0,
+              position = None,
+              postfix = None,
+              unit_divisor = 1000,
+              write_bytes = None,
+              lock_args = None,
+              nrows = None,
+              gui = False,
+              **kwargs)</span>
+            </dt>
+            <dd>Parameters
+----------
+iterable  : iterable, optional
+    Iterable to decorate with a progressbar.
+    Leave blank to manually manage the updates.
+desc  : str, optional
+    Prefix for the progressbar.
+total  : int or float, optional
+    The number of expected iterations. If unspecified,
+    len(iterable) is used if possible. If float(&quot;inf&quot;) or as a last
+    resort, only basic progress statistics are displayed
+    (no ETA, no progressbar).
+    If `gui` is True and this parameter needs subsequent updating,
+    specify an initial arbitrary large positive number,
+    e.g. 9e9.
+leave  : bool, optional
+    If [default: True], keeps all traces of the progressbar
+    upon termination of iteration.
+    If `None`, will leave only if `position` is `0`.
+file  : `io.TextIOWrapper` or `io.StringIO`, optional
+    Specifies where to output the progress messages
+    (default: sys.stderr). Uses `file.write(str)` and `file.flush()`
+    methods.  For encoding, see `write_bytes`.
+ncols  : int, optional
+    The width of the entire output message. If specified,
+    dynamically resizes the progressbar to stay within this bound.
+    If unspecified, attempts to use environment width. The
+    fallback is a meter width of 10 and no limit for the counter and
+    statistics. If 0, will not print any meter (only stats).
+mininterval  : float, optional
+    Minimum progress display update interval [default: 0.1] seconds.
+maxinterval  : float, optional
+    Maximum progress display update interval [default: 10] seconds.
+    Automatically adjusts `miniters` to correspond to `mininterval`
+    after long display update lag. Only works if `dynamic_miniters`
+    or monitor thread is enabled.
+miniters  : int or float, optional
+    Minimum progress display update interval, in iterations.
+    If 0 and `dynamic_miniters`, will automatically adjust to equal
+    `mininterval` (more CPU efficient, good for tight loops).
+    If &gt; 0, will skip display of specified number of iterations.
+    Tweak this and `mininterval` to get very efficient loops.
+    If your progress is erratic with both fast and slow iterations
+    (network, skipping items, etc) you should set miniters=1.
+ascii  : bool or str, optional
+    If unspecified or False, use unicode (smooth blocks) to fill
+    the meter. The fallback is to use ASCII characters &quot; 123456789#&quot;.
+disable  : bool, optional
+    Whether to disable the entire progressbar wrapper
+    [default: False]. If set to None, disable on non-TTY.
+unit  : str, optional
+    String that will be used to define the unit of each iteration
+    [default: it].
+unit_scale  : bool or int or float, optional
+    If 1 or True, the number of iterations will be reduced/scaled
+    automatically and a metric prefix following the
+    International System of Units standard will be added
+    (kilo, mega, etc.) [default: False]. If any other non-zero
+    number, will scale `total` and `n`.
+dynamic_ncols  : bool, optional
+    If set, constantly alters `ncols` and `nrows` to the
+    environment (allowing for window resizes) [default: False].
+smoothing  : float, optional
+    Exponential moving average smoothing factor for speed estimates
+    (ignored in GUI mode). Ranges from 0 (average speed) to 1
+    (current/instantaneous speed) [default: 0.3].
+bar_format  : str, optional
+    Specify a custom bar string formatting. May impact performance.
+    [default: &#x27;{l_bar}{bar}{r_bar}&#x27;], where
+    l_bar=&#x27;{desc}: {percentage:3.0f}%|&#x27; and
+    r_bar=&#x27;| {n_fmt}/{total_fmt} [{elapsed}&lt;{remaining}, &#x27;
+      &#x27;{rate_fmt}{postfix}]&#x27;
+    Possible vars: l_bar, bar, r_bar, n, n_fmt, total, total_fmt,
+      percentage, elapsed, elapsed_s, ncols, nrows, desc, unit,
+      rate, rate_fmt, rate_noinv, rate_noinv_fmt,
+      rate_inv, rate_inv_fmt, postfix, unit_divisor,
+      remaining, remaining_s.
+    Note that a trailing &quot;: &quot; is automatically removed after {desc}
+    if the latter is empty.
+initial  : int or float, optional
+    The initial counter value. Useful when restarting a progress
+    bar [default: 0]. If using float, consider specifying `{n:.3f}`
+    or similar in `bar_format`, or specifying `unit_scale`.
+position  : int, optional
+    Specify the line offset to print this bar (starting from 0)
+    Automatic if unspecified.
+    Useful to manage multiple bars at once (eg, from threads).
+postfix  : dict or *, optional
+    Specify additional stats to display at the end of the bar.
+    Calls `set_postfix(**postfix)` if possible (dict).
+unit_divisor  : float, optional
+    [default: 1000], ignored unless `unit_scale` is True.
+write_bytes  : bool, optional
+    If (default: None) and `file` is unspecified,
+    bytes will be written in Python 2. If `True` will also write
+    bytes. In all other cases will default to unicode.
+lock_args  : tuple, optional
+    Passed to `refresh` for intermediate output
+    (initialisation, iterating, and updating).
+nrows  : int, optional
+    The screen height. If specified, hides nested bars outside this
+    bound. If unspecified, attempts to use environment height.
+    The fallback is 20.
+gui  : bool, optional
+    WARNING: internal parameter - do not use.
+    Use tqdm.gui.tqdm(...) instead. If set, will attempt to use
+    matplotlib animations for a graphical output [default: False].</dd>
+            <dt id="__iter__">
+              <span class="m-doc-wrap-bumper">def <a href="#__iter__" class="m-doc-self">__iter__</a>(</span><span class="m-doc-wrap">self)</span>
+            </dt>
+            <dd>Backward-compatibility to use: for x in tqdm(iterable)</dd>
+            <dt id="__le__">
+              <span class="m-doc-wrap-bumper">def <a href="#__le__" class="m-doc-self">__le__</a>(</span><span class="m-doc-wrap">self, other)</span>
+            </dt>
+            <dd></dd>
+            <dt id="__len__">
+              <span class="m-doc-wrap-bumper">def <a href="#__len__" class="m-doc-self">__len__</a>(</span><span class="m-doc-wrap">self)</span>
+            </dt>
+            <dd></dd>
+            <dt id="__lt__">
+              <span class="m-doc-wrap-bumper">def <a href="#__lt__" class="m-doc-self">__lt__</a>(</span><span class="m-doc-wrap">self, other)</span>
+            </dt>
+            <dd></dd>
+            <dt id="__ne__">
+              <span class="m-doc-wrap-bumper">def <a href="#__ne__" class="m-doc-self">__ne__</a>(</span><span class="m-doc-wrap">self, other)</span>
+            </dt>
+            <dd></dd>
+            <dt id="__new__">
+              <span class="m-doc-wrap-bumper">def <a href="#__new__" class="m-doc-self">__new__</a>(</span><span class="m-doc-wrap">cls, *args, **kwargs)</span>
+            </dt>
+            <dd></dd>
+            <dt id="__nonzero__">
+              <span class="m-doc-wrap-bumper">def <a href="#__nonzero__" class="m-doc-self">__nonzero__</a>(</span><span class="m-doc-wrap">self)</span>
+            </dt>
+            <dd></dd>
+            <dt id="__repr__">
+              <span class="m-doc-wrap-bumper">def <a href="#__repr__" class="m-doc-self">__repr__</a>(</span><span class="m-doc-wrap">self)</span>
+            </dt>
+            <dd></dd>
+          </dl>
+        </section>
+        <section id="properties">
+          <h2><a href="#properties">Properties</a></h2>
+          <dl class="m-doc">
+            <dt id="format_dict">
+              <a href="#format_dict" class="m-doc-self">format_dict</a> <span class="m-label m-flat m-warning">get</span>
+            </dt>
+            <dd>Public API for read-only member access.</dd>
+          </dl>
+        </section>
+        <section id="data">
+          <h2><a href="#data">Data</a></h2>
+          <dl class="m-doc">
+            <dt id="monitor">
+              <a href="#monitor" class="m-doc-self">monitor</a> = None
+            </dt>
+            <dd></dd>
+            <dt id="monitor_interval">
+              <a href="#monitor_interval" class="m-doc-self">monitor_interval</a> = 10
+            </dt>
+            <dd></dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Method documentation</h2>
+          <section class="m-doc-details" id="_decr_instances"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def tqdm.<wbr />tqdm.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#_decr_instances" class="m-doc-self">_decr_instances</a>(</span><span class="m-doc-wrap">instance) <span class="m-label m-success">classmethod</span></span></span>
+            </h3>
+            <p>Remove from list and reposition another unfixed bar
+to fill the new gap.</p>
+<p>This means that by default (where all nested bars are unfixed),
+order is not maintained but screen flicker/blank space is minimised.
+(tqdm&lt;=4.44.1 moved ALL subsequent unfixed bars up.)</p>
+          </div></section>
+          <section class="m-doc-details" id="pandas"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def tqdm.<wbr />tqdm.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#pandas" class="m-doc-self">pandas</a>(</span><span class="m-doc-wrap">*targs, **tkwargs) <span class="m-label m-success">classmethod</span></span></span>
+            </h3>
+            <p>Registers the given `tqdm` class with
+    pandas.core.
+    ( frame.DataFrame
+    | series.Series
+    | groupby.(generic.)DataFrameGroupBy
+    | groupby.(generic.)SeriesGroupBy
+    ).progress_apply</p>
+<p>A new instance will be create every time `progress_apply` is called,
+and each instance will automatically close() upon completion.</p>
+<p>Parameters
+----------
+targs, tkwargs  : arguments for the tqdm instance</p>
+<p>Examples
+--------
+&gt;&gt;&gt; import pandas as pd
+&gt;&gt;&gt; import numpy as np
+&gt;&gt;&gt; from tqdm import tqdm
+&gt;&gt;&gt; from tqdm.gui import tqdm as tqdm_gui
+&gt;&gt;&gt;
+&gt;&gt;&gt; df = pd.DataFrame(np.random.randint(0, 100, (100000, 6)))
+&gt;&gt;&gt; tqdm.pandas(ncols=50)  # can use tqdm_gui, optional kwargs, etc
+&gt;&gt;&gt; # Now you can use `progress_apply` instead of `apply`
+&gt;&gt;&gt; df.groupby(0).progress_apply(lambda x: x**2)</p>
+<p>References
+----------
+https://stackoverflow.com/questions/18603270/
+progress-indicator-during-pandas-operations-python</p>
+          </div></section>
+          <section class="m-doc-details" id="wrapattr"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def tqdm.<wbr />tqdm.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#wrapattr" class="m-doc-self">wrapattr</a>(</span><span class="m-doc-wrap">stream,
+              method,
+              total = None,
+              bytes = True,
+              **tkwargs) <span class="m-label m-success">classmethod</span></span></span>
+            </h3>
+            <p>stream  : file-like object.
+method  : str, &quot;read&quot; or &quot;write&quot;. The result of `read()` and
+    the first argument of `write()` should have a `len()`.</p>
+<p>&gt;&gt;&gt; with tqdm.wrapattr(file_obj, &quot;read&quot;, total=file_obj.size) as fobj:
+...     while True:
+...         chunk = fobj.read(chunk_size)
+...         if not chunk:
+...             break</p>
+          </div></section>
+          <section class="m-doc-details" id="ema"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def tqdm.<wbr />tqdm.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ema" class="m-doc-self">ema</a>(</span><span class="m-doc-wrap">x,
+              mu = None,
+              alpha = 0.3) <span class="m-label m-info">staticmethod</span></span></span>
+            </h3>
+            <p>Exponential moving average: smoothing to give progressively lower
+weights to older values.</p>
+<p>Parameters
+----------
+x  : float
+    New value to include in EMA.
+mu  : float, optional
+    Previous EMA value.
+alpha  : float, optional
+    Smoothing factor in range [0, 1], [default: 0.3].
+    Increase to give more weight to recent values.
+    Ranges from 0 (yields mu) to 1 (yields x).</p>
+          </div></section>
+          <section class="m-doc-details" id="format_interval"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def tqdm.<wbr />tqdm.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#format_interval" class="m-doc-self">format_interval</a>(</span><span class="m-doc-wrap">t) <span class="m-label m-info">staticmethod</span></span></span>
+            </h3>
+            <p>Formats a number of seconds as a clock time, [H:]MM:SS</p>
+<p>Parameters
+----------
+t  : int
+    Number of seconds.</p>
+<p>Returns
+-------
+out  : str
+    [H:]MM:SS</p>
+          </div></section>
+          <section class="m-doc-details" id="format_meter"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def tqdm.<wbr />tqdm.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#format_meter" class="m-doc-self">format_meter</a>(</span><span class="m-doc-wrap">n,
+              total,
+              elapsed,
+              ncols = None,
+              prefix = &#x27;&#x27;,
+              ascii = False,
+              unit = &#x27;it&#x27;,
+              unit_scale = False,
+              rate = None,
+              bar_format = None,
+              postfix = None,
+              unit_divisor = 1000,
+              **extra_kwargs) <span class="m-label m-info">staticmethod</span></span></span>
+            </h3>
+            <p>Return a string-based progress bar given some parameters</p>
+<p>Parameters
+----------
+n  : int or float
+    Number of finished iterations.
+total  : int or float
+    The expected total number of iterations. If meaningless (None),
+    only basic progress statistics are displayed (no ETA).
+elapsed  : float
+    Number of seconds passed since start.
+ncols  : int, optional
+    The width of the entire output message. If specified,
+    dynamically resizes `{bar}` to stay within this bound
+    [default: None]. If `0`, will not print any bar (only stats).
+    The fallback is `{bar:10}`.
+prefix  : str, optional
+    Prefix message (included in total width) [default: &#x27;&#x27;].
+    Use as {desc} in bar_format string.
+ascii  : bool, optional or str, optional
+    If not set, use unicode (smooth blocks) to fill the meter
+    [default: False]. The fallback is to use ASCII characters
+    &quot; 123456789#&quot;.
+unit  : str, optional
+    The iteration unit [default: &#x27;it&#x27;].
+unit_scale  : bool or int or float, optional
+    If 1 or True, the number of iterations will be printed with an
+    appropriate SI metric prefix (k = 10^3, M = 10^6, etc.)
+    [default: False]. If any other non-zero number, will scale
+    `total` and `n`.
+rate  : float, optional
+    Manual override for iteration rate.
+    If [default: None], uses n/elapsed.
+bar_format  : str, optional
+    Specify a custom bar string formatting. May impact performance.
+    [default: &#x27;{l_bar}{bar}{r_bar}&#x27;], where
+    l_bar=&#x27;{desc}: {percentage:3.0f}%|&#x27; and
+    r_bar=&#x27;| {n_fmt}/{total_fmt} [{elapsed}&lt;{remaining}, &#x27;
+      &#x27;{rate_fmt}{postfix}]&#x27;
+    Possible vars: l_bar, bar, r_bar, n, n_fmt, total, total_fmt,
+      percentage, elapsed, elapsed_s, ncols, nrows, desc, unit,
+      rate, rate_fmt, rate_noinv, rate_noinv_fmt,
+      rate_inv, rate_inv_fmt, postfix, unit_divisor,
+      remaining, remaining_s.
+    Note that a trailing &quot;: &quot; is automatically removed after {desc}
+    if the latter is empty.
+postfix  : *, optional
+    Similar to `prefix`, but placed at the end
+    (e.g. for additional stats).
+    Note: postfix is usually a string (not a dict) for this method,
+    and will if possible be set to postfix = &#x27;, &#x27; + postfix.
+    However other types are supported (#382).
+unit_divisor  : float, optional
+    [default: 1000], ignored unless `unit_scale` is True.</p>
+<p>Returns
+-------
+out  : Formatted meter and stats, ready to display.</p>
+          </div></section>
+          <section class="m-doc-details" id="format_num"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def tqdm.<wbr />tqdm.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#format_num" class="m-doc-self">format_num</a>(</span><span class="m-doc-wrap">n) <span class="m-label m-info">staticmethod</span></span></span>
+            </h3>
+            <p>Intelligent scientific notation (.3g).</p>
+<p>Parameters
+----------
+n  : int or float or Numeric
+    A Number.</p>
+<p>Returns
+-------
+out  : str
+    Formatted number.</p>
+          </div></section>
+          <section class="m-doc-details" id="format_sizeof"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def tqdm.<wbr />tqdm.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#format_sizeof" class="m-doc-self">format_sizeof</a>(</span><span class="m-doc-wrap">num,
+              suffix = &#x27;&#x27;,
+              divisor = 1000) <span class="m-label m-info">staticmethod</span></span></span>
+            </h3>
+            <p>Formats a number (greater than unity) with SI Order of Magnitude
+prefixes.</p>
+<p>Parameters
+----------
+num  : float
+    Number ( &gt;= 1) to format.
+suffix  : str, optional
+    Post-postfix [default: &#x27;&#x27;].
+divisor  : float, optional
+    Divisor between prefixes [default: 1000].</p>
+<p>Returns
+-------
+out  : str
+    Number with Order of Magnitude SI unit postfix.</p>
+          </div></section>
+          <section class="m-doc-details" id="display"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def tqdm.<wbr />tqdm.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#display" class="m-doc-self">display</a>(</span><span class="m-doc-wrap">self,
+              msg = None,
+              pos = None)</span></span>
+            </h3>
+            <p>Use `self.sp` to display `msg` in the specified `pos`.</p>
+<p>Consider overloading this function when inheriting to use e.g.:
+`self.some_frontend(**self.format_dict)` instead of `self.sp`.</p>
+<p>Parameters
+----------
+msg  : str, optional. What to display (default: `repr(self)`).
+pos  : int, optional. Position to `moveto`
+  (default: `abs(self.pos)`).</p>
+          </div></section>
+          <section class="m-doc-details" id="refresh"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def tqdm.<wbr />tqdm.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#refresh" class="m-doc-self">refresh</a>(</span><span class="m-doc-wrap">self,
+              nolock = False,
+              lock_args = None)</span></span>
+            </h3>
+            <p>Force refresh the display of this bar.</p>
+<p>Parameters
+----------
+nolock  : bool, optional
+    If `True`, does not lock.
+    If [default: `False`]: calls `acquire()` on internal lock.
+lock_args  : tuple, optional
+    Passed to internal lock&#x27;s `acquire()`.
+    If specified, will only `display()` if `acquire()` returns `True`.</p>
+          </div></section>
+          <section class="m-doc-details" id="reset"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def tqdm.<wbr />tqdm.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#reset" class="m-doc-self">reset</a>(</span><span class="m-doc-wrap">self,
+              total = None)</span></span>
+            </h3>
+            <p>Resets to 0 iterations for repeated use.</p>
+<p>Consider combining with `leave=True`.</p>
+<p>Parameters
+----------
+total  : int or float, optional. Total to use for the new bar.</p>
+          </div></section>
+          <section class="m-doc-details" id="set_description"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def tqdm.<wbr />tqdm.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#set_description" class="m-doc-self">set_description</a>(</span><span class="m-doc-wrap">self,
+              desc = None,
+              refresh = True)</span></span>
+            </h3>
+            <p>Set/modify description of the progress bar.</p>
+<p>Parameters
+----------
+desc  : str, optional
+refresh  : bool, optional
+    Forces refresh [default: True].</p>
+          </div></section>
+          <section class="m-doc-details" id="set_postfix"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def tqdm.<wbr />tqdm.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#set_postfix" class="m-doc-self">set_postfix</a>(</span><span class="m-doc-wrap">self,
+              ordered_dict = None,
+              refresh = True,
+              **kwargs)</span></span>
+            </h3>
+            <p>Set/modify postfix (additional stats)
+with automatic formatting based on datatype.</p>
+<p>Parameters
+----------
+ordered_dict  : dict or OrderedDict, optional
+refresh  : bool, optional
+    Forces refresh [default: True].
+kwargs  : dict, optional</p>
+          </div></section>
+          <section class="m-doc-details" id="update"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def tqdm.<wbr />tqdm.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#update" class="m-doc-self">update</a>(</span><span class="m-doc-wrap">self,
+              n = 1)</span></span>
+            </h3>
+            <p>Manually update the progress bar, useful for streams
+such as reading files.
+E.g.:
+&gt;&gt;&gt; t = tqdm(total=filesize) # Initialise
+&gt;&gt;&gt; for current_buffer in stream:
+...    ...
+...    t.update(len(current_buffer))
+&gt;&gt;&gt; t.close()
+The last line is highly recommended, but possibly not necessary if
+`t.update()` will be called in such a way that `filesize` will be
+exactly reached and printed.</p>
+<p>Parameters
+----------
+n  : int or float, optional
+    Increment to add to the internal counter of iterations
+    [default: 1]. If using float, consider specifying `{n:.3f}`
+    or similar in `bar_format`, or specifying `unit_scale`.</p>
+          </div></section>
+          <section class="m-doc-details" id="__init__"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def tqdm.<wbr />tqdm.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#__init__" class="m-doc-self">__init__</a>(</span><span class="m-doc-wrap">self,
+              iterable = None,
+              desc = None,
+              total = None,
+              leave = True,
+              file = None,
+              ncols = None,
+              mininterval = 0.1,
+              maxinterval = 10.0,
+              miniters = None,
+              ascii = None,
+              disable = False,
+              unit = &#x27;it&#x27;,
+              unit_scale = False,
+              dynamic_ncols = False,
+              smoothing = 0.3,
+              bar_format = None,
+              initial = 0,
+              position = None,
+              postfix = None,
+              unit_divisor = 1000,
+              write_bytes = None,
+              lock_args = None,
+              nrows = None,
+              gui = False,
+              **kwargs)</span></span>
+            </h3>
+            <p>Parameters
+----------
+iterable  : iterable, optional
+    Iterable to decorate with a progressbar.
+    Leave blank to manually manage the updates.
+desc  : str, optional
+    Prefix for the progressbar.
+total  : int or float, optional
+    The number of expected iterations. If unspecified,
+    len(iterable) is used if possible. If float(&quot;inf&quot;) or as a last
+    resort, only basic progress statistics are displayed
+    (no ETA, no progressbar).
+    If `gui` is True and this parameter needs subsequent updating,
+    specify an initial arbitrary large positive number,
+    e.g. 9e9.
+leave  : bool, optional
+    If [default: True], keeps all traces of the progressbar
+    upon termination of iteration.
+    If `None`, will leave only if `position` is `0`.
+file  : `io.TextIOWrapper` or `io.StringIO`, optional
+    Specifies where to output the progress messages
+    (default: sys.stderr). Uses `file.write(str)` and `file.flush()`
+    methods.  For encoding, see `write_bytes`.
+ncols  : int, optional
+    The width of the entire output message. If specified,
+    dynamically resizes the progressbar to stay within this bound.
+    If unspecified, attempts to use environment width. The
+    fallback is a meter width of 10 and no limit for the counter and
+    statistics. If 0, will not print any meter (only stats).
+mininterval  : float, optional
+    Minimum progress display update interval [default: 0.1] seconds.
+maxinterval  : float, optional
+    Maximum progress display update interval [default: 10] seconds.
+    Automatically adjusts `miniters` to correspond to `mininterval`
+    after long display update lag. Only works if `dynamic_miniters`
+    or monitor thread is enabled.
+miniters  : int or float, optional
+    Minimum progress display update interval, in iterations.
+    If 0 and `dynamic_miniters`, will automatically adjust to equal
+    `mininterval` (more CPU efficient, good for tight loops).
+    If &gt; 0, will skip display of specified number of iterations.
+    Tweak this and `mininterval` to get very efficient loops.
+    If your progress is erratic with both fast and slow iterations
+    (network, skipping items, etc) you should set miniters=1.
+ascii  : bool or str, optional
+    If unspecified or False, use unicode (smooth blocks) to fill
+    the meter. The fallback is to use ASCII characters &quot; 123456789#&quot;.
+disable  : bool, optional
+    Whether to disable the entire progressbar wrapper
+    [default: False]. If set to None, disable on non-TTY.
+unit  : str, optional
+    String that will be used to define the unit of each iteration
+    [default: it].
+unit_scale  : bool or int or float, optional
+    If 1 or True, the number of iterations will be reduced/scaled
+    automatically and a metric prefix following the
+    International System of Units standard will be added
+    (kilo, mega, etc.) [default: False]. If any other non-zero
+    number, will scale `total` and `n`.
+dynamic_ncols  : bool, optional
+    If set, constantly alters `ncols` and `nrows` to the
+    environment (allowing for window resizes) [default: False].
+smoothing  : float, optional
+    Exponential moving average smoothing factor for speed estimates
+    (ignored in GUI mode). Ranges from 0 (average speed) to 1
+    (current/instantaneous speed) [default: 0.3].
+bar_format  : str, optional
+    Specify a custom bar string formatting. May impact performance.
+    [default: &#x27;{l_bar}{bar}{r_bar}&#x27;], where
+    l_bar=&#x27;{desc}: {percentage:3.0f}%|&#x27; and
+    r_bar=&#x27;| {n_fmt}/{total_fmt} [{elapsed}&lt;{remaining}, &#x27;
+      &#x27;{rate_fmt}{postfix}]&#x27;
+    Possible vars: l_bar, bar, r_bar, n, n_fmt, total, total_fmt,
+      percentage, elapsed, elapsed_s, ncols, nrows, desc, unit,
+      rate, rate_fmt, rate_noinv, rate_noinv_fmt,
+      rate_inv, rate_inv_fmt, postfix, unit_divisor,
+      remaining, remaining_s.
+    Note that a trailing &quot;: &quot; is automatically removed after {desc}
+    if the latter is empty.
+initial  : int or float, optional
+    The initial counter value. Useful when restarting a progress
+    bar [default: 0]. If using float, consider specifying `{n:.3f}`
+    or similar in `bar_format`, or specifying `unit_scale`.
+position  : int, optional
+    Specify the line offset to print this bar (starting from 0)
+    Automatic if unspecified.
+    Useful to manage multiple bars at once (eg, from threads).
+postfix  : dict or *, optional
+    Specify additional stats to display at the end of the bar.
+    Calls `set_postfix(**postfix)` if possible (dict).
+unit_divisor  : float, optional
+    [default: 1000], ignored unless `unit_scale` is True.
+write_bytes  : bool, optional
+    If (default: None) and `file` is unspecified,
+    bytes will be written in Python 2. If `True` will also write
+    bytes. In all other cases will default to unicode.
+lock_args  : tuple, optional
+    Passed to `refresh` for intermediate output
+    (initialisation, iterating, and updating).
+nrows  : int, optional
+    The screen height. If specified, hides nested bars outside this
+    bound. If unspecified, attempts to use environment height.
+    The fallback is 20.
+gui  : bool, optional
+    WARNING: internal parameter - do not use.
+    Use tqdm.gui.tqdm(...) instead. If set, will attempt to use
+    matplotlib animations for a graphical output [default: False].</p>
+<p>Returns
+-------
+out  : decorated iterator.</p>
+          </div></section>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for modules, classes, functions and other
+            symbols. You can omit any prefix from the symbol path; adding a <code>.</code>
+            suffix lists all members of given symbol.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>xmolpp2 Python API. Created with <a href="https://mcss.mosra.cz/documentation/python/">m.css Python doc generator</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>
