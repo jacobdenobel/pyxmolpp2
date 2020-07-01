@@ -65,6 +65,7 @@
         <h1>
           <span class="m-breadcrumb"><a href="pyxmolpp2.html">pyxmolpp2</a>.<wbr/></span>AmberNetCDF <span class="m-thin">class</span>
         </h1>
+        <p>Amber trajectory file</p>
         <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
@@ -82,23 +83,23 @@
           <dl class="m-doc">
             <dt id="advance">
               <span class="m-doc-wrap-bumper">def <a href="#advance" class="m-doc-self">advance</a>(</span><span class="m-doc-wrap">self,
-              arg0: int<span class="m-text m-dim">, /</span>) -&gt; None</span>
+              shift: int) -&gt; None</span>
             </dt>
-            <dd></dd>
+            <dd>Shift internal pointer by <cite>shift</cite></dd>
             <dt id="n_atoms">
               <span class="m-doc-wrap-bumper">def <a href="#n_atoms" class="m-doc-self">n_atoms</a>(</span><span class="m-doc-wrap">self<span class="m-text m-dim">, /</span>) -&gt; int</span>
             </dt>
-            <dd></dd>
+            <dd>Number of atoms per frame</dd>
             <dt id="n_frames">
               <span class="m-doc-wrap-bumper">def <a href="#n_frames" class="m-doc-self">n_frames</a>(</span><span class="m-doc-wrap">self<span class="m-text m-dim">, /</span>) -&gt; int</span>
             </dt>
-            <dd></dd>
+            <dd>Number of frames</dd>
             <dt id="read_coordinates">
               <span class="m-doc-wrap-bumper">def <a href="#read_coordinates" class="m-doc-self">read_coordinates</a>(</span><span class="m-doc-wrap">self,
-              arg0: int,
-              arg1: <a href="pyxmolpp2.CoordSpan.html" class="m-doc">CoordSpan</a><span class="m-text m-dim">, /</span>) -&gt; None</span>
+              index: int,
+              coords: <a href="pyxmolpp2.CoordSpan.html" class="m-doc">CoordSpan</a>) -&gt; None</span>
             </dt>
-            <dd></dd>
+            <dd>Assign <cite>index</cite> frame coordinates to <cite>coords</cite></dd>
           </dl>
         </section>
         <section id="dunder-methods">
@@ -108,7 +109,7 @@
               <span class="m-doc-wrap-bumper">def <a href="#__init__" class="m-doc-self">__init__</a>(</span><span class="m-doc-wrap">self,
               filename: str) -&gt; None</span>
             </dt>
-            <dd></dd>
+            <dd>Amber binary trajectory <code>.nc</code> file</dd>
           </dl>
         </section>
       </div>

@@ -65,6 +65,7 @@
         <h1>
           <span class="m-breadcrumb"><a href="pyxmolpp2.html">pyxmolpp2</a>.<wbr/></span>XYZ <span class="m-thin">class</span>
         </h1>
+        <p>3D Vector</p>
         <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
@@ -85,48 +86,48 @@
               <span class="m-doc-wrap-bumper">def <a href="#angle-475f6" class="m-doc-self">angle</a>(</span><span class="m-doc-wrap">self,
               r: <a href="pyxmolpp2.XYZ.html" class="m-doc">XYZ</a>) -&gt; <a href="pyxmolpp2.AngleValue.html" class="m-doc">AngleValue</a></span>
             </dt>
-            <dd></dd>
+            <dd>Angle between two vectors</dd>
             <dt id="angle-48efe">
               <span class="m-doc-wrap-bumper">def <a href="#angle-48efe" class="m-doc-self">angle</a>(</span><span class="m-doc-wrap">self,
               b: <a href="pyxmolpp2.XYZ.html" class="m-doc">XYZ</a>,
               c: <a href="pyxmolpp2.XYZ.html" class="m-doc">XYZ</a>) -&gt; <a href="pyxmolpp2.AngleValue.html" class="m-doc">AngleValue</a></span>
             </dt>
-            <dd></dd>
+            <dd>Linear angle by three points</dd>
             <dt id="cross">
               <span class="m-doc-wrap-bumper">def <a href="#cross" class="m-doc-self">cross</a>(</span><span class="m-doc-wrap">self,
-              rhs: <a href="pyxmolpp2.XYZ.html" class="m-doc">XYZ</a>) -&gt; <a href="pyxmolpp2.XYZ.html" class="m-doc">XYZ</a></span>
+              arg0: <a href="pyxmolpp2.XYZ.html" class="m-doc">XYZ</a><span class="m-text m-dim">, /</span>) -&gt; <a href="pyxmolpp2.XYZ.html" class="m-doc">XYZ</a></span>
             </dt>
-            <dd>Returns cross product</dd>
+            <dd>Cross product</dd>
             <dt id="dihedral">
               <span class="m-doc-wrap-bumper">def <a href="#dihedral" class="m-doc-self">dihedral</a>(</span><span class="m-doc-wrap">self,
               b: <a href="pyxmolpp2.XYZ.html" class="m-doc">XYZ</a>,
               c: <a href="pyxmolpp2.XYZ.html" class="m-doc">XYZ</a>,
               d: <a href="pyxmolpp2.XYZ.html" class="m-doc">XYZ</a>) -&gt; <a href="pyxmolpp2.AngleValue.html" class="m-doc">AngleValue</a></span>
             </dt>
-            <dd></dd>
+            <dd>Dihedral angle by four points</dd>
             <dt id="distance">
               <span class="m-doc-wrap-bumper">def <a href="#distance" class="m-doc-self">distance</a>(</span><span class="m-doc-wrap">self,
               r: <a href="pyxmolpp2.XYZ.html" class="m-doc">XYZ</a>) -&gt; float</span>
             </dt>
-            <dd></dd>
+            <dd>Distance</dd>
             <dt id="distance2">
               <span class="m-doc-wrap-bumper">def <a href="#distance2" class="m-doc-self">distance2</a>(</span><span class="m-doc-wrap">self,
               r: <a href="pyxmolpp2.XYZ.html" class="m-doc">XYZ</a>) -&gt; float</span>
             </dt>
-            <dd></dd>
+            <dd>Distance squared</dd>
             <dt id="dot">
               <span class="m-doc-wrap-bumper">def <a href="#dot" class="m-doc-self">dot</a>(</span><span class="m-doc-wrap">self,
-              rhs: <a href="pyxmolpp2.XYZ.html" class="m-doc">XYZ</a>) -&gt; float</span>
+              arg0: <a href="pyxmolpp2.XYZ.html" class="m-doc">XYZ</a><span class="m-text m-dim">, /</span>) -&gt; float</span>
             </dt>
-            <dd>Returns dot product</dd>
+            <dd>Dot product</dd>
             <dt id="len">
               <span class="m-doc-wrap-bumper">def <a href="#len" class="m-doc-self">len</a>(</span><span class="m-doc-wrap">self<span class="m-text m-dim">, /</span>) -&gt; float</span>
             </dt>
-            <dd>Returns vector length</dd>
+            <dd>Vector length</dd>
             <dt id="len2">
               <span class="m-doc-wrap-bumper">def <a href="#len2" class="m-doc-self">len2</a>(</span><span class="m-doc-wrap">self<span class="m-text m-dim">, /</span>) -&gt; float</span>
             </dt>
-            <dd>Returns vector length squared</dd>
+            <dd>Vector length squared</dd>
           </dl>
         </section>
         <section id="dunder-methods">
@@ -140,14 +141,19 @@
             <dt id="__init__-6eef6">
               <span class="m-doc-wrap-bumper">def <a href="#__init__-6eef6" class="m-doc-self">__init__</a>(</span><span class="m-doc-wrap">self<span class="m-text m-dim">, /</span>) -&gt; None</span>
             </dt>
-            <dd>Equivalent to XYZ(0,0,0)</dd>
+            <dd>Default constructor</dd>
             <dt id="__init__-fa16b">
               <span class="m-doc-wrap-bumper">def <a href="#__init__-fa16b" class="m-doc-self">__init__</a>(</span><span class="m-doc-wrap">self,
               x: float,
               y: float,
               z: float) -&gt; None</span>
             </dt>
-            <dd>Initialize with x, y, z</dd>
+            <dd>Constructor</dd>
+            <dt id="__init__-475f6">
+              <span class="m-doc-wrap-bumper">def <a href="#__init__-475f6" class="m-doc-self">__init__</a>(</span><span class="m-doc-wrap">self,
+              arg0: <a href="pyxmolpp2.XYZ.html" class="m-doc">XYZ</a><span class="m-text m-dim">, /</span>) -&gt; None</span>
+            </dt>
+            <dd>Copy constructor</dd>
             <dt id="__mul__">
               <span class="m-doc-wrap-bumper">def <a href="#__mul__" class="m-doc-self">__mul__</a>(</span><span class="m-doc-wrap">self,
               arg0: float<span class="m-text m-dim">, /</span>) -&gt; <a href="pyxmolpp2.XYZ.html" class="m-doc">XYZ</a></span>
@@ -188,7 +194,7 @@
             <dt id="values">
               <a href="#values" class="m-doc-self">values</a>: numpy.ndarray[numpy.float64[1, 3]] <span class="m-label m-flat m-success">get set</span>
             </dt>
-            <dd>Convert to/from numpy.array[float, 3]</dd>
+            <dd>Convert to/from numpy.ndarray[float, 3]</dd>
             <dt id="x">
               <a href="#x" class="m-doc-self">x</a>: float <span class="m-label m-flat m-success">get set</span>
             </dt>

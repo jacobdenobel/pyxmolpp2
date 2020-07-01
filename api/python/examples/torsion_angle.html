@@ -81,8 +81,8 @@ In addition it might be able to rotate part of structure around <code>b-c</code>
 <span class="nb">print</span><span class="p">(</span><span class="n">psi_48</span><span class="o">.</span><span class="n">value</span><span class="p">()</span><span class="o">.</span><span class="n">degrees</span><span class="p">)</span></pre>
 </div>
 <div class="m-py-exec">
-<pre class="m-code m-nopad m-console">&lt;pyxmolpp2._core.Residue object at 0x7f4b42bc6030&gt;
-&lt;pyxmolpp2._core.TorsionAngle object at 0x7f4b42bc6c30&gt;
+<pre class="m-code m-nopad m-console">&lt;pyxmolpp2._core.Residue object at 0x7fc7d73c0cf0&gt;
+&lt;pyxmolpp2._core.TorsionAngle object at 0x7fc7d72291b0&gt;
 142.71298452616637</pre>
 </div>
 </div>
@@ -103,7 +103,7 @@ In addition it might be able to rotate part of structure around <code>b-c</code>
 <div class="m-code-figure">
 <div class="m-py-exec">
 <pre class="m-code"><span class="c1"># Residues 49-76 are affected by this rotation</span>
-<span class="n">psi_48</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">Degrees</span><span class="p">(</span><span class="mi">150</span><span class="p">))</span>
+<span class="n">psi_48</span><span class="o">.</span><span class="n">rotate_to</span><span class="p">(</span><span class="n">Degrees</span><span class="p">(</span><span class="mi">150</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">psi_48</span><span class="o">.</span><span class="n">value</span><span class="p">()</span><span class="o">.</span><span class="n">degrees</span><span class="p">)</span></pre>
 </div>
 <div class="m-py-exec">
@@ -132,10 +132,10 @@ In addition it might be able to rotate part of structure around <code>b-c</code>
 <span class="k">assert</span> <span class="n">phi_2_ro</span><span class="o">.</span><span class="n">value</span><span class="p">()</span><span class="o">.</span><span class="n">degrees</span> <span class="o">==</span> <span class="n">TorsionAngleFactory</span><span class="o">.</span><span class="n">phi</span><span class="p">(</span><span class="n">r2</span><span class="p">)</span><span class="o">.</span><span class="n">value</span><span class="p">()</span><span class="o">.</span><span class="n">degrees</span></pre>
 </div>
 </div>
-<p>Attempt to set read-only agle will lead to <a class="m-doc" href="../pyxmolpp2.GeomError.html">GeomError</a>:</p>
+<p>Attempt to set read-only angle will lead to <a class="m-doc" href="../pyxmolpp2.GeomError.html">GeomError</a>:</p>
 <div class="m-code-figure">
 <div class="m-py-exec">
-<pre class="m-code"><span class="n">phi_2_ro</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">Degrees</span><span class="p">(</span><span class="o">-</span><span class="mi">130</span><span class="p">))</span></pre>
+<pre class="m-code"><span class="n">phi_2_ro</span><span class="o">.</span><span class="n">rotate_to</span><span class="p">(</span><span class="n">Degrees</span><span class="p">(</span><span class="o">-</span><span class="mi">130</span><span class="p">))</span></pre>
 </div>
 <div class="m-py-exec">
 <pre class="m-code m-nopad m-console"><span class="g g-AnsiRed">Traceback (most recent call last):</span>
@@ -154,7 +154,7 @@ which returns a selection of affected atoms by our torsion angle</p>
 <span class="n">phi_2_rw</span> <span class="o">=</span> <span class="n">TorsionAngle</span><span class="p">(</span><span class="n">r1</span><span class="p">[</span><span class="s2">&quot;C&quot;</span><span class="p">],</span> <span class="n">r2</span><span class="p">[</span><span class="s2">&quot;N&quot;</span><span class="p">],</span> <span class="n">r2</span><span class="p">[</span><span class="s2">&quot;CA&quot;</span><span class="p">],</span> <span class="n">r2</span><span class="p">[</span><span class="s2">&quot;C&quot;</span><span class="p">],</span>
                         <span class="n">affected_phi_atoms</span><span class="p">)</span>
 
-<span class="n">phi_2_rw</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">Degrees</span><span class="p">(</span><span class="o">-</span><span class="mi">130</span><span class="p">))</span>
+<span class="n">phi_2_rw</span><span class="o">.</span><span class="n">rotate_to</span><span class="p">(</span><span class="n">Degrees</span><span class="p">(</span><span class="o">-</span><span class="mi">130</span><span class="p">))</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">phi_2_ro</span><span class="o">.</span><span class="n">value</span><span class="p">()</span><span class="o">.</span><span class="n">degrees</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">phi_2_rw</span><span class="o">.</span><span class="n">value</span><span class="p">()</span><span class="o">.</span><span class="n">degrees</span><span class="p">)</span></pre>

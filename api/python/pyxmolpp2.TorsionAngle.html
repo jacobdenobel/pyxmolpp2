@@ -65,7 +65,7 @@
         <h1>
           <span class="m-breadcrumb"><a href="pyxmolpp2.html">pyxmolpp2</a>.<wbr/></span>TorsionAngle <span class="m-thin">class</span>
         </h1>
-        <p>Holds references to 4 atoms, and optionally to a Callable-&gt;AtomSelection. If Callable is supplied, the set operation is available.</p>
+        <p>Torsion angle</p>
         <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
@@ -81,16 +81,16 @@
         <section id="methods">
           <h2><a href="#methods">Methods</a></h2>
           <dl class="m-doc">
-            <dt id="set">
-              <span class="m-doc-wrap-bumper">def <a href="#set" class="m-doc-self">set</a>(</span><span class="m-doc-wrap">self,
+            <dt>
+              <span class="m-doc-wrap-bumper">def <a href="#rotate_to" class="m-doc">rotate_to</a>(</span><span class="m-doc-wrap">self,
               value: <a href="pyxmolpp2.AngleValue.html" class="m-doc">AngleValue</a>,
               noop_tolerance: <a href="pyxmolpp2.AngleValue.html" class="m-doc">AngleValue</a> = Degrees(0.01)) -&gt; None</span>
             </dt>
-            <dd>Perform rotation around torsion angle, all dependent atoms are also rotated.</dd>
+            <dd>Perform rotation around torsion angle</dd>
             <dt id="value">
               <span class="m-doc-wrap-bumper">def <a href="#value" class="m-doc-self">value</a>(</span><span class="m-doc-wrap">self<span class="m-text m-dim">, /</span>) -&gt; <a href="pyxmolpp2.AngleValue.html" class="m-doc">AngleValue</a></span>
             </dt>
-            <dd>Get current value</dd>
+            <dd>Current value</dd>
           </dl>
         </section>
         <section id="dunder-methods">
@@ -103,7 +103,7 @@
               c: <a href="pyxmolpp2.Atom.html" class="m-doc">Atom</a>,
               d: <a href="pyxmolpp2.Atom.html" class="m-doc">Atom</a>) -&gt; None</span>
             </dt>
-            <dd></dd>
+            <dd>Constructor of read-only value</dd>
             <dt id="__init__-5a6b1">
               <span class="m-doc-wrap-bumper">def <a href="#__init__-5a6b1" class="m-doc-self">__init__</a>(</span><span class="m-doc-wrap">self,
               a: <a href="pyxmolpp2.Atom.html" class="m-doc">Atom</a>,
@@ -112,8 +112,39 @@
               d: <a href="pyxmolpp2.Atom.html" class="m-doc">Atom</a>,
               affected_atoms_selector: typing.Callable[[<a href="pyxmolpp2.Atom.html" class="m-doc">Atom</a>, <a href="pyxmolpp2.Atom.html" class="m-doc">Atom</a>, <a href="pyxmolpp2.Atom.html" class="m-doc">Atom</a>, <a href="pyxmolpp2.Atom.html" class="m-doc">Atom</a>], <a href="pyxmolpp2.AtomSelection.html" class="m-doc">AtomSelection</a>]) -&gt; None</span>
             </dt>
-            <dd></dd>
+            <dd>Constructor of read-write value</dd>
           </dl>
+        </section>
+        <section>
+          <h2>Method documentation</h2>
+          <section class="m-doc-details" id="rotate_to"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">def pyxmolpp2.<wbr />TorsionAngle.<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#rotate_to" class="m-doc-self">rotate_to</a>(</span><span class="m-doc-wrap">self,
+              value: <a href="pyxmolpp2.AngleValue.html" class="m-doc">AngleValue</a>,
+              noop_tolerance: <a href="pyxmolpp2.AngleValue.html" class="m-doc">AngleValue</a> = Degrees(0.01)) -&gt; None</span></span>
+            </h3>
+            <p>Perform rotation around torsion angle</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">value</td>
+                  <td>target value of torsion angle</td>
+                </tr>
+                <tr>
+                  <td>noop_tolerance</td>
+                  <td>no-op tolerance to skip negligible rotations</td>
+                </tr>
+              </tbody>
+            </table>
+<dl>
+<dt>Precondition:</dt>
+<dd>Must be a read-write</dd>
+</dl>
+<p>Note that this is O(N) operation where N is number of affected atoms</p>
+          </div></section>
         </section>
       </div>
     </div>

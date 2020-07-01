@@ -65,6 +65,7 @@
         <h1>
           <span class="m-breadcrumb"><a href="pyxmolpp2.html">pyxmolpp2</a>.<wbr/></span>Rotation <span class="m-thin">class</span>
         </h1>
+        <p>Rotational transformation</p>
         <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
@@ -83,19 +84,19 @@
             <dt id="axis">
               <span class="m-doc-wrap-bumper">def <a href="#axis" class="m-doc-self">axis</a>(</span><span class="m-doc-wrap">self<span class="m-text m-dim">, /</span>) -&gt; <a href="pyxmolpp2.XYZ.html" class="m-doc">XYZ</a></span>
             </dt>
-            <dd>Returns axis of rotation</dd>
+            <dd>Rotational axis</dd>
             <dt id="inverted">
               <span class="m-doc-wrap-bumper">def <a href="#inverted" class="m-doc-self">inverted</a>(</span><span class="m-doc-wrap">self<span class="m-text m-dim">, /</span>) -&gt; <a href="pyxmolpp2.Rotation.html" class="m-doc">Rotation</a></span>
             </dt>
-            <dd>Returns inverted rotation</dd>
+            <dd>Inverted rotation</dd>
             <dt id="matrix3d">
               <span class="m-doc-wrap-bumper">def <a href="#matrix3d" class="m-doc-self">matrix3d</a>(</span><span class="m-doc-wrap">self<span class="m-text m-dim">, /</span>) -&gt; numpy.ndarray[numpy.float64]</span>
             </dt>
-            <dd>Returns underlying rotational matrix</dd>
+            <dd>Rotational matrix</dd>
             <dt id="theta">
               <span class="m-doc-wrap-bumper">def <a href="#theta" class="m-doc-self">theta</a>(</span><span class="m-doc-wrap">self<span class="m-text m-dim">, /</span>) -&gt; <a href="pyxmolpp2.AngleValue.html" class="m-doc">AngleValue</a></span>
             </dt>
-            <dd>Returns angle of rotation</dd>
+            <dd>Rotational angle</dd>
             <dt id="transform">
               <span class="m-doc-wrap-bumper">def <a href="#transform" class="m-doc-self">transform</a>(</span><span class="m-doc-wrap">self,
               r: <a href="pyxmolpp2.XYZ.html" class="m-doc">XYZ</a>) -&gt; <a href="pyxmolpp2.XYZ.html" class="m-doc">XYZ</a></span>
@@ -109,18 +110,18 @@
             <dt id="__init__-6eef6">
               <span class="m-doc-wrap-bumper">def <a href="#__init__-6eef6" class="m-doc-self">__init__</a>(</span><span class="m-doc-wrap">self<span class="m-text m-dim">, /</span>) -&gt; None</span>
             </dt>
-            <dd></dd>
+            <dd>Default constructor</dd>
             <dt id="__init__-45e62">
               <span class="m-doc-wrap-bumper">def <a href="#__init__-45e62" class="m-doc-self">__init__</a>(</span><span class="m-doc-wrap">self,
               rotation_axis: <a href="pyxmolpp2.XYZ.html" class="m-doc">XYZ</a>,
               rotation_angle: <a href="pyxmolpp2.AngleValue.html" class="m-doc">AngleValue</a>) -&gt; None</span>
             </dt>
-            <dd></dd>
+            <dd>Construct from axis and angle</dd>
             <dt id="__init__-22e0e">
               <span class="m-doc-wrap-bumper">def <a href="#__init__-22e0e" class="m-doc-self">__init__</a>(</span><span class="m-doc-wrap">self,
               rotation_matrix: numpy.ndarray[numpy.float64[3, 3]]) -&gt; None</span>
             </dt>
-            <dd></dd>
+            <dd>Construct from matrix</dd>
             <dt id="__mul__-ddd57">
               <span class="m-doc-wrap-bumper">def <a href="#__mul__-ddd57" class="m-doc-self">__mul__</a>(</span><span class="m-doc-wrap">self,
               arg0: <a href="pyxmolpp2.Rotation.html" class="m-doc">Rotation</a><span class="m-text m-dim">, /</span>) -&gt; <a href="pyxmolpp2.Rotation.html" class="m-doc">Rotation</a></span>

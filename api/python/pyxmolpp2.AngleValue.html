@@ -65,6 +65,7 @@
         <h1>
           <span class="m-breadcrumb"><a href="pyxmolpp2.html">pyxmolpp2</a>.<wbr/></span>AngleValue <span class="m-thin">class</span>
         </h1>
+        <p>Angular value</p>
         <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
@@ -81,12 +82,12 @@
         <section id="methods">
           <h2><a href="#methods">Methods</a></h2>
           <dl class="m-doc">
-            <dt id="cos">
-              <span class="m-doc-wrap-bumper">def <a href="#cos" class="m-doc-self">cos</a>(</span><span class="m-doc-wrap">self<span class="m-text m-dim">, /</span>) -&gt; float</span>
+            <dt id="abs">
+              <span class="m-doc-wrap-bumper">def <a href="#abs" class="m-doc-self">abs</a>(</span><span class="m-doc-wrap">self<span class="m-text m-dim">, /</span>) -&gt; <a href="pyxmolpp2.AngleValue.html" class="m-doc">AngleValue</a></span>
             </dt>
             <dd></dd>
-            <dt id="fabs">
-              <span class="m-doc-wrap-bumper">def <a href="#fabs" class="m-doc-self">fabs</a>(</span><span class="m-doc-wrap">self<span class="m-text m-dim">, /</span>) -&gt; <a href="pyxmolpp2.AngleValue.html" class="m-doc">AngleValue</a></span>
+            <dt id="cos">
+              <span class="m-doc-wrap-bumper">def <a href="#cos" class="m-doc-self">cos</a>(</span><span class="m-doc-wrap">self<span class="m-text m-dim">, /</span>) -&gt; float</span>
             </dt>
             <dd></dd>
             <dt id="sin">
@@ -100,7 +101,27 @@
             <dt id="to_standard_range">
               <span class="m-doc-wrap-bumper">def <a href="#to_standard_range" class="m-doc-self">to_standard_range</a>(</span><span class="m-doc-wrap">self<span class="m-text m-dim">, /</span>) -&gt; <a href="pyxmolpp2.AngleValue.html" class="m-doc">AngleValue</a></span>
             </dt>
-            <dd>Return angle in range :math:`[-\pi..\pi)`</dd>
+            <dd>Wraps value to <svg class="m-math" style="width: 3.932em; height: 1.245em; vertical-align: -0.312em;" viewBox="0 -8.966376 37.744346 11.955168">
+<title>
+[-\pi..\pi)
+</title>
+<defs>
+<path d='M3.096389 -4.507098H4.447323C4.124533 -3.16812 3.921295 -2.295392 3.921295 -1.338979C3.921295 -1.171606 3.921295 0.119552 4.411457 0.119552C4.662516 0.119552 4.877709 -0.107597 4.877709 -0.310834C4.877709 -0.37061 4.877709 -0.394521 4.794022 -0.573848C4.471233 -1.398755 4.471233 -2.426899 4.471233 -2.510585C4.471233 -2.582316 4.471233 -3.431133 4.722291 -4.507098H6.06127C6.216687 -4.507098 6.611208 -4.507098 6.611208 -4.889664C6.611208 -5.152677 6.38406 -5.152677 6.168867 -5.152677H2.235616C1.960648 -5.152677 1.554172 -5.152677 1.004234 -4.566874C0.6934 -4.220174 0.310834 -3.58655 0.310834 -3.514819S0.37061 -3.419178 0.442341 -3.419178C0.526027 -3.419178 0.537983 -3.455044 0.597758 -3.526775C1.219427 -4.507098 1.841096 -4.507098 2.139975 -4.507098H2.82142C2.558406 -3.610461 2.259527 -2.570361 1.279203 -0.478207C1.183562 -0.286924 1.183562 -0.263014 1.183562 -0.191283C1.183562 0.059776 1.398755 0.119552 1.506351 0.119552C1.853051 0.119552 1.948692 -0.191283 2.092154 -0.6934C2.283437 -1.303113 2.283437 -1.327024 2.402989 -1.80523L3.096389 -4.507098Z' id='eq1-g1-25'/>
+<path d='M2.199751 -0.573848C2.199751 -0.920548 1.912827 -1.159651 1.625903 -1.159651C1.279203 -1.159651 1.0401 -0.872727 1.0401 -0.585803C1.0401 -0.239103 1.327024 0 1.613948 0C1.960648 0 2.199751 -0.286924 2.199751 -0.573848Z' id='eq1-g1-58'/>
+<path d='M7.878456 -2.749689C8.081694 -2.749689 8.296887 -2.749689 8.296887 -2.988792S8.081694 -3.227895 7.878456 -3.227895H1.41071C1.207472 -3.227895 0.992279 -3.227895 0.992279 -2.988792S1.207472 -2.749689 1.41071 -2.749689H7.878456Z' id='eq1-g0-0'/>
+<path d='M3.371357 -2.976837C3.371357 -3.88543 3.251806 -5.36787 2.582316 -6.75467C1.876961 -8.18929 0.896638 -8.966376 0.765131 -8.966376C0.71731 -8.966376 0.657534 -8.942466 0.657534 -8.870735C0.657534 -8.834869 0.657534 -8.810959 0.860772 -8.607721C2.056289 -7.400249 2.725778 -5.427646 2.725778 -2.988792C2.725778 -0.669489 2.163885 1.327024 0.777086 2.737733C0.657534 2.84533 0.657534 2.86924 0.657534 2.905106C0.657534 2.976837 0.71731 3.000747 0.765131 3.000747C0.920548 3.000747 1.900872 2.139975 2.486675 0.968369C3.096389 -0.251059 3.371357 -1.542217 3.371357 -2.976837Z' id='eq1-g2-41'/>
+<path d='M2.988792 2.988792V2.546451H1.829141V-8.524035H2.988792V-8.966376H1.3868V2.988792H2.988792Z' id='eq1-g2-91'/>
+</defs>
+<g id='eq1-page1'>
+<use x='0' xlink:href='#eq1-g2-91' y='0'/>
+<use x='3.251661' xlink:href='#eq1-g0-0' y='0'/>
+<use x='12.550158' xlink:href='#eq1-g1-25' y='0'/>
+<use x='19.619428' xlink:href='#eq1-g1-58' y='0'/>
+<use x='22.871089' xlink:href='#eq1-g1-58' y='0'/>
+<use x='26.12275' xlink:href='#eq1-g1-25' y='0'/>
+<use x='33.19202' xlink:href='#eq1-g2-41' y='0'/>
+</g>
+</svg> range</dd>
           </dl>
         </section>
         <section id="dunder-methods">
@@ -163,11 +184,11 @@
             <dt id="degrees">
               <a href="#degrees" class="m-doc-self">degrees</a>: float <span class="m-label m-flat m-warning">get</span>
             </dt>
-            <dd>Return angle value in degrees</dd>
+            <dd>Angle value in degrees</dd>
             <dt id="radians">
               <a href="#radians" class="m-doc-self">radians</a>: float <span class="m-label m-flat m-warning">get</span>
             </dt>
-            <dd>Return angle value in radians</dd>
+            <dd>Angle value in radians</dd>
           </dl>
         </section>
       </div>
