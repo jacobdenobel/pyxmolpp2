@@ -69,7 +69,7 @@
             <dt>
               class <a href="classxmol_1_1io_1_1AmberNetCDF.html" class="m-doc">xmol::io::AmberNetCDF</a>
             </dt>
-            <dd><span></span></dd>
+            <dd></dd>
             <dt>
               class <a href="classxmol_1_1io_1_1PdbInputFile.html" class="m-doc">xmol::io::PdbInputFile</a>
             </dt>
@@ -109,6 +109,11 @@
               <span class="m-doc-wrap-bumper">void <a href="#a3a086e1ff6bef755e9791e6f943d41b8" class="m-doc">advance</a>(</span><span class="m-doc-wrap">size_t shift) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a20b4262dcb2a5d8122169b5e1dd6b2ea" class="m-doc">read_unit_cell</a>(</span><span class="m-doc-wrap">size_t index,
+              const <a href="classxmol_1_1geom_1_1UnitCell.html" class="m-doc">xmol::<wbr />geom::<wbr />UnitCell</a>&amp; previous) -&gt; <a href="classxmol_1_1geom_1_1UnitCell.html" class="m-doc">xmol::<wbr />geom::<wbr />UnitCell</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd></dd>
           </dl>
         </section>
         <section>
@@ -125,6 +130,13 @@
               <span class="m-doc-wrap-bumper">void xmol::<wbr />trajectory::<wbr />TrajectoryInputFile::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3a086e1ff6bef755e9791e6f943d41b8" class="m-doc-self">advance</a>(</span><span class="m-doc-wrap">size_t shift) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
 <p>Advance internal data pointer by <code>shift</code> frames and be prepared to read coordinates</p><p>When internal data pointer shifted beyond <a href="classxmol_1_1trajectory_1_1TrajectoryInputFile.html#a6100d58146d52923ffc5481d09ff8f98" class="m-doc">n_<wbr />frames()</a> file handles must be closed</p><p>Note: advance(0) prepares file to be read by <a href="classxmol_1_1trajectory_1_1TrajectoryInputFile.html#afaa57af3416bad144e014fa5c939a157" class="m-doc">read_<wbr />coordinates()</a></p>
+          </div></section>
+          <section class="m-doc-details" id="a20b4262dcb2a5d8122169b5e1dd6b2ea"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="classxmol_1_1geom_1_1UnitCell.html" class="m-doc">xmol::<wbr />geom::<wbr />UnitCell</a> xmol::<wbr />trajectory::<wbr />TrajectoryInputFile::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a20b4262dcb2a5d8122169b5e1dd6b2ea" class="m-doc-self">read_unit_cell</a>(</span><span class="m-doc-wrap">size_t index,
+              const <a href="classxmol_1_1geom_1_1UnitCell.html" class="m-doc">xmol::<wbr />geom::<wbr />UnitCell</a>&amp; previous) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+<p>Read unit cell at <code>index</code>.</p><p>Input value of <code>previous</code> corresponds to value from another frame (not necessarily preceding to this one) Precondition: <code>index</code> must match current position of internal data pointer</p>
           </div></section>
         </section>
       </div>

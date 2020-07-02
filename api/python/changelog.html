@@ -66,11 +66,13 @@
           Change log
         </h1>
 <dl>
-<dt>v1.1.0.dev:</dt>
+<dt>v1.1:</dt>
 <dd><ul>
+<li>New: Trajectory reads <a class="m-doc" href="pyxmolpp2.Frame.html#cell">Frame.cell</a> from input formats (<a class="m-doc" href="pyxmolpp2.AmberNetCDF.html">AmberNetCDF</a> | <a class="m-doc" href="pyxmolpp2.PdbFile.html">PdbFile</a>)</li>
 <li>Renamed <code>AngleValue.{fabs -&gt; abs}</code></li>
 <li>Renamed <code>TorsionAngle.{set -&gt; rotate_to}</code></li>
 <li>Fixed <a class="m-doc" href="pyxmolpp2.TrajectoryInputFile.html">TrajectoryInputFile</a> trampoline</li>
+<li>Added basic <code>CRYST1</code> pdb record support</li>
 </ul>
 </dd>
 <dt>v1.0.0:</dt>

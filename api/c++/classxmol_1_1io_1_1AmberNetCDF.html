@@ -49,7 +49,6 @@
           <span class="m-breadcrumb"><a href="namespacexmol.html">xmol</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespacexmol_1_1io.html">io</a>::<wbr/></span>AmberNetCDF <span class="m-thin">class</span>
           <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="AmberNetCDF_8h.html">&lt;xmol/io/AmberNetCDF.h&gt;</a></div>
         </h1>
-        <p><span></span></p>
         <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
@@ -63,6 +62,7 @@
             </li>
           </ul>
         </div>
+<p>AMBER NetCDF Trajectory</p><p>Format description: <a href="https://ambermd.org/netcdf/nctraj.xhtml">https:/<wbr />/<wbr />ambermd.org/<wbr />netcdf/<wbr />nctraj.xhtml</a></p>
         <section id="base-classes">
           <h2><a href="#base-classes">Base classes</a></h2>
           <dl class="m-doc">
@@ -104,39 +104,55 @@
               <span class="m-doc-wrap-bumper">auto <a href="#a19703449c1b1fbf33483b46a82d68ea0" class="m-doc-self">operator=</a>(</span><span class="m-doc-wrap"><a href="classxmol_1_1io_1_1AmberNetCDF.html" class="m-doc">AmberNetCDF</a>&amp;&amp;) -&gt; <a href="classxmol_1_1io_1_1AmberNetCDF.html" class="m-doc">AmberNetCDF</a>&amp; <span class="m-label m-flat m-info">defaulted</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="ae90eaaf5b331d61db20b851943e7ab18">
-              <span class="m-doc-wrap-bumper">auto <a href="#ae90eaaf5b331d61db20b851943e7ab18" class="m-doc-self">n_frames</a>(</span><span class="m-doc-wrap">) const -&gt; size_t <span class="m-label m-flat m-warning">override</span></span>
+            <dt id="acf213190b90bf809dd3d54f37dba87ea">
+              <span class="m-doc-wrap-bumper">auto <a href="#acf213190b90bf809dd3d54f37dba87ea" class="m-doc-self">n_frames</a>(</span><span class="m-doc-wrap">) const -&gt; size_t <span class="m-label m-flat m-warning">final</span></span>
             </dt>
             <dd>Number of frames.</dd>
-            <dt id="a40771beb23ba5334cd137667bb8eecc0">
-              <span class="m-doc-wrap-bumper">auto <a href="#a40771beb23ba5334cd137667bb8eecc0" class="m-doc-self">n_atoms</a>(</span><span class="m-doc-wrap">) const -&gt; size_t <span class="m-label m-flat m-warning">override</span></span>
+            <dt id="a7ca283e2d7457ca5fd2c421ab080cc64">
+              <span class="m-doc-wrap-bumper">auto <a href="#a7ca283e2d7457ca5fd2c421ab080cc64" class="m-doc-self">n_atoms</a>(</span><span class="m-doc-wrap">) const -&gt; size_t <span class="m-label m-flat m-warning">final</span></span>
             </dt>
             <dd>Number of atoms per frame.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#aa18570cb3f72a7977fb33d50d702f4a9" class="m-doc">read_coordinates</a>(</span><span class="m-doc-wrap">size_t index,
-              <a href="classxmol_1_1proxy_1_1CoordSpan.html" class="m-doc">proxy::<wbr />CoordSpan</a>&amp; coordinates) <span class="m-label m-flat m-warning">override</span></span>
+              <span class="m-doc-wrap-bumper">void <a href="#abd728801b7b463d06d8bf39e09cb9480" class="m-doc">read_coordinates</a>(</span><span class="m-doc-wrap">size_t index,
+              <a href="classxmol_1_1proxy_1_1CoordSpan.html" class="m-doc">proxy::<wbr />CoordSpan</a>&amp; coordinates) <span class="m-label m-flat m-warning">final</span></span>
             </dt>
             <dd></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a470283c5cbbab25cc32a574c83524192" class="m-doc">advance</a>(</span><span class="m-doc-wrap">size_t shift) <span class="m-label m-flat m-warning">override</span></span>
+              <span class="m-doc-wrap-bumper">void <a href="#a8207963e3febe97cd93fcc6b71dad52c" class="m-doc">advance</a>(</span><span class="m-doc-wrap">size_t shift) <span class="m-label m-flat m-warning">final</span></span>
             </dt>
             <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a9dcb2295f734af2c667fca99a6afe599" class="m-doc">read_unit_cell</a>(</span><span class="m-doc-wrap">size_t index,
+              const <a href="classxmol_1_1geom_1_1UnitCell.html" class="m-doc">geom::<wbr />UnitCell</a>&amp; previous) -&gt; <a href="classxmol_1_1geom_1_1UnitCell.html" class="m-doc">geom::<wbr />UnitCell</a> <span class="m-label m-flat m-warning">final</span></span>
+            </dt>
+            <dd></dd>
+            <dt id="a831f5fa97d330c3e436023dfa10e3889">
+              <span class="m-doc-wrap-bumper">auto <a href="#a831f5fa97d330c3e436023dfa10e3889" class="m-doc-self">has_cell</a>(</span><span class="m-doc-wrap">) const -&gt; bool</span>
+            </dt>
+            <dd><span></span></dd>
           </dl>
         </section>
         <section>
           <h2>Function documentation</h2>
-          <section class="m-doc-details" id="aa18570cb3f72a7977fb33d50d702f4a9"><div>
+          <section class="m-doc-details" id="abd728801b7b463d06d8bf39e09cb9480"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void xmol::<wbr />io::<wbr />AmberNetCDF::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa18570cb3f72a7977fb33d50d702f4a9" class="m-doc-self">read_coordinates</a>(</span><span class="m-doc-wrap">size_t index,
-              <a href="classxmol_1_1proxy_1_1CoordSpan.html" class="m-doc">proxy::<wbr />CoordSpan</a>&amp; coordinates) <span class="m-label m-warning">override</span></span></span>
+              <span class="m-doc-wrap-bumper">void xmol::<wbr />io::<wbr />AmberNetCDF::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#abd728801b7b463d06d8bf39e09cb9480" class="m-doc-self">read_coordinates</a>(</span><span class="m-doc-wrap">size_t index,
+              <a href="classxmol_1_1proxy_1_1CoordSpan.html" class="m-doc">proxy::<wbr />CoordSpan</a>&amp; coordinates) <span class="m-label m-warning">final</span></span></span>
             </h3>
 <p>Read <code>index</code> &#x27;th frame into <code>coordinates</code></p><p>Precondition: <code>index</code> must match current position of internal data pointer</p>
           </div></section>
-          <section class="m-doc-details" id="a470283c5cbbab25cc32a574c83524192"><div>
+          <section class="m-doc-details" id="a8207963e3febe97cd93fcc6b71dad52c"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void xmol::<wbr />io::<wbr />AmberNetCDF::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a470283c5cbbab25cc32a574c83524192" class="m-doc-self">advance</a>(</span><span class="m-doc-wrap">size_t shift) <span class="m-label m-warning">override</span></span></span>
+              <span class="m-doc-wrap-bumper">void xmol::<wbr />io::<wbr />AmberNetCDF::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8207963e3febe97cd93fcc6b71dad52c" class="m-doc-self">advance</a>(</span><span class="m-doc-wrap">size_t shift) <span class="m-label m-warning">final</span></span></span>
             </h3>
-<p>Advance internal data pointer by <code>shift</code> frames and be prepared to read coordinates</p><p>When internal data pointer shifted beyond <a href="classxmol_1_1io_1_1AmberNetCDF.html#ae90eaaf5b331d61db20b851943e7ab18" class="m-doc">n_<wbr />frames()</a> file handles must be closed</p><p>Note: advance(0) prepares file to be read by <a href="classxmol_1_1io_1_1AmberNetCDF.html#aa18570cb3f72a7977fb33d50d702f4a9" class="m-doc">read_<wbr />coordinates()</a></p>
+<p>Advance internal data pointer by <code>shift</code> frames and be prepared to read coordinates</p><p>When internal data pointer shifted beyond <a href="classxmol_1_1io_1_1AmberNetCDF.html#acf213190b90bf809dd3d54f37dba87ea" class="m-doc">n_<wbr />frames()</a> file handles must be closed</p><p>Note: advance(0) prepares file to be read by <a href="classxmol_1_1io_1_1AmberNetCDF.html#abd728801b7b463d06d8bf39e09cb9480" class="m-doc">read_<wbr />coordinates()</a></p>
+          </div></section>
+          <section class="m-doc-details" id="a9dcb2295f734af2c667fca99a6afe599"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="classxmol_1_1geom_1_1UnitCell.html" class="m-doc">geom::<wbr />UnitCell</a> xmol::<wbr />io::<wbr />AmberNetCDF::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9dcb2295f734af2c667fca99a6afe599" class="m-doc-self">read_unit_cell</a>(</span><span class="m-doc-wrap">size_t index,
+              const <a href="classxmol_1_1geom_1_1UnitCell.html" class="m-doc">geom::<wbr />UnitCell</a>&amp; previous) <span class="m-label m-warning">final</span></span></span>
+            </h3>
+<p>Read unit cell at <code>index</code>.</p><p>Input value of <code>previous</code> corresponds to value from another frame (not necessarily preceding to this one) Precondition: <code>index</code> must match current position of internal data pointer</p>
           </div></section>
         </section>
       </div>

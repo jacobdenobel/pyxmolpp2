@@ -122,6 +122,11 @@
               <span class="m-doc-wrap-bumper">void <a href="#a3671fdc98479526a2a008545a0da0427" class="m-doc">advance</a>(</span><span class="m-doc-wrap">size_t shift) <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a453bba33d06272ca80d44739c1e3d201" class="m-doc">read_unit_cell</a>(</span><span class="m-doc-wrap">size_t index,
+              const <a href="classxmol_1_1geom_1_1UnitCell.html" class="m-doc">geom::<wbr />UnitCell</a>&amp; previous) -&gt; <a href="classxmol_1_1geom_1_1UnitCell.html" class="m-doc">geom::<wbr />UnitCell</a> <span class="m-label m-flat m-warning">final</span></span>
+            </dt>
+            <dd></dd>
           </dl>
         </section>
         <section>
@@ -165,6 +170,13 @@
               <span class="m-doc-wrap-bumper">void xmol::<wbr />io::<wbr />PdbInputFile::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3671fdc98479526a2a008545a0da0427" class="m-doc-self">advance</a>(</span><span class="m-doc-wrap">size_t shift) <span class="m-label m-warning">override</span></span></span>
             </h3>
 <p>Advance internal data pointer by <code>shift</code> frames and be prepared to read coordinates</p><p>When internal data pointer shifted beyond <a href="classxmol_1_1io_1_1PdbInputFile.html#a16aef5087a5289d619931556ac341587" class="m-doc">n_<wbr />frames()</a> file handles must be closed</p><p>Note: advance(0) prepares file to be read by <a href="classxmol_1_1io_1_1PdbInputFile.html#a59387b2bc6de19e6e192cb39877fabaa" class="m-doc">read_<wbr />coordinates()</a></p>
+          </div></section>
+          <section class="m-doc-details" id="a453bba33d06272ca80d44739c1e3d201"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="classxmol_1_1geom_1_1UnitCell.html" class="m-doc">geom::<wbr />UnitCell</a> xmol::<wbr />io::<wbr />PdbInputFile::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a453bba33d06272ca80d44739c1e3d201" class="m-doc-self">read_unit_cell</a>(</span><span class="m-doc-wrap">size_t index,
+              const <a href="classxmol_1_1geom_1_1UnitCell.html" class="m-doc">geom::<wbr />UnitCell</a>&amp; previous) <span class="m-label m-warning">final</span></span></span>
+            </h3>
+<p>Read unit cell at <code>index</code>.</p><p>Input value of <code>previous</code> corresponds to value from another frame (not necessarily preceding to this one) Precondition: <code>index</code> must match current position of internal data pointer</p>
           </div></section>
         </section>
       </div>
