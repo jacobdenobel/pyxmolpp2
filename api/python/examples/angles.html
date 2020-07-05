@@ -65,36 +65,36 @@
         <h1>
           <span class="m-breadcrumb"><a href="../examples/index.html">Examples</a> &raquo; <wbr/></span>AngleValue
         </h1>
-<p>Protect yourself from missing <code>2π/180</code> factor</p>
+<p>This class protects from sudden loss of <code>2π/180</code> factor</p>
 <div class="m-code-figure">
 <div class="m-py-exec">
 <pre class="m-code"><span class="kn">from</span> <span class="nn">pyxmolpp2</span> <span class="kn">import</span> <span class="n">Degrees</span><span class="p">,</span> <span class="n">Radians</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span></pre>
 </div>
 </div>
-<p>To avoid accidental errors user is forced to use <a class="m-doc" href="../pyxmolpp2.AngleValue.html">AngleValue</a> instead of raw float numbers</p>
+<p>To avoid accidental errors use of <a class="m-doc" href="../pyxmolpp2.AngleValue.html">AngleValue</a> is enforced by API.</p>
 <p><a class="m-doc" href="../pyxmolpp2.AngleValue.html">AngleValue</a> can be constructed via <a class="m-doc" href="../pyxmolpp2.html#Degrees">Degrees()</a> or <a class="m-doc" href="../pyxmolpp2.html#Radians">Radians()</a>:</p>
 <div class="m-code-figure">
 <div class="m-py-exec">
-<pre class="m-code"><span class="n">angle_value_1</span> <span class="o">=</span> <span class="n">Degrees</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span>
-<span class="n">angle_value_2</span> <span class="o">=</span> <span class="n">Radians</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span></pre>
+<pre class="m-code"><span class="n">a</span> <span class="o">=</span> <span class="n">Degrees</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">Radians</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span></pre>
 </div>
 </div>
 <p>It can be casted back to float as degrees or radians:</p>
 <div class="m-code-figure">
 <div class="m-py-exec">
-<pre class="m-code"><span class="nb">print</span><span class="p">(</span><span class="n">angle_value_1</span><span class="o">.</span><span class="n">degrees</span><span class="p">,</span> <span class="n">angle_value_1</span><span class="o">.</span><span class="n">radians</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">angle_value_2</span><span class="o">.</span><span class="n">degrees</span><span class="p">,</span> <span class="n">angle_value_2</span><span class="o">.</span><span class="n">radians</span><span class="p">)</span></pre>
+<pre class="m-code"><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">degrees</span><span class="p">,</span> <span class="n">b</span><span class="o">.</span><span class="n">radians</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">degrees</span><span class="p">,</span> <span class="n">b</span><span class="o">.</span><span class="n">radians</span><span class="p">)</span></pre>
 </div>
 <div class="m-py-exec">
-<pre class="m-code m-nopad m-console">45.0 0.7853981633974483
+<pre class="m-code m-nopad m-console">45.0 3.141592653589793
 180.0 3.141592653589793</pre>
 </div>
 </div>
-<p>AngleValue supports all basic arithmetic operations:</p>
+<p>All basic arithmetic operations are supported:</p>
 <div class="m-code-figure">
 <div class="m-py-exec">
-<pre class="m-code"><span class="nb">print</span><span class="p">((</span><span class="n">angle_value_1</span><span class="o">*</span><span class="mi">2</span> <span class="o">+</span> <span class="n">angle_value_2</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">degrees</span><span class="p">)</span></pre>
+<pre class="m-code"><span class="nb">print</span><span class="p">((</span><span class="n">a</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">b</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">degrees</span><span class="p">)</span></pre>
 </div>
 <div class="m-py-exec">
 <pre class="m-code m-nopad m-console">149.99999999999997</pre>
@@ -103,21 +103,41 @@
 <p><a class="m-doc" href="../pyxmolpp2.AngleValue.html">AngleValue</a> also has <a class="m-doc" href="../pyxmolpp2.AngleValue.html#cos">cos()</a>, <a class="m-doc" href="../pyxmolpp2.AngleValue.html#sin">sin()</a>, <a class="m-doc" href="../pyxmolpp2.AngleValue.html#tan">tan()</a>, <a class="m-doc" href="../pyxmolpp2.AngleValue.html#abs">abs()</a> methods for convenience:</p>
 <div class="m-code-figure">
 <div class="m-py-exec">
-<pre class="m-code"><span class="nb">print</span><span class="p">(</span> <span class="p">(</span><span class="n">angle_value_1</span><span class="p">)</span><span class="o">.</span><span class="n">cos</span><span class="p">(),</span>
-       <span class="p">(</span><span class="n">angle_value_1</span><span class="p">)</span><span class="o">.</span><span class="n">sin</span><span class="p">(),</span>
-       <span class="p">(</span><span class="n">angle_value_1</span><span class="p">)</span><span class="o">.</span><span class="n">tan</span><span class="p">(),</span>
-       <span class="p">(</span><span class="n">angle_value_1</span><span class="p">)</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span><span class="o">.</span><span class="n">degrees</span><span class="p">)</span></pre>
+<pre class="m-code"><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">cos</span><span class="p">(),</span> <span class="n">a</span><span class="o">.</span><span class="n">sin</span><span class="p">(),</span> <span class="n">a</span><span class="o">.</span><span class="n">tan</span><span class="p">(),</span> <span class="n">a</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span><span class="o">.</span><span class="n">degrees</span><span class="p">)</span></pre>
 </div>
 <div class="m-py-exec">
 <pre class="m-code m-nopad m-console">0.7071067811865476 0.7071067811865475 0.9999999999999999 45.0</pre>
 </div>
 </div>
+<p>Sometimes we don't need extra periodic cycles and want our angle in <svg class="m-math" style="width: 3.932em; height: 1.245em; vertical-align: -0.312em;" viewBox="0 -8.966376 37.744346 11.955168">
+<title>
+[-\pi .. \pi)
+</title>
+<defs>
+<path d='M3.096389 -4.507098H4.447323C4.124533 -3.16812 3.921295 -2.295392 3.921295 -1.338979C3.921295 -1.171606 3.921295 0.119552 4.411457 0.119552C4.662516 0.119552 4.877709 -0.107597 4.877709 -0.310834C4.877709 -0.37061 4.877709 -0.394521 4.794022 -0.573848C4.471233 -1.398755 4.471233 -2.426899 4.471233 -2.510585C4.471233 -2.582316 4.471233 -3.431133 4.722291 -4.507098H6.06127C6.216687 -4.507098 6.611208 -4.507098 6.611208 -4.889664C6.611208 -5.152677 6.38406 -5.152677 6.168867 -5.152677H2.235616C1.960648 -5.152677 1.554172 -5.152677 1.004234 -4.566874C0.6934 -4.220174 0.310834 -3.58655 0.310834 -3.514819S0.37061 -3.419178 0.442341 -3.419178C0.526027 -3.419178 0.537983 -3.455044 0.597758 -3.526775C1.219427 -4.507098 1.841096 -4.507098 2.139975 -4.507098H2.82142C2.558406 -3.610461 2.259527 -2.570361 1.279203 -0.478207C1.183562 -0.286924 1.183562 -0.263014 1.183562 -0.191283C1.183562 0.059776 1.398755 0.119552 1.506351 0.119552C1.853051 0.119552 1.948692 -0.191283 2.092154 -0.6934C2.283437 -1.303113 2.283437 -1.327024 2.402989 -1.80523L3.096389 -4.507098Z' id='eq1-g1-25'/>
+<path d='M2.199751 -0.573848C2.199751 -0.920548 1.912827 -1.159651 1.625903 -1.159651C1.279203 -1.159651 1.0401 -0.872727 1.0401 -0.585803C1.0401 -0.239103 1.327024 0 1.613948 0C1.960648 0 2.199751 -0.286924 2.199751 -0.573848Z' id='eq1-g1-58'/>
+<path d='M7.878456 -2.749689C8.081694 -2.749689 8.296887 -2.749689 8.296887 -2.988792S8.081694 -3.227895 7.878456 -3.227895H1.41071C1.207472 -3.227895 0.992279 -3.227895 0.992279 -2.988792S1.207472 -2.749689 1.41071 -2.749689H7.878456Z' id='eq1-g0-0'/>
+<path d='M3.371357 -2.976837C3.371357 -3.88543 3.251806 -5.36787 2.582316 -6.75467C1.876961 -8.18929 0.896638 -8.966376 0.765131 -8.966376C0.71731 -8.966376 0.657534 -8.942466 0.657534 -8.870735C0.657534 -8.834869 0.657534 -8.810959 0.860772 -8.607721C2.056289 -7.400249 2.725778 -5.427646 2.725778 -2.988792C2.725778 -0.669489 2.163885 1.327024 0.777086 2.737733C0.657534 2.84533 0.657534 2.86924 0.657534 2.905106C0.657534 2.976837 0.71731 3.000747 0.765131 3.000747C0.920548 3.000747 1.900872 2.139975 2.486675 0.968369C3.096389 -0.251059 3.371357 -1.542217 3.371357 -2.976837Z' id='eq1-g2-41'/>
+<path d='M2.988792 2.988792V2.546451H1.829141V-8.524035H2.988792V-8.966376H1.3868V2.988792H2.988792Z' id='eq1-g2-91'/>
+</defs>
+<g id='eq1-page1'>
+<use x='0' xlink:href='#eq1-g2-91' y='0'/>
+<use x='3.251661' xlink:href='#eq1-g0-0' y='0'/>
+<use x='12.550158' xlink:href='#eq1-g1-25' y='0'/>
+<use x='19.619428' xlink:href='#eq1-g1-58' y='0'/>
+<use x='22.871089' xlink:href='#eq1-g1-58' y='0'/>
+<use x='26.12275' xlink:href='#eq1-g1-25' y='0'/>
+<use x='33.19202' xlink:href='#eq1-g2-41' y='0'/>
+</g>
+</svg> range.
+<a class="m-doc" href="../pyxmolpp2.AngleValue.html#to_standard_range">to_standard_range()</a> functions would help you.</p>
 <div class="m-code-figure">
 <div class="m-py-exec">
-<pre class="m-code"><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;380 deg casted to range[0..2pi]:&quot;</span><span class="p">,</span> <span class="n">Degrees</span><span class="p">(</span><span class="mi">380</span><span class="p">)</span><span class="o">.</span><span class="n">to_standard_range</span><span class="p">()</span><span class="o">.</span><span class="n">degrees</span> <span class="p">)</span></pre>
+<pre class="m-code"><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;380 to [-180..180) range:&quot;</span><span class="p">,</span>
+      <span class="n">Degrees</span><span class="p">(</span><span class="mi">380</span><span class="p">)</span><span class="o">.</span><span class="n">to_standard_range</span><span class="p">()</span><span class="o">.</span><span class="n">degrees</span><span class="p">)</span></pre>
 </div>
 <div class="m-py-exec">
-<pre class="m-code m-nopad m-console">380 deg casted to range[0..2pi]: 20.00000000000003</pre>
+<pre class="m-code m-nopad m-console">380 to [-180..180) range: 20.00000000000003</pre>
 </div>
 </div>
       </div>
