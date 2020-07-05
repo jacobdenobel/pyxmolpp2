@@ -93,42 +93,32 @@
             </dt>
             <dd>Number of atoms per frame.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a42721f496a86c3e889d5669538970399" class="m-doc">read_coordinates</a>(</span><span class="m-doc-wrap">size_t index,
-              <a href="classxmol_1_1proxy_1_1CoordSpan.html" class="m-doc">proxy::<wbr />CoordSpan</a>&amp; coordinates) <span class="m-label m-flat m-warning">final</span></span>
+              <span class="m-doc-wrap-bumper">void <a href="#a530b25f5ea0775e7f440394445b2c4df" class="m-doc">read_frame</a>(</span><span class="m-doc-wrap">size_t index,
+              <a href="classxmol_1_1proxy_1_1CoordSpan.html" class="m-doc">proxy::<wbr />CoordSpan</a>&amp; coordinates,
+              <a href="classxmol_1_1geom_1_1UnitCell.html" class="m-doc">geom::<wbr />UnitCell</a>&amp; cell) <span class="m-label m-flat m-warning">final</span></span>
             </dt>
             <dd></dd>
             <dt>
               <span class="m-doc-wrap-bumper">void <a href="#ab5491ae94eefce1f5cada5075fa0cd46" class="m-doc">advance</a>(</span><span class="m-doc-wrap">size_t shift) <span class="m-label m-flat m-warning">final</span></span>
             </dt>
             <dd></dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ab74e85a4b025523d73f88121d0c998e0" class="m-doc">read_unit_cell</a>(</span><span class="m-doc-wrap">size_t index,
-              const <a href="classxmol_1_1geom_1_1UnitCell.html" class="m-doc">geom::<wbr />UnitCell</a>&amp; previous) -&gt; <a href="classxmol_1_1geom_1_1UnitCell.html" class="m-doc">geom::<wbr />UnitCell</a> <span class="m-label m-flat m-warning">final</span></span>
-            </dt>
-            <dd></dd>
           </dl>
         </section>
         <section>
           <h2>Function documentation</h2>
-          <section class="m-doc-details" id="a42721f496a86c3e889d5669538970399"><div>
+          <section class="m-doc-details" id="a530b25f5ea0775e7f440394445b2c4df"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void xmol::<wbr />io::<wbr />TrjtoolDatFile::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a42721f496a86c3e889d5669538970399" class="m-doc-self">read_coordinates</a>(</span><span class="m-doc-wrap">size_t index,
-              <a href="classxmol_1_1proxy_1_1CoordSpan.html" class="m-doc">proxy::<wbr />CoordSpan</a>&amp; coordinates) <span class="m-label m-warning">final</span></span></span>
+              <span class="m-doc-wrap-bumper">void xmol::<wbr />io::<wbr />TrjtoolDatFile::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a530b25f5ea0775e7f440394445b2c4df" class="m-doc-self">read_frame</a>(</span><span class="m-doc-wrap">size_t index,
+              <a href="classxmol_1_1proxy_1_1CoordSpan.html" class="m-doc">proxy::<wbr />CoordSpan</a>&amp; coordinates,
+              <a href="classxmol_1_1geom_1_1UnitCell.html" class="m-doc">geom::<wbr />UnitCell</a>&amp; cell) <span class="m-label m-warning">final</span></span></span>
             </h3>
-<p>Read <code>index</code> &#x27;th frame into <code>coordinates</code></p><p>Precondition: <code>index</code> must match current position of internal data pointer</p>
+<p>Read <code>index</code> &#x27;th frame into coordinates</p><p>Note: trajectory without cell info should ignore <code>cell</code> argument. Precondition: index must match current position of internal data pointer</p>
           </div></section>
           <section class="m-doc-details" id="ab5491ae94eefce1f5cada5075fa0cd46"><div>
             <h3>
               <span class="m-doc-wrap-bumper">void xmol::<wbr />io::<wbr />TrjtoolDatFile::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab5491ae94eefce1f5cada5075fa0cd46" class="m-doc-self">advance</a>(</span><span class="m-doc-wrap">size_t shift) <span class="m-label m-warning">final</span></span></span>
             </h3>
-<p>Advance internal data pointer by <code>shift</code> frames and be prepared to read coordinates</p><p>When internal data pointer shifted beyond <a href="classxmol_1_1io_1_1TrjtoolDatFile.html#ae8c77c233b80af73a0dd9813df88ecb2" class="m-doc">n_<wbr />frames()</a> file handles must be closed</p><p>Note: advance(0) prepares file to be read by <a href="classxmol_1_1io_1_1TrjtoolDatFile.html#a42721f496a86c3e889d5669538970399" class="m-doc">read_<wbr />coordinates()</a></p>
-          </div></section>
-          <section class="m-doc-details" id="ab74e85a4b025523d73f88121d0c998e0"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper"><a href="classxmol_1_1geom_1_1UnitCell.html" class="m-doc">geom::<wbr />UnitCell</a> xmol::<wbr />io::<wbr />TrjtoolDatFile::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab74e85a4b025523d73f88121d0c998e0" class="m-doc-self">read_unit_cell</a>(</span><span class="m-doc-wrap">size_t index,
-              const <a href="classxmol_1_1geom_1_1UnitCell.html" class="m-doc">geom::<wbr />UnitCell</a>&amp; previous) <span class="m-label m-warning">final</span></span></span>
-            </h3>
-<p>Read unit cell at <code>index</code>.</p><p>Input value of <code>previous</code> corresponds to value from another frame (not necessarily preceding to this one) Precondition: <code>index</code> must match current position of internal data pointer</p>
+<p>Advance internal data pointer by <code>shift</code> frames and be prepared to read coordinates</p><p>When internal data pointer shifted beyond <a href="classxmol_1_1io_1_1TrjtoolDatFile.html#ae8c77c233b80af73a0dd9813df88ecb2" class="m-doc">n_<wbr />frames()</a> file handles must be closed</p><p>Note: advance(0) prepares file to be read by read_coordinates()</p>
           </div></section>
         </section>
       </div>

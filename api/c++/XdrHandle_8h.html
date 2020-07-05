@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>xmol::trajectory::PreprocessedTrajectory class | XMOLPP2 C++ API</title>
+  <title>xmol/io/xdr/XdrHandle.h file | XMOLPP2 C++ API</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
   <link rel="icon" href="favicon-dark.png" type="image/png" />
@@ -46,8 +46,7 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <div class="m-doc-template">template&lt;typename TrajectoryPreprocessor&gt;</div>
-          xmol::trajectory::PreprocessedTrajectory <span class="m-thin">class</span>
+          <span class="m-breadcrumb"><a href="dir_a18896a24e5780d34de4df2e88eca873.html">xmol</a>/</span><span class="m-breadcrumb"><a href="dir_0adea226adc4a2409472cd380839d204.html">io</a>/</span><span class="m-breadcrumb"><a href="dir_d7499a650d61dd2850ae1b84dcd90cfa.html">xdr</a>/</span>XdrHandle.h <span class="m-thin">file</span>
         </h1>
         <p><span></span></p>
         <div class="m-block m-default">
@@ -56,16 +55,59 @@
             <li>
               Reference
               <ul>
-                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
+                <li><a href="#namespaces">Namespaces</a></li>
+                <li><a href="#nested-classes">Classes</a></li>
+                <li><a href="#enum-members">Enums</a></li>
+                <li><a href="#func-members">Functions</a></li>
               </ul>
             </li>
           </ul>
         </div>
-        <section id="typeless-methods">
-          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
+        <section id="namespaces">
+          <h2><a href="#namespaces">Namespaces</a></h2>
           <dl class="m-doc">
-            <dt id="afe647128b8edec64b64d4aa13dfe2cce">
-              <span class="m-doc-wrap-bumper"><a href="#afe647128b8edec64b64d4aa13dfe2cce" class="m-doc-self">TrajectoryPreprocessor</a>(</span><span class="m-doc-wrap">)</span>
+            <dt>namespace <a href="namespacexmol.html" class="m-doc">xmol</a></dt>
+            <dd>Reworked original xmol.</dd>
+            <dt>namespace <a href="namespacexmol_1_1io.html" class="m-doc">xmol::io</a></dt>
+            <dd><span></span></dd>
+            <dt>namespace <a href="namespacexmol_1_1io_1_1xdr.html" class="m-doc">xmol::io::xdr</a></dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="nested-classes">
+          <h2><a href="#nested-classes">Classes</a></h2>
+          <dl class="m-doc">
+            <dt>
+              class <a href="classxmol_1_1io_1_1xdr_1_1XdrHandle.html" class="m-doc">xmol::io::xdr::XdrHandle</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="enum-members">
+          <h2><a href="#enum-members">Enums</a></h2>
+          <dl class="m-doc">
+            <dt id="a1368b3266f25b320c42e5d822f4987da">
+              <span class="m-doc-wrap-bumper">enum class <a href="#a1368b3266f25b320c42e5d822f4987da" class="m-doc-self">Status</a>: uint8_t { </span><span class="m-doc-wrap"><a href="#a1368b3266f25b320c42e5d822f4987daabb1ca97ec761fc37101737ba0aa2e7c5" class="m-doc">ERROR</a> = 0,
+              <a href="#a1368b3266f25b320c42e5d822f4987daae0aa021e21dddbd6d8cecec71e9cf564" class="m-doc">OK</a> = 1 }</span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="func-members">
+          <h2><a href="#func-members">Functions</a></h2>
+          <dl class="m-doc">
+            <dt id="a89dd4699cab3d2cc259eb03f4c0be115">
+              <span class="m-doc-wrap-bumper">auto <a href="#a89dd4699cab3d2cc259eb03f4c0be115" class="m-doc-self">operator&amp;</a>(</span><span class="m-doc-wrap">const Status&amp; lhs,
+              const Status&amp; rhs) -&gt; Status</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae5e3978cce1496507af419847b992c33">
+              <span class="m-doc-wrap-bumper">auto <a href="#ae5e3978cce1496507af419847b992c33" class="m-doc-self">operator&amp;=</a>(</span><span class="m-doc-wrap">Status&amp; lhs,
+              const Status&amp; rhs) -&gt; Status&amp;</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aaabf68756c283fa21feca41bf5df14c6">
+              <span class="m-doc-wrap-bumper">auto <a href="#aaabf68756c283fa21feca41bf5df14c6" class="m-doc-self">operator!</a>(</span><span class="m-doc-wrap">const Status&amp; lhs) -&gt; bool</span>
             </dt>
             <dd><span></span></dd>
           </dl>

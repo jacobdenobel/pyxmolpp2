@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>xmol::trajectory::PreprocessedTrajectory class | XMOLPP2 C++ API</title>
+  <title>xmol::geom::SpatialIndex class | XMOLPP2 C++ API</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
   <link rel="icon" href="favicon-dark.png" type="image/png" />
@@ -46,8 +46,8 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <div class="m-doc-template">template&lt;typename TrajectoryPreprocessor&gt;</div>
-          xmol::trajectory::PreprocessedTrajectory <span class="m-thin">class</span>
+          <span class="m-breadcrumb"><a href="namespacexmol.html">xmol</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespacexmol_1_1geom.html">geom</a>::<wbr/></span>SpatialIndex <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="SpatialIndex_8h.html">&lt;xmol/geom/SpatialIndex.h&gt;</a></div>
         </h1>
         <p><span></span></p>
         <div class="m-block m-default">
@@ -56,16 +56,46 @@
             <li>
               Reference
               <ul>
+                <li><a href="#pub-types">Public types</a></li>
                 <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
               </ul>
             </li>
           </ul>
         </div>
+        <section id="pub-types">
+          <h2><a href="#pub-types">Public types</a></h2>
+          <dl class="m-doc">
+            <dt id="a0f93e4cc69ec7e7fd5180b8bc69591b1">
+              using <a href="#a0f93e4cc69ec7e7fd5180b8bc69591b1" class="m-doc-self">bin_id_t</a> = std::tuple&lt;int, int, int&gt;
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a95750c1794a483c06c0409168e7a9a05">
+              using <a href="#a95750c1794a483c06c0409168e7a9a05" class="m-doc-self">index_t</a> = int
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a418b0643afe84a749a5446f11f724c13">
+              using <a href="#a418b0643afe84a749a5446f11f724c13" class="m-doc-self">indices_t</a> = std::vector&lt;index_t&gt;
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
         <section id="typeless-methods">
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
-            <dt id="afe647128b8edec64b64d4aa13dfe2cce">
-              <span class="m-doc-wrap-bumper"><a href="#afe647128b8edec64b64d4aa13dfe2cce" class="m-doc-self">TrajectoryPreprocessor</a>(</span><span class="m-doc-wrap">)</span>
+            <dt id="a4d883d08ace307351351ce82fec7c6b6">
+              <span class="m-doc-wrap-bumper"><a href="#a4d883d08ace307351351ce82fec7c6b6" class="m-doc-self">SpatialIndex</a>(</span><span class="m-doc-wrap">const <a href="structxmol_1_1future_1_1Span.html" class="m-doc">future::<wbr />Span</a>&lt;<a href="classxmol_1_1geom_1_1XYZ.html" class="m-doc">XYZ</a>&gt;&amp; coords,
+              double bin_side_length)</span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt id="aa06dac1284372e127a40e6746c130707">
+              <span class="m-doc-wrap-bumper">auto <a href="#aa06dac1284372e127a40e6746c130707" class="m-doc-self">within</a>(</span><span class="m-doc-wrap">double distance,
+              const <a href="classxmol_1_1geom_1_1XYZ.html" class="m-doc">XYZ</a>&amp; point) -&gt; indices_t</span>
             </dt>
             <dd><span></span></dd>
           </dl>

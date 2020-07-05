@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>xmol::trajectory::PreprocessedTrajectory class | XMOLPP2 C++ API</title>
+  <title>xmol::io::xdr::XtcReader class | XMOLPP2 C++ API</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
   <link rel="icon" href="favicon-dark.png" type="image/png" />
@@ -46,8 +46,8 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <div class="m-doc-template">template&lt;typename TrajectoryPreprocessor&gt;</div>
-          xmol::trajectory::PreprocessedTrajectory <span class="m-thin">class</span>
+          <span class="m-breadcrumb"><a href="namespacexmol.html">xmol</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespacexmol_1_1io.html">io</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespacexmol_1_1io_1_1xdr.html">xdr</a>::<wbr/></span>XtcReader <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="XtcReader_8h.html">&lt;xmol/io/xdr/XtcReader.h&gt;</a></div>
         </h1>
         <p><span></span></p>
         <div class="m-block m-default">
@@ -57,6 +57,7 @@
               Reference
               <ul>
                 <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
               </ul>
             </li>
           </ul>
@@ -64,10 +65,35 @@
         <section id="typeless-methods">
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
-            <dt id="afe647128b8edec64b64d4aa13dfe2cce">
-              <span class="m-doc-wrap-bumper"><a href="#afe647128b8edec64b64d4aa13dfe2cce" class="m-doc-self">TrajectoryPreprocessor</a>(</span><span class="m-doc-wrap">)</span>
+            <dt id="a4f252736fceed4c50f36148d317ce4a0">
+              <span class="m-doc-wrap-bumper"><a href="#a4f252736fceed4c50f36148d317ce4a0" class="m-doc-self">XtcReader</a>(</span><span class="m-doc-wrap">const std::string&amp; filename) <span class="m-label m-flat m-info">explicit</span> </span>
             </dt>
             <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt id="a426c0c6b73648aedf9611bac7e36a858">
+              <span class="m-doc-wrap-bumper">auto <a href="#a426c0c6b73648aedf9611bac7e36a858" class="m-doc-self">read_header</a>(</span><span class="m-doc-wrap"><a href="structxmol_1_1io_1_1xdr_1_1XtcHeader.html" class="m-doc">XtcHeader</a>&amp; header) -&gt; Status -&gt; auto</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a5e5ff55eee28aaad0646c7f2b7cdeb84">
+              <span class="m-doc-wrap-bumper">auto <a href="#a5e5ff55eee28aaad0646c7f2b7cdeb84" class="m-doc-self">read_box</a>(</span><span class="m-doc-wrap">const <a href="structxmol_1_1future_1_1Span.html" class="m-doc">future::<wbr />Span</a>&lt;float&gt;&amp; box) -&gt; Status -&gt; auto</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a364375e54ff5a8b11624bfbaee13bb96">
+              <span class="m-doc-wrap-bumper">auto <a href="#a364375e54ff5a8b11624bfbaee13bb96" class="m-doc-self">read_coords</a>(</span><span class="m-doc-wrap">const <a href="structxmol_1_1future_1_1Span.html" class="m-doc">future::<wbr />Span</a>&lt;float&gt;&amp; flat_coords) -&gt; Status -&gt; auto</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a543ffd09557dbef15fd2d2c379f7e637">
+              <span class="m-doc-wrap-bumper">auto <a href="#a543ffd09557dbef15fd2d2c379f7e637" class="m-doc-self">advance</a>(</span><span class="m-doc-wrap">size_t n_frames) -&gt; Status -&gt; auto</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a109d69c595e7a364942b5242770caaf2">
+              <span class="m-doc-wrap-bumper">auto <a href="#a109d69c595e7a364942b5242770caaf2" class="m-doc-self">last_error</a>(</span><span class="m-doc-wrap">) const -&gt; const char*</span>
+            </dt>
+            <dd>Skip n_frame frames.</dd>
           </dl>
         </section>
       </div>

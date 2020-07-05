@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>xmol::future::Span struct | XMOLPP2 C++ API</title>
+  <title>xmol::io::xdr::XdrHandle class | XMOLPP2 C++ API</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
   <link rel="icon" href="favicon-dark.png" type="image/png" />
@@ -46,48 +46,43 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="span_8h.html">&lt;xmol/future/span.h&gt;</a></div>
-          <div class="m-doc-template">template&lt;typename T&gt;</div>
-          <span class="m-breadcrumb"><a href="namespacexmol.html">xmol</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespacexmol_1_1future.html">future</a>::<wbr/></span>Span <span class="m-thin">struct</span>
+          <span class="m-breadcrumb"><a href="namespacexmol.html">xmol</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespacexmol_1_1io.html">io</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespacexmol_1_1io_1_1xdr.html">xdr</a>::<wbr/></span>XdrHandle <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="XdrHandle_8h.html">&lt;xmol/io/xdr/XdrHandle.h&gt;</a></div>
         </h1>
-        <p>Analogue of C++20 std::span.</p>
+        <p><span></span></p>
         <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
               Reference
               <ul>
+                <li><a href="#pub-types">Public types</a></li>
                 <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
-                <li><a href="#pub-attribs">Public variables</a></li>
               </ul>
             </li>
           </ul>
         </div>
+        <section id="pub-types">
+          <h2><a href="#pub-types">Public types</a></h2>
+          <dl class="m-doc">
+            <dt id="a4e48c030073cf71553269c549194632e">
+              <span class="m-doc-wrap-bumper">enum class <a href="#a4e48c030073cf71553269c549194632e" class="m-doc-self">Mode</a>: uint8_t { </span><span class="m-doc-wrap"><a href="#a4e48c030073cf71553269c549194632ea3466fab4975481651940ed328aa990e4" class="m-doc">READ</a>,
+              <a href="#a4e48c030073cf71553269c549194632ead4b9e47f65b6e79b010582f15785867e" class="m-doc">WRITE</a> }</span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
         <section id="typeless-methods">
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
-            <dt id="a8be5952d9a980f6fbc1fffe0dc6c57fe">
-              <span class="m-doc-wrap-bumper"><a href="#a8be5952d9a980f6fbc1fffe0dc6c57fe" class="m-doc-self">Span</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-primary">constexpr</span></span>
+            <dt id="a998dcf4b58d679a12bc3c73b6b3fd6fd">
+              <span class="m-doc-wrap-bumper"><a href="#a998dcf4b58d679a12bc3c73b6b3fd6fd" class="m-doc-self">XdrHandle</a>(</span><span class="m-doc-wrap">const std::string&amp; path,
+              Mode mode)</span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a872967672c4052711d666da5d4fea4ba">
-              <span class="m-doc-wrap-bumper"><a href="#a872967672c4052711d666da5d4fea4ba" class="m-doc-self">Span</a>(</span><span class="m-doc-wrap">T* b,
-              T* e) <span class="m-label m-flat m-primary">constexpr</span></span>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="a9a5697c30705a9d69f3c3258e2b250f1">
-              <span class="m-doc-wrap-bumper"><a href="#a9a5697c30705a9d69f3c3258e2b250f1" class="m-doc-self">Span</a>(</span><span class="m-doc-wrap">T* b,
-              size_t n) <span class="m-label m-flat m-primary">constexpr</span></span>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="aea330df6d23222e402a61826075fa73b">
-              <span class="m-doc-wrap-bumper"><a href="#aea330df6d23222e402a61826075fa73b" class="m-doc-self">Span</a>(</span><span class="m-doc-wrap">std::vector&lt;T&gt;&amp; v) <span class="m-label m-flat m-primary">constexpr</span></span>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="a649cbeac0131133d755e973d96cdeaf1">
-              <div class="m-doc-template">template&lt;size_t N&gt;</div>
-              <span class="m-doc-wrap-bumper"><a href="#a649cbeac0131133d755e973d96cdeaf1" class="m-doc-self">Span</a>(</span><span class="m-doc-wrap">std::array&lt;T, N&gt;&amp; v) <span class="m-label m-flat m-primary">constexpr</span></span>
+            <dt id="aa551e2134edd7e969ac7b5ff56acc18d">
+              <span class="m-doc-wrap-bumper"><a href="#aa551e2134edd7e969ac7b5ff56acc18d" class="m-doc-self">~XdrHandle</a>(</span><span class="m-doc-wrap">)</span>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -95,50 +90,46 @@
         <section id="pub-methods">
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
-            <dt id="a4cd24e2fa96ce834e77013567860298f">
-              <span class="m-doc-wrap-bumper">auto <a href="#a4cd24e2fa96ce834e77013567860298f" class="m-doc-self">size</a>(</span><span class="m-doc-wrap">) const -&gt; size_t <span class="m-label m-flat m-primary">constexpr</span></span>
+            <dt id="a569e355084964c67ebd395f0806db57a">
+              <span class="m-doc-wrap-bumper">auto <a href="#a569e355084964c67ebd395f0806db57a" class="m-doc-self">read_opaque</a>(</span><span class="m-doc-wrap">char* cp,
+              unsigned int cnt) -&gt; Status -&gt; auto</span>
             </dt>
             <dd><span></span></dd>
-            <dt id="af0b751dcc1fb1cc4cf847aab3a28af8d">
-              <span class="m-doc-wrap-bumper">auto <a href="#af0b751dcc1fb1cc4cf847aab3a28af8d" class="m-doc-self">empty</a>(</span><span class="m-doc-wrap">) const -&gt; size_t</span>
+            <dt id="a95adf8528dd2feae4a8448ae5edd65cb">
+              <span class="m-doc-wrap-bumper">auto <a href="#a95adf8528dd2feae4a8448ae5edd65cb" class="m-doc-self">write_opaque</a>(</span><span class="m-doc-wrap">const char* cp,
+              unsigned int cnt) -&gt; Status -&gt; auto</span>
             </dt>
             <dd><span></span></dd>
-            <dt id="ac0474b2284d6806b73f03e060936cbed">
-              <span class="m-doc-wrap-bumper">auto <a href="#ac0474b2284d6806b73f03e060936cbed" class="m-doc-self">begin</a>(</span><span class="m-doc-wrap">) const -&gt; T*</span>
+            <dt id="afc97c50cc6bc163659160cbfdc362db3">
+              <span class="m-doc-wrap-bumper">auto <a href="#afc97c50cc6bc163659160cbfdc362db3" class="m-doc-self">read</a>(</span><span class="m-doc-wrap">int&amp; value) -&gt; Status -&gt; auto</span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a72d87ad8b4faee02186d2763bb973cdd">
-              <span class="m-doc-wrap-bumper">auto <a href="#a72d87ad8b4faee02186d2763bb973cdd" class="m-doc-self">end</a>(</span><span class="m-doc-wrap">) const -&gt; T*</span>
+            <dt id="ae56b4702cd13766d3f9edfd7433bc738">
+              <span class="m-doc-wrap-bumper">auto <a href="#ae56b4702cd13766d3f9edfd7433bc738" class="m-doc-self">write</a>(</span><span class="m-doc-wrap">const int&amp; value) -&gt; Status -&gt; auto</span>
             </dt>
             <dd><span></span></dd>
-            <dt id="aa6927cb9970d779d4c364ba59d9595d2">
-              <span class="m-doc-wrap-bumper">auto <a href="#aa6927cb9970d779d4c364ba59d9595d2" class="m-doc-self">data</a>(</span><span class="m-doc-wrap">) const -&gt; T*</span>
+            <dt id="a87905324bd7e71f8349078a4ef5a6048">
+              <span class="m-doc-wrap-bumper">auto <a href="#a87905324bd7e71f8349078a4ef5a6048" class="m-doc-self">read</a>(</span><span class="m-doc-wrap">float&amp; value) -&gt; Status -&gt; auto</span>
             </dt>
             <dd><span></span></dd>
-            <dt id="acac6890aab2a91940bd3c1657db8ba12">
-              <span class="m-doc-wrap-bumper">auto <a href="#acac6890aab2a91940bd3c1657db8ba12" class="m-doc-self">operator[]</a>(</span><span class="m-doc-wrap">size_t i) -&gt; T&amp;</span>
+            <dt id="a674b524f0e5c68cc0359d9f36943743a">
+              <span class="m-doc-wrap-bumper">auto <a href="#a674b524f0e5c68cc0359d9f36943743a" class="m-doc-self">write</a>(</span><span class="m-doc-wrap">const float&amp; value) -&gt; Status -&gt; auto</span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a5c2f8bc6e3a4b518a290fcd01cd7ee81">
-              <span class="m-doc-wrap-bumper">auto <a href="#a5c2f8bc6e3a4b518a290fcd01cd7ee81" class="m-doc-self">operator[]</a>(</span><span class="m-doc-wrap">size_t i) const -&gt; const T&amp;</span>
+            <dt id="a47a6a1917671e305959326d9311eaea0">
+              <span class="m-doc-wrap-bumper">auto <a href="#a47a6a1917671e305959326d9311eaea0" class="m-doc-self">read</a>(</span><span class="m-doc-wrap">const <a href="structxmol_1_1future_1_1Span.html" class="m-doc">future::<wbr />Span</a>&lt;float&gt;&amp; value) -&gt; Status -&gt; auto</span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a49cc7499cbd71dd4db9646d2a7309df7">
-              <span class="m-doc-wrap-bumper">void <a href="#a49cc7499cbd71dd4db9646d2a7309df7" class="m-doc-self">rebase</a>(</span><span class="m-doc-wrap">const T* from,
-              T* to)</span>
+            <dt id="ad281faef30795c3d2b86430bbd58afe8">
+              <span class="m-doc-wrap-bumper">auto <a href="#ad281faef30795c3d2b86430bbd58afe8" class="m-doc-self">write</a>(</span><span class="m-doc-wrap">const <a href="structxmol_1_1future_1_1Span.html" class="m-doc">future::<wbr />Span</a>&lt;const float&gt;&amp; value) -&gt; Status -&gt; auto</span>
             </dt>
             <dd><span></span></dd>
-          </dl>
-        </section>
-        <section id="pub-attribs">
-          <h2><a href="#pub-attribs">Public variables</a></h2>
-          <dl class="m-doc">
-            <dt id="ae44ddce6d8cb672e3db613da9834dc3c">
-              T* <a href="#ae44ddce6d8cb672e3db613da9834dc3c" class="m-doc-self">m_begin</a>
+            <dt id="a31757c620983ae5e5781fe27e29aa3e1">
+              <span class="m-doc-wrap-bumper">auto <a href="#a31757c620983ae5e5781fe27e29aa3e1" class="m-doc-self">read</a>(</span><span class="m-doc-wrap">const <a href="structxmol_1_1future_1_1Span.html" class="m-doc">future::<wbr />Span</a>&lt;int&gt;&amp; value) -&gt; Status -&gt; auto</span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a53b118b8fe886fe96fe61b1af51c9bca">
-              T* <a href="#a53b118b8fe886fe96fe61b1af51c9bca" class="m-doc-self">m_end</a>
+            <dt id="a4214f103a9696a741fd99c8f511b11a2">
+              <span class="m-doc-wrap-bumper">auto <a href="#a4214f103a9696a741fd99c8f511b11a2" class="m-doc-self">write</a>(</span><span class="m-doc-wrap">const <a href="structxmol_1_1future_1_1Span.html" class="m-doc">future::<wbr />Span</a>&lt;const int&gt;&amp; value) -&gt; Status -&gt; auto</span>
             </dt>
             <dd><span></span></dd>
           </dl>
