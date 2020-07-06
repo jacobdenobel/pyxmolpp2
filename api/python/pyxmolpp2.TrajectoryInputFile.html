@@ -72,11 +72,37 @@
             <li>
               Reference
               <ul>
+                <li><a href="#methods">Methods</a></li>
                 <li><a href="#dunder-methods">Special methods</a></li>
               </ul>
             </li>
           </ul>
         </div>
+        <section id="methods">
+          <h2><a href="#methods">Methods</a></h2>
+          <dl class="m-doc">
+            <dt id="advance">
+              <span class="m-doc-wrap-bumper">def <a href="#advance" class="m-doc-self">advance</a>(</span><span class="m-doc-wrap">self,
+              shift: int) -&gt; None</span>
+            </dt>
+            <dd>Shift internal data pointer</dd>
+            <dt id="n_atoms">
+              <span class="m-doc-wrap-bumper">def <a href="#n_atoms" class="m-doc-self">n_atoms</a>(</span><span class="m-doc-wrap">self<span class="m-text m-dim">, /</span>) -&gt; int</span>
+            </dt>
+            <dd>Number of atoms per frame</dd>
+            <dt id="n_frames">
+              <span class="m-doc-wrap-bumper">def <a href="#n_frames" class="m-doc-self">n_frames</a>(</span><span class="m-doc-wrap">self<span class="m-text m-dim">, /</span>) -&gt; int</span>
+            </dt>
+            <dd>Number of frames</dd>
+            <dt id="read_frame">
+              <span class="m-doc-wrap-bumper">def <a href="#read_frame" class="m-doc-self">read_frame</a>(</span><span class="m-doc-wrap">self,
+              index: int,
+              coords: <a href="pyxmolpp2.CoordSpan.html" class="m-doc">CoordSpan</a>,
+              cell: <a href="pyxmolpp2.UnitCell.html" class="m-doc">UnitCell</a>) -&gt; None</span>
+            </dt>
+            <dd>Read frame data at current data pointer position</dd>
+          </dl>
+        </section>
         <section id="dunder-methods">
           <h2><a href="#dunder-methods">Special methods</a></h2>
           <dl class="m-doc">
