@@ -83,8 +83,8 @@
               <span class="m-doc-wrap-bumper"><a href="#ae97a33e76732376c6752f55ff091f7ff" class="m-doc-self">AmberNetCDF</a>(</span><span class="m-doc-wrap"><a href="classxmol_1_1io_1_1AmberNetCDF.html" class="m-doc">AmberNetCDF</a>&amp;&amp;) <span class="m-label m-flat m-info">defaulted</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="ad906c4c292f7a14562ebb919230c1390">
-              <span class="m-doc-wrap-bumper"><a href="#ad906c4c292f7a14562ebb919230c1390" class="m-doc-self">AmberNetCDF</a>(</span><span class="m-doc-wrap">const std::string&amp; filename) <span class="m-label m-flat m-info">explicit</span> </span>
+            <dt id="a6bfd2ee17ac89059230407dcddf5f1e2">
+              <span class="m-doc-wrap-bumper"><a href="#a6bfd2ee17ac89059230407dcddf5f1e2" class="m-doc-self">AmberNetCDF</a>(</span><span class="m-doc-wrap">std::string filename) <span class="m-label m-flat m-info">explicit</span> </span>
             </dt>
             <dd><span></span></dd>
             <dt id="ae96b6d7a58198ddc290efa68371a09cf">
@@ -113,9 +113,8 @@
             </dt>
             <dd>Number of atoms per frame.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a1951df8642aaa4cdb76bdb7cbdc9f841" class="m-doc">read_frame</a>(</span><span class="m-doc-wrap">size_t index,
-              <a href="classxmol_1_1proxy_1_1CoordSpan.html" class="m-doc">proxy::<wbr />CoordSpan</a>&amp; coordinates,
-              <a href="classxmol_1_1geom_1_1UnitCell.html" class="m-doc">geom::<wbr />UnitCell</a>&amp; cell) <span class="m-label m-flat m-warning">final</span></span>
+              <span class="m-doc-wrap-bumper">void <a href="#a91f1208c02e75eb13849b7e2f19f7dd6" class="m-doc">read_frame</a>(</span><span class="m-doc-wrap">size_t index,
+              <a href="classxmol_1_1Frame.html" class="m-doc">Frame</a>&amp; frame) <span class="m-label m-flat m-warning">final</span></span>
             </dt>
             <dd></dd>
             <dt>
@@ -130,11 +129,10 @@
         </section>
         <section>
           <h2>Function documentation</h2>
-          <section class="m-doc-details" id="a1951df8642aaa4cdb76bdb7cbdc9f841"><div>
+          <section class="m-doc-details" id="a91f1208c02e75eb13849b7e2f19f7dd6"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void xmol::<wbr />io::<wbr />AmberNetCDF::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1951df8642aaa4cdb76bdb7cbdc9f841" class="m-doc-self">read_frame</a>(</span><span class="m-doc-wrap">size_t index,
-              <a href="classxmol_1_1proxy_1_1CoordSpan.html" class="m-doc">proxy::<wbr />CoordSpan</a>&amp; coordinates,
-              <a href="classxmol_1_1geom_1_1UnitCell.html" class="m-doc">geom::<wbr />UnitCell</a>&amp; cell) <span class="m-label m-warning">final</span></span></span>
+              <span class="m-doc-wrap-bumper">void xmol::<wbr />io::<wbr />AmberNetCDF::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a91f1208c02e75eb13849b7e2f19f7dd6" class="m-doc-self">read_frame</a>(</span><span class="m-doc-wrap">size_t index,
+              <a href="classxmol_1_1Frame.html" class="m-doc">Frame</a>&amp; frame) <span class="m-label m-warning">final</span></span></span>
             </h3>
 <p>Read <code>index</code> &#x27;th frame into coordinates</p><p>Note: trajectory without cell info should ignore <code>cell</code> argument. Precondition: index must match current position of internal data pointer</p>
           </div></section>

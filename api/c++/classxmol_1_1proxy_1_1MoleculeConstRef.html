@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>xmol::io::TrjtoolDatFile class | XMOLPP2 C++ API</title>
+  <title>xmol::proxy::MoleculeConstRef class | XMOLPP2 C++ API</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
   <link rel="icon" href="favicon-dark.png" type="image/png" />
@@ -46,10 +46,10 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="namespacexmol.html">xmol</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespacexmol_1_1io.html">io</a>::<wbr/></span>TrjtoolDatFile <span class="m-thin">class</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="TrjtoolDatFile_8h.html">&lt;xmol/io/TrjtoolDatFile.h&gt;</a></div>
+          xmol::proxy::MoleculeConstRef <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="proxy_8h.html">&lt;xmol/proxy/proxy.h&gt;</a></div>
         </h1>
-        <p>3d MD coordinates in &quot;trjtool .dat&quot; format</p>
+        <p><span></span></p>
         <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
@@ -67,16 +67,21 @@
           <h2><a href="#base-classes">Base classes</a></h2>
           <dl class="m-doc">
             <dt>
-              class <a href="classxmol_1_1trajectory_1_1TrajectoryInputFile.html" class="m-doc">xmol::trajectory::TrajectoryInputFile</a>
+              <div class="m-doc-template">template&lt;typename MRef&gt;</div>
+              class <a href="classxmol_1_1proxy_1_1MoleculeGettersMixin.html" class="m-doc">xmol::proxy::MoleculeGettersMixin&lt;MoleculeConstRef&gt;</a>
             </dt>
-            <dd>Forward read-only re-enterable trajectory coordinate file.</dd>
+            <dd><span></span></dd>
           </dl>
         </section>
         <section id="typeless-methods">
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
-            <dt id="aa548deeb45ce5fc37ed1b38066ea50cc">
-              <span class="m-doc-wrap-bumper"><a href="#aa548deeb45ce5fc37ed1b38066ea50cc" class="m-doc-self">TrjtoolDatFile</a>(</span><span class="m-doc-wrap">std::string filename) <span class="m-label m-flat m-info">explicit</span> </span>
+            <dt id="ac526305e2d21746c7140f58a17f0036b">
+              <span class="m-doc-wrap-bumper"><a href="#ac526305e2d21746c7140f58a17f0036b" class="m-doc-self">MoleculeConstRef</a>(</span><span class="m-doc-wrap">const <a href="classxmol_1_1proxy_1_1MoleculeConstRef.html" class="m-doc">MoleculeConstRef</a>&amp; rhs) <span class="m-label m-flat m-info">defaulted</span> <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ab387a37152b907d57d4062a72b4394ba">
+              <span class="m-doc-wrap-bumper"><a href="#ab387a37152b907d57d4062a72b4394ba" class="m-doc-self">MoleculeConstRef</a>(</span><span class="m-doc-wrap"><a href="classxmol_1_1proxy_1_1MoleculeConstRef.html" class="m-doc">MoleculeConstRef</a>&amp;&amp; rhs) <span class="m-label m-flat m-info">defaulted</span> <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -84,40 +89,15 @@
         <section id="pub-methods">
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
-            <dt id="ae8c77c233b80af73a0dd9813df88ecb2">
-              <span class="m-doc-wrap-bumper">auto <a href="#ae8c77c233b80af73a0dd9813df88ecb2" class="m-doc-self">n_frames</a>(</span><span class="m-doc-wrap">) const -&gt; size_t <span class="m-label m-flat m-warning">final</span></span>
+            <dt id="a2d9203faf29eb41f9d644fb2c4a5ae1e">
+              <span class="m-doc-wrap-bumper">auto <a href="#a2d9203faf29eb41f9d644fb2c4a5ae1e" class="m-doc-self">operator=</a>(</span><span class="m-doc-wrap">const <a href="classxmol_1_1proxy_1_1MoleculeConstRef.html" class="m-doc">MoleculeConstRef</a>&amp; rhs) -&gt; <a href="classxmol_1_1proxy_1_1MoleculeConstRef.html" class="m-doc">MoleculeConstRef</a>&amp; <span class="m-label m-flat m-info">defaulted</span> <span class="m-label m-flat m-primary">constexpr</span></span>
             </dt>
-            <dd>Number of frames.</dd>
-            <dt id="a992c684d99537e137036f66ea49c932f">
-              <span class="m-doc-wrap-bumper">auto <a href="#a992c684d99537e137036f66ea49c932f" class="m-doc-self">n_atoms</a>(</span><span class="m-doc-wrap">) const -&gt; size_t <span class="m-label m-flat m-warning">final</span></span>
+            <dd><span></span></dd>
+            <dt id="a035e6fe5d2a9ada309ee7eede8db0662">
+              <span class="m-doc-wrap-bumper">auto <a href="#a035e6fe5d2a9ada309ee7eede8db0662" class="m-doc-self">operator=</a>(</span><span class="m-doc-wrap"><a href="classxmol_1_1proxy_1_1MoleculeConstRef.html" class="m-doc">MoleculeConstRef</a>&amp;&amp; rhs) -&gt; <a href="classxmol_1_1proxy_1_1MoleculeConstRef.html" class="m-doc">MoleculeConstRef</a>&amp; <span class="m-label m-flat m-info">defaulted</span> <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
-            <dd>Number of atoms per frame.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a79495406db2f8f63e3b334c3db66a097" class="m-doc">read_frame</a>(</span><span class="m-doc-wrap">size_t index,
-              <a href="classxmol_1_1Frame.html" class="m-doc">Frame</a>&amp; frame) <span class="m-label m-flat m-warning">final</span></span>
-            </dt>
-            <dd></dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#ab5491ae94eefce1f5cada5075fa0cd46" class="m-doc">advance</a>(</span><span class="m-doc-wrap">size_t shift) <span class="m-label m-flat m-warning">final</span></span>
-            </dt>
-            <dd></dd>
+            <dd><span></span></dd>
           </dl>
-        </section>
-        <section>
-          <h2>Function documentation</h2>
-          <section class="m-doc-details" id="a79495406db2f8f63e3b334c3db66a097"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">void xmol::<wbr />io::<wbr />TrjtoolDatFile::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a79495406db2f8f63e3b334c3db66a097" class="m-doc-self">read_frame</a>(</span><span class="m-doc-wrap">size_t index,
-              <a href="classxmol_1_1Frame.html" class="m-doc">Frame</a>&amp; frame) <span class="m-label m-warning">final</span></span></span>
-            </h3>
-<p>Read <code>index</code> &#x27;th frame into coordinates</p><p>Note: trajectory without cell info should ignore <code>cell</code> argument. Precondition: index must match current position of internal data pointer</p>
-          </div></section>
-          <section class="m-doc-details" id="ab5491ae94eefce1f5cada5075fa0cd46"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">void xmol::<wbr />io::<wbr />TrjtoolDatFile::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab5491ae94eefce1f5cada5075fa0cd46" class="m-doc-self">advance</a>(</span><span class="m-doc-wrap">size_t shift) <span class="m-label m-warning">final</span></span></span>
-            </h3>
-<p>Advance internal data pointer by <code>shift</code> frames and be prepared to read coordinates</p><p>When internal data pointer shifted beyond <a href="classxmol_1_1io_1_1TrjtoolDatFile.html#ae8c77c233b80af73a0dd9813df88ecb2" class="m-doc">n_<wbr />frames()</a> file handles must be closed</p><p>Note: advance(0) prepares file to be read by read_coordinates()</p>
-          </div></section>
         </section>
       </div>
     </div>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>xmol::io::TrjtoolDatFile class | XMOLPP2 C++ API</title>
+  <title>xmol::proxy::ResidueSettersMixin class | XMOLPP2 C++ API</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
   <link rel="icon" href="favicon-dark.png" type="image/png" />
@@ -46,10 +46,11 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="namespacexmol.html">xmol</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespacexmol_1_1io.html">io</a>::<wbr/></span>TrjtoolDatFile <span class="m-thin">class</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="TrjtoolDatFile_8h.html">&lt;xmol/io/TrjtoolDatFile.h&gt;</a></div>
+          <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="ResidueRefMixin_8h.html">&lt;xmol/proxy/mixins/ResidueRefMixin.h&gt;</a></div>
+          <div class="m-doc-template">template&lt;typename RRef&gt;</div>
+          xmol::proxy::ResidueSettersMixin <span class="m-thin">class</span>
         </h1>
-        <p>3d MD coordinates in &quot;trjtool .dat&quot; format</p>
+        <p><span></span></p>
         <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
@@ -57,6 +58,7 @@
               Reference
               <ul>
                 <li><a href="#base-classes">Base classes</a></li>
+                <li><a href="#derived-classes">Derived classes</a></li>
                 <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
               </ul>
@@ -67,16 +69,26 @@
           <h2><a href="#base-classes">Base classes</a></h2>
           <dl class="m-doc">
             <dt>
-              class <a href="classxmol_1_1trajectory_1_1TrajectoryInputFile.html" class="m-doc">xmol::trajectory::TrajectoryInputFile</a>
+              <div class="m-doc-template">template&lt;typename RRef&gt;</div>
+              class <a href="classxmol_1_1proxy_1_1ResidueGettersMixin.html" class="m-doc">xmol::proxy::ResidueGettersMixin&lt;RRef&gt;</a>
             </dt>
-            <dd>Forward read-only re-enterable trajectory coordinate file.</dd>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="derived-classes">
+          <h2><a href="#derived-classes">Derived classes</a></h2>
+          <dl class="m-doc">
+            <dt>
+              class <a href="classxmol_1_1proxy_1_1ResidueRef.html" class="m-doc">xmol::proxy::ResidueRef</a>
+            </dt>
+            <dd>Lightweight residue reference.</dd>
           </dl>
         </section>
         <section id="typeless-methods">
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
-            <dt id="aa548deeb45ce5fc37ed1b38066ea50cc">
-              <span class="m-doc-wrap-bumper"><a href="#aa548deeb45ce5fc37ed1b38066ea50cc" class="m-doc-self">TrjtoolDatFile</a>(</span><span class="m-doc-wrap">std::string filename) <span class="m-label m-flat m-info">explicit</span> </span>
+            <dt id="abf6b0719b6a16f60fea22b9c8918d5f8">
+              <span class="m-doc-wrap-bumper"><a href="#abf6b0719b6a16f60fea22b9c8918d5f8" class="m-doc-self">ResidueSettersMixin</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-info">defaulted</span> <span class="m-label m-flat m-primary">constexpr</span></span>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -84,40 +96,47 @@
         <section id="pub-methods">
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
-            <dt id="ae8c77c233b80af73a0dd9813df88ecb2">
-              <span class="m-doc-wrap-bumper">auto <a href="#ae8c77c233b80af73a0dd9813df88ecb2" class="m-doc-self">n_frames</a>(</span><span class="m-doc-wrap">) const -&gt; size_t <span class="m-label m-flat m-warning">final</span></span>
+            <dt id="a787029f5e21cd9aa0b8fb7c72baa9720">
+              <span class="m-doc-wrap-bumper">auto <a href="#a787029f5e21cd9aa0b8fb7c72baa9720" class="m-doc-self">id</a>(</span><span class="m-doc-wrap"><a href="structxmol_1_1ResidueId.html" class="m-doc">ResidueId</a> value) &amp; -&gt; RRef&amp; <span class="m-label m-flat m-primary">constexpr</span></span>
             </dt>
-            <dd>Number of frames.</dd>
-            <dt id="a992c684d99537e137036f66ea49c932f">
-              <span class="m-doc-wrap-bumper">auto <a href="#a992c684d99537e137036f66ea49c932f" class="m-doc-self">n_atoms</a>(</span><span class="m-doc-wrap">) const -&gt; size_t <span class="m-label m-flat m-warning">final</span></span>
+            <dd><span></span></dd>
+            <dt id="aae9bef726cd73e6855107855ad4e47bf">
+              <span class="m-doc-wrap-bumper">auto <a href="#aae9bef726cd73e6855107855ad4e47bf" class="m-doc-self">id</a>(</span><span class="m-doc-wrap"><a href="structxmol_1_1ResidueId.html" class="m-doc">ResidueId</a> value) &amp;&amp; -&gt; RRef&amp;&amp; <span class="m-label m-flat m-primary">constexpr</span></span>
             </dt>
-            <dd>Number of atoms per frame.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a79495406db2f8f63e3b334c3db66a097" class="m-doc">read_frame</a>(</span><span class="m-doc-wrap">size_t index,
-              <a href="classxmol_1_1Frame.html" class="m-doc">Frame</a>&amp; frame) <span class="m-label m-flat m-warning">final</span></span>
+            <dd><span></span></dd>
+            <dt id="a9073e5bd29b8371a4f0cea3c242414c1">
+              <span class="m-doc-wrap-bumper">auto <a href="#a9073e5bd29b8371a4f0cea3c242414c1" class="m-doc-self">id</a>(</span><span class="m-doc-wrap">residueSerial_t value) &amp; -&gt; RRef&amp; <span class="m-label m-flat m-primary">constexpr</span></span>
             </dt>
-            <dd></dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#ab5491ae94eefce1f5cada5075fa0cd46" class="m-doc">advance</a>(</span><span class="m-doc-wrap">size_t shift) <span class="m-label m-flat m-warning">final</span></span>
+            <dd><span></span></dd>
+            <dt id="a2a2e2011e99a85f4c56e3f70266a2cc1">
+              <span class="m-doc-wrap-bumper">auto <a href="#a2a2e2011e99a85f4c56e3f70266a2cc1" class="m-doc-self">id</a>(</span><span class="m-doc-wrap">residueSerial_t value) &amp;&amp; -&gt; RRef&amp;&amp; <span class="m-label m-flat m-primary">constexpr</span></span>
             </dt>
-            <dd></dd>
+            <dd><span></span></dd>
+            <dt id="a7649efec63eb645f4ed85851ecb47c99">
+              <span class="m-doc-wrap-bumper">auto <a href="#a7649efec63eb645f4ed85851ecb47c99" class="m-doc-self">name</a>(</span><span class="m-doc-wrap"><a href="classxmol_1_1utils_1_1ShortAsciiString.html" class="m-doc">ResidueName</a> value) &amp; -&gt; RRef&amp; <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a53c6c86c394d61da2621e717ad9fdb6f">
+              <span class="m-doc-wrap-bumper">auto <a href="#a53c6c86c394d61da2621e717ad9fdb6f" class="m-doc-self">name</a>(</span><span class="m-doc-wrap"><a href="classxmol_1_1utils_1_1ShortAsciiString.html" class="m-doc">ResidueName</a> value) &amp;&amp; -&gt; RRef&amp;&amp; <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae708859a19bac383a2edb5d9b0833719">
+              <span class="m-doc-wrap-bumper">auto <a href="#ae708859a19bac383a2edb5d9b0833719" class="m-doc-self">name</a>(</span><span class="m-doc-wrap">const std::string&amp; value) &amp; -&gt; RRef&amp; <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a90da0004786c561597229b64a7097e3e">
+              <span class="m-doc-wrap-bumper">auto <a href="#a90da0004786c561597229b64a7097e3e" class="m-doc-self">name</a>(</span><span class="m-doc-wrap">const std::string&amp; value) &amp;&amp; -&gt; RRef&amp;&amp; <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a45f9940df7d111fcd6ba1ce0ce086abd">
+              <span class="m-doc-wrap-bumper">auto <a href="#a45f9940df7d111fcd6ba1ce0ce086abd" class="m-doc-self">name</a>(</span><span class="m-doc-wrap">const char* value) &amp; -&gt; RRef&amp; <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a0c26d396d2b13c4a22621136bdcaf92b">
+              <span class="m-doc-wrap-bumper">auto <a href="#a0c26d396d2b13c4a22621136bdcaf92b" class="m-doc-self">name</a>(</span><span class="m-doc-wrap">const char* value) &amp;&amp; -&gt; RRef&amp;&amp; <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd><span></span></dd>
           </dl>
-        </section>
-        <section>
-          <h2>Function documentation</h2>
-          <section class="m-doc-details" id="a79495406db2f8f63e3b334c3db66a097"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">void xmol::<wbr />io::<wbr />TrjtoolDatFile::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a79495406db2f8f63e3b334c3db66a097" class="m-doc-self">read_frame</a>(</span><span class="m-doc-wrap">size_t index,
-              <a href="classxmol_1_1Frame.html" class="m-doc">Frame</a>&amp; frame) <span class="m-label m-warning">final</span></span></span>
-            </h3>
-<p>Read <code>index</code> &#x27;th frame into coordinates</p><p>Note: trajectory without cell info should ignore <code>cell</code> argument. Precondition: index must match current position of internal data pointer</p>
-          </div></section>
-          <section class="m-doc-details" id="ab5491ae94eefce1f5cada5075fa0cd46"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">void xmol::<wbr />io::<wbr />TrjtoolDatFile::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab5491ae94eefce1f5cada5075fa0cd46" class="m-doc-self">advance</a>(</span><span class="m-doc-wrap">size_t shift) <span class="m-label m-warning">final</span></span></span>
-            </h3>
-<p>Advance internal data pointer by <code>shift</code> frames and be prepared to read coordinates</p><p>When internal data pointer shifted beyond <a href="classxmol_1_1io_1_1TrjtoolDatFile.html#ae8c77c233b80af73a0dd9813df88ecb2" class="m-doc">n_<wbr />frames()</a> file handles must be closed</p><p>Note: advance(0) prepares file to be read by read_coordinates()</p>
-          </div></section>
         </section>
       </div>
     </div>
