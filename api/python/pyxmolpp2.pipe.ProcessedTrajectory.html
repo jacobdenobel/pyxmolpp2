@@ -72,6 +72,7 @@
               Reference
               <ul>
                 <li><a href="#dunder-methods">Special methods</a></li>
+                <li><a href="#properties">Properties</a></li>
               </ul>
             </li>
           </ul>
@@ -85,12 +86,33 @@
             <dd></dd>
             <dt id="__init__">
               <span class="m-doc-wrap-bumper">def <a href="#__init__" class="m-doc-self">__init__</a>(</span><span class="m-doc-wrap">self,
-              trajectory: typing.Sequence[<a href="pyxmolpp2.Frame.html" class="m-doc">pyxmolpp2.Frame</a>],
+              trajectory: typing.Union[<a href="pyxmolpp2.Trajectory.html" class="m-doc">pyxmolpp2.Trajectory</a>, <a href="pyxmolpp2.Trajectory.Slice.html" class="m-doc">pyxmolpp2.Trajectory.Slice</a>, <a href="pyxmolpp2.pipe.ProcessedTrajectory.html" class="m-doc">ProcessedTrajectory</a>],
               processor: <a href="pyxmolpp2.pipe.TrajectoryProcessor.html" class="m-doc">TrajectoryProcessor</a>)</span>
             </dt>
             <dd></dd>
             <dt id="__iter__">
               <span class="m-doc-wrap-bumper">def <a href="#__iter__" class="m-doc-self">__iter__</a>(</span><span class="m-doc-wrap">self)</span>
+            </dt>
+            <dd></dd>
+            <dt id="__len__">
+              <span class="m-doc-wrap-bumper">def <a href="#__len__" class="m-doc-self">__len__</a>(</span><span class="m-doc-wrap">self)</span>
+            </dt>
+            <dd></dd>
+          </dl>
+        </section>
+        <section id="properties">
+          <h2><a href="#properties">Properties</a></h2>
+          <dl class="m-doc">
+            <dt id="n_atoms">
+              <a href="#n_atoms" class="m-doc-self">n_atoms</a> <span class="m-label m-flat m-warning">get</span>
+            </dt>
+            <dd></dd>
+            <dt id="n_frames">
+              <a href="#n_frames" class="m-doc-self">n_frames</a> <span class="m-label m-flat m-warning">get</span>
+            </dt>
+            <dd></dd>
+            <dt id="size">
+              <a href="#size" class="m-doc-self">size</a> <span class="m-label m-flat m-warning">get</span>
             </dt>
             <dd></dd>
           </dl>
